@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="xmlpull_1_0_5">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/android-common8/libs/xmlpull_1_0_5.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

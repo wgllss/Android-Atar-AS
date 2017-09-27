@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- 网络错误异常提示 start -->
+    <string-array name="viewpager_demo_tabs">
+        <item>tab11</item>
+        <item>tab22</item>
+        <item>tab33</item>
+    </string-array>
+
+    <!-- 网络错误异常提示 end -->
+
+
+    <!-- ————————————————————————————————————————————————————————————皮肤颜色 0：白天，1夜间  start —————————————————————— -->
+    <!-- String 颜色值 #############################  start -->
+    <string-array name="txt_day_black_night_greywhite_style3_string">
+        <item>#989898</item>
+        <item>#999999</item>
+        <item>#a0cde2</item>
+    </string-array>
+    <!-- String 颜色值 #############################  end -->
+
+
+    <!-- color 颜色值 #############################  start -->
+    <!-- 头部条背景色 -->
+    <array name="common_top_title_bar_bg_color">
+        <item>#1191f6</item>
+        <item>#005e91</item>
+        <item>#48b3e5</item>
+    </array>
+    <!--
+         <array name="common_top_title_bar_bg_color">
+        <item>#1191f6</item>
+        <item>#005e91</item>
+        <item>#48b3e5</item>
+    </array>
+    -->
+
+
+    <!-- 内容背景色 -->
+    <array name="common_content_bg_color">
+        <item>#F3F3F3</item>
+        <item>#0e1929</item>
+    </array>
+    <array name="common_activity_title_color">
+        <item>#FFFFFF</item>
+        <item>#55aad8</item>
+        <item>#48b3e5</item>
+    </array>
+    <array name="common_tab_bg_color">
+        <item>#F8F8F8</item>
+        <item>#132237</item>
+    </array>
+    <!-- tab 线颜色 -->
+    <array name="common_tab_line_color">
+        <item>#a4a4a4</item>
+        <item>#A6A6A6</item>
+    </array>
+    <!-- tab 线 移动条颜色 -->
+    <array name="common_tab_line_move_color">
+        <item>#1191f6</item>
+        <item>#005e91</item>
+    </array>
+    <!-- txt tab 标签文字选中颜色 -->
+    <array name="select_tab_txt_color">
+        <item>#1191f6</item>
+        <item>#005e91</item>
+    </array>
+    <!-- txt tab 标签文字没选中颜色 -->
+    <array name="tab_txt_color">
+        <item>#555555</item>
+        <item>#999999</item>
+    </array>
+    <array name="txt_day_black_night_greywhite_color">
+        <item>#222222</item>
+        <item>#999999</item>
+        <item>#a0cde2</item>
+    </array>
+    <array name="txt_day_grey_night_greyblack_color">
+        <item>#BBBBBB</item>
+        <item>#666666</item>
+        <item>#2e6b8a</item>
+    </array>
+    <array name="refresh_header_text_color">
+        <item>#BBBBBB</item>
+        <item>#666666</item>
+        <item>#2e6b8a</item>
+    </array>
+    <array name="refresh_header_sub_text_color">
+        <item>#aaaaaa</item>
+        <item>#666666</item>
+        <item>#2e6b8a</item>
+    </array>
+    <array name="refresh_bg_color">
+        <item>#E3EDCF</item>
+        <item>#ff0000</item>
+        <item>#2e6b8a</item>
+    </array>
+    <!-- 更多中item bg颜色 -->
+    <array name="item_white_black_bg">
+        <item>#FFFFFF</item>
+        <item>#15253d </item>
+        <item>#15253d </item>
+    </array>
+
+    <!-- 分隔线 -->
+    <array name="txt_line_color">
+        <item>#DDDDDD</item>
+        <item>#0e1929</item>
+    </array>
+    <array name="txt_line_drawable">
+        <item>@drawable/rectangle_line_day</item>
+        <item>@drawable/rectangle_line_night</item>
+    </array>
+    <array name="photo">
+        <item>@drawable/zhaox</item>
+        <item>@drawable/zhaox_n</item>
+    </array>
+    <!-- color 颜色值 #############################  end -->
+    <!-- ————————————————————————————————————————————————————————————皮肤颜色 0：白天，1夜间  end —————————————————————— -->
+
+
+    <!-- ————————————————————————————————————————————————————————————皮肤 drawable 图片 0：白天，1夜间  start —————————————————————— -->
+    <array name="img_back">
+        <item>@drawable/leftw</item>
+        <item>@drawable/leftw_n</item>
+        <item>@drawable/k_game_back</item>
+    </array>
+    <!-- ————————————————————————————————————————————————————————————皮肤图片 0：白天，1夜间  end —————————————————————— -->
+
+</resources>

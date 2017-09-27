@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Atar-demo</string>
+    <!-- 异常错误提示  by Atar start -->
+    <string name="ehttpio_msg">服务器开小差,请重试</string>
+    <string name="emobilenetuseless_msg">当前网络不可用</string>
+    <string name="enetworkio_msg">网络连接异常</string>
+    <string name="enotfoundmethods_msg">没有找到反射方法</string>
+    <string name="ehttpprotocol_msg">HTTP协议错误</string>
+    <string name="exmlparser_msg">XML解析出错</string>
+    <string name="exmlio_msg">XML通讯错误</string>
+    <string name="eclassnotfound_msg">没有找到反射类</string>
+    <string name="eillegalaccess_msg">反射调用时指针出错</string>
+    <string name="esecurity_msg">反射安全出错</string>
+    <string name="econnecttimeout_msg">请求超时,请重试</string>
+    <string name="eparamhasnull_msg">反射方法中有传入为null的参数</string>
+    <string name="eparamuninvalid_msg">反射方法中传入参数不合法</string>
+    <string name="ejsonparser_msg">数据异常</string> <!-- Json解析出错 -->
+    <string name="enotdefine_msg">未知错误异常</string>
+    <string name="ehttp_request_fail400">服务器异常400</string>
+    <string name="ehttp_request_fail403">请求ip被封了</string>
+    <string name="ehttp_request_fail404">服务器异常404</string>
+    <string name="ehttp_request_fail405">服务器异常405</string>
+    <string name="ehttp_request_fail502">服务器异常502</string>
+    <string name="ehttp_request_fail503">服务器异常503</string>
+    <string name="ehttp_request_fail504">服务器异常504</string>
+    <string name="ehttp_request_fail500">服务器异常500</string>
+    <string name="ehttp_eunknownhost_msg">服务器找不到主机</string>
+    <string name="ehttp_unknownservice_msg">服务器出错了</string>
+    <string name="ehttp_unsupportedencoding_msg">通信编码出错</string>
+    <!-- 异常错误提示  by Atar end -->
+
+
+    <!-- Atar start -->
+    <string name="umeng_socialize_sina">新浪</string>
+    <string name="umeng_sharebutton_custom">腾讯微博</string>
+    <string name="pull_to_end_loading">正在刷新</string>
+    <string name="pull_to_up_load_more">上拉加载更多</string>
+    <string name="pull_to_up_reset">释放开始加载</string>
+    <string name="pull_to_start_loading">正在刷新</string>
+    <string name="pull_to_start_refresh">下拉刷新</string>
+    <string name="pull_to_start_reset">释放开始刷新</string>
+    <string name="pull_to_last_time">最后更新时间</string>
+    <string name="pull_to_no_more_data">没有更多数据了</string>
+    <string name="refreshing_waiting">加载中...</string>
+    <string name="loading_waiting">请稍候...</string>
+    <!-- Atar end -->
+
+</resources>

@@ -1,0 +1,40 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+    <style name="AppBaseTheme" parent="android:Theme.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+
+    <!-- ListView的父style,去除一些基本设置 -->
+    <style name="BaseListViewStyle" parent="android:Widget.ListView.White">
+        <item name="android:cacheColorHint">#00000000</item> <!-- 去除拖动时默认的黑色背景 -->
+        <item name="android:divider">#00000000</item>
+        <item name="android:dividerHeight">0.3dp</item>
+        <item name="android:listSelector">#00000000</item> <!-- 去除选中时的黄色底色 -->
+        <!-- <item name="android:overScrollMode">never</item> -->
+        <!-- 去除下拉上拉水阴影虚化 -->
+        <!-- <item name="android:scrollbars">none</item> -->
+        <!-- 去除滚动条 -->
+        <item name="android:fadingEdge">none</item> <!-- 去除ListView滑到顶部和底部时边缘的黑色阴影 -->
+    </style>
+
+    <style name="ProgressBarStyleLarge" parent="@android:style/Widget.ProgressBar.Large">
+        <item name="android:minHeight">30dip</item>
+        <item name="android:minWidth">30dip</item>
+        <item name="android:maxHeight">30dip</item>
+        <item name="android:maxWidth">30dip</item>
+    </style>
+
+</resources>
