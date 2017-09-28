@@ -3,11 +3,6 @@
  */
 package com.atar.activitys.demos;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 import android.activity.ActivityManager;
 import android.activity.CommonActivity;
 import android.app.Activity;
@@ -31,6 +26,11 @@ import com.atar.enums.EnumMsgWhat;
 import com.atar.modles.WonderfulTopicJson;
 import com.atar.net.NetWorkInterfaces;
 import com.atar.net.UrlParamCommon;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  *****************************************************************************************************************************************************************************
