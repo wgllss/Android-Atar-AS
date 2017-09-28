@@ -19,7 +19,6 @@ import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.utils.ApplicationManagement;
 import android.utils.ScreenUtils;
-import android.utils.ShowLog;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
@@ -124,7 +123,6 @@ public class AtarLoadActivity extends Activity implements OnPageChangeListener, 
 				|| AppConfigModel.getInstance().getBoolean(AppConfigUtils.APP_CONFIG_TEXT_VERSION_KEY + configVersion, true)) {
 
 			String imagesJson = AppConfigModel.getInstance().getString(AppConfigUtils.APP_LOADING_IMAGES_KEY, "");
-			ShowLog.i(TAG,"imagesJson:"+imagesJson);
 			if (imagesJson == null || imagesJson.length() == 0) {
 				imagesJson = "[\"assets://images/loading1.png\",\"assets://images/loading2.jpg\",\"assets://images/loading3.jpeg\"]";
 			}
@@ -171,7 +169,6 @@ public class AtarLoadActivity extends Activity implements OnPageChangeListener, 
 		switch (msg.what) {
 		case 50505:
 			if (msg.arg1 == 0) {// 下载引导图
-				ShowLog.i(TAG,"下载引导图");
 				try {
 					@SuppressWarnings("unchecked")
 					List<String> loading_images = (List<String>) msg.obj;
