@@ -1,7 +1,15 @@
 /**
- * 
+ *
  */
 package com.atar.htmls;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+
+import org.json.JSONObject;
 
 import android.annotation.SuppressLint;
 import android.appconfig.AppConfigSetting;
@@ -17,6 +25,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.reflection.NetWorkMsg;
 import android.reflection.ThreadPoolTool;
+import android.skin.SkinUtils;
 import android.utils.ScreenUtils;
 import android.utils.ShowLog;
 import android.view.Gravity;
@@ -56,17 +65,9 @@ import com.google.gson.reflect.TypeToken;
 import com.handmark.pulltorefresh.library.PullToRefreshWebView;
 import com.umeng.socialize.bean.SHARE_MEDIA;
 
-import org.json.JSONObject;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-
 /**
  *****************************************************************************************************************************************************************************
- * 
+ *
  * @author :Atar
  * @createTime:2017-6-2下午1:31:36
  * @version:1.0.0
@@ -154,10 +155,10 @@ public class ImplInAndroidScript {
 									@Override
 									public void onHandlerData(Message msg1) {
 										switch (msg1.what) {
-										case EnumMsgWhat.LOAD_FROM_SQL_COMPLETE:
-											String resultJson = LoadUtil.loadFromSqlComelete(msg1, String.class);
-											callWebViewData(resultJson, msgWhat, whichThred1, whichThred2, specialHtml);
-											break;
+											case EnumMsgWhat.LOAD_FROM_SQL_COMPLETE:
+												String resultJson = LoadUtil.loadFromSqlComelete(msg1, String.class);
+												callWebViewData(resultJson, msgWhat, whichThred1, whichThred2, specialHtml);
+												break;
 										}
 									}
 								}, savrUrl, "", "");
@@ -379,7 +380,7 @@ public class ImplInAndroidScript {
 
 	/**
 	 * 设置viewpager是否滑动返回控制 0可返回 其它 不能返回
-	 * 
+	 *
 	 * @author :Atar
 	 * @createTime:2017-4-18上午10:38:00
 	 * @version:1.0.0
@@ -512,7 +513,7 @@ public class ImplInAndroidScript {
 
 	@JavascriptInterface
 	public void confirm(final String strTitle, final String strContent, final String strOk, final String strCancle, final String callbackMethodOk, final String callbackMethodCancle,
-			final String callbackMethodOkJson, final String callbackMethodCancleJson) {
+						final String callbackMethodOkJson, final String callbackMethodCancleJson) {
 		if (handler != null && activity != null) {
 			handler.post(new Runnable() {
 				@Override
@@ -586,7 +587,7 @@ public class ImplInAndroidScript {
 	 */
 	@JavascriptInterface
 	public void show(final String strGravity, final String strX, final String strY, final String spKey, final String strPopwindowWidth, final String strTextSize, final String jsonList,
-			final String onItemClickcallbackMethod) {
+					 final String onItemClickcallbackMethod) {
 		if (handler != null && activity != null) {
 			handler.post(new Runnable() {
 				@SuppressWarnings({ "null", "unused" })
@@ -600,7 +601,7 @@ public class ImplInAndroidScript {
 								gravity = Gravity.NO_GRAVITY;
 							} else if ("1".equals(strGravity)) {// 右上角
 								gravity = Gravity.TOP | Gravity.RIGHT;
-								drawableResID = R.mipmap.drop_r;
+								// drawableResID = R.drawable.drop_r;
 							} else if ("2".equals(strGravity)) {// 左上角
 								gravity = Gravity.TOP | Gravity.LEFT;
 							} else if ("3".equals(strGravity)) {// 上边中间
@@ -648,7 +649,9 @@ public class ImplInAndroidScript {
 						((ListView) dropView).setDividerHeight(0);
 						final PopupWindow mPopupWindow = new PopupWindow(dropView, popwindowWidth, ViewGroup.LayoutParams.WRAP_CONTENT, true);
 						mPopupWindow.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
-						mPopupWindow.setBackgroundDrawable(activity.getResources().getDrawable(drawableResID));
+						if ("1".equals(strGravity)) {// 右上角
+							mPopupWindow.setBackgroundDrawable(SkinUtils.getDrawable(activity, R.string.drawable_drop_r));
+						}
 						mPopupWindow.showAtLocation(activity.getWindow().getDecorView(), gravity, x, y);
 						((ListView) dropView).setOnItemClickListener(new OnItemClickListener() {
 							@Override
@@ -673,15 +676,15 @@ public class ImplInAndroidScript {
 	}
 
 	/**
-	{
-	"shareContent":"淘股吧是中国知名的移动互联投资社交化平台",
-	"shareUrl":"http://m.taoguba.com.cn/downloadApp",
-	"shareTitle":"v_5.5.5",
-	"ShareImgResID":"",
-	"ShareImgUrl":"",
-	"SHARE_MEDIA":["QZONE","WEIXIN"]
-	}
-	*/
+	 {
+	 "shareContent":"淘股吧是中国知名的移动互联投资社交化平台",
+	 "shareUrl":"http://m.taoguba.com.cn/downloadApp",
+	 "shareTitle":"v_5.5.5",
+	 "ShareImgResID":"",
+	 "ShareImgUrl":"",
+	 "SHARE_MEDIA":["QZONE","WEIXIN"]
+	 }
+	 */
 	@JavascriptInterface
 	public void Share(final String shareJson) {
 		if (handler != null && activity != null) {

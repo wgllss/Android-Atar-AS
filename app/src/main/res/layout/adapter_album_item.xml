@@ -32,6 +32,6 @@
         android:layout_centerVertical="true"
         android:padding="10dp"
         android:scaleType="fitCenter"
-        android:src="@mipmap/dayu01" />
+         />
 
 </RelativeLayout>

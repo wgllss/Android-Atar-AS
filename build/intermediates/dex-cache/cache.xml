@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="/Users/xuelanbin/Downloads/regenxin/Android-Atar/app/libs/android-support-v7-recyclerview.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="1820c8a0b92b910fc7f03f85e91435a991f07704">
+        <dex dex="/Users/xuelanbin/Downloads/regenxin/Android-Atar/app/build/intermediates/transforms/dex/debug/folders/1000/2/android-support-v7-recyclerview_2adcd0ca024d0a69199b9db09f5872a9decb9754/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/xuelanbin/Downloads/regenxin/Android-Atar/app/libs/okhttp-ws-2.3.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="7896d229b6aa7884552ab9c23de54c7eb0de8203">
+        <dex dex="/Users/xuelanbin/Downloads/regenxin/Android-Atar/app/build/intermediates/transforms/dex/debug/folders/1000/2/okhttp-ws-2.3.0_9c12bc5f783cbb0976c5a97f05caa54b54d32889/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/xuelanbin/Downloads/regenxin/Android-Atar/app/libs/MiPush_SDK_Client_3_0_3.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="908d543d83aaa44ad289f211c743900979b9d11d">
+        <dex dex="/Users/xuelanbin/Downloads/regenxin/Android-Atar/app/build/intermediates/transforms/dex/debug/folders/1000/2/MiPush_SDK_Client_3_0_3_9f716f96cae9e290755df61cdbfd521d68a40fc3/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/xuelanbin/Downloads/regenxin/Android-Atar/app/libs/fastjson-1.1.46.android.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="108717c93f7aec31fb86db57cb4ad1e26034c638">
+        <dex dex="/Users/xuelanbin/Downloads/regenxin/Android-Atar/app/build/intermediates/transforms/dex/debug/folders/1000/2/fastjson-1.1.46.android_fcdcc93810cd851a10de5d6302f82bbb19951523/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/xuelanbin/Downloads/regenxin/Android-Atar/android-common8/build/intermediates/bundles/default/libs/xmlpull_1_0_5.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="9d8f617a8cfa642d308ac26e2933a7e55e3b43a5">
+        <dex dex="/Users/xuelanbin/Downloads/regenxin/Android-Atar/app/build/intermediates/transforms/dex/debug/folders/1000/8/xmlpull_1_0_5_ec6b2674c9e6ea7e8a028c7f8cdaad1daf2b08a2/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/xuelanbin/Downloads/regenxin/Android-Atar/app/libs/sophix-3.0.9.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="f7e5c97d2da6a53d568cf9fd59f3b2d1d931792d">
+        <dex dex="/Users/xuelanbin/Downloads/regenxin/Android-Atar/app/build/intermediates/transforms/dex/debug/folders/1000/2/sophix-3.0.9_f1f3573054d549e744136886b4b5898323695ddc/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/xuelanbin/Downloads/regenxin/Android-Atar/app/libs/volley.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="c4c0b8d237757dce06738a695d8b5c09d0ea2574">
+        <dex dex="/Users/xuelanbin/Downloads/regenxin/Android-Atar/app/build/intermediates/transforms/dex/debug/folders/1000/2/volley_3a7e0fb7f6d721ff74c0a820d5b9d28ec8690854/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/xuelanbin/Downloads/regenxin/Android-Atar/app/libs/okhttp-2.3.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="2e7bc7033dc2c8423e661224171b3133fb155b28">
+        <dex dex="/Users/xuelanbin/Downloads/regenxin/Android-Atar/app/build/intermediates/transforms/dex/debug/folders/1000/2/okhttp-2.3.0_998e8092b6e64ad67231ed3f8f31818b0298a681/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/xuelanbin/Downloads/regenxin/Android-Atar/app/libs/jackson-core-asl-1.9.7.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="2dd41e7570f5c73e63a6a1311671a60c817e1989">
+        <dex dex="/Users/xuelanbin/Downloads/regenxin/Android-Atar/app/build/intermediates/transforms/dex/debug/folders/1000/2/jackson-core-asl-1.9.7_d04853943a2be8ef4e0931de3ed087c4677f6d14/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/xuelanbin/Downloads/regenxin/Android-Atar/app/libs/SocialSDK_WeiXin_1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="47f4993168154fa73377d7470b9f6887d48a8023">
+        <dex dex="/Users/xuelanbin/Downloads/regenxin/Android-Atar/app/build/intermediates/transforms/dex/debug/folders/1000/2/SocialSDK_WeiXin_1_76f4c3472a7d0b199d595a620d859c1917c6e485/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/xuelanbin/Downloads/regenxin/Android-Atar/android-common8/build/intermediates/bundles/default/libs/universal-image-loader-fixed1.9.5.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="6ff199b1d50516b07f9e6c82809bdc5f5b0713dc">
+        <dex dex="/Users/xuelanbin/Downloads/regenxin/Android-Atar/app/build/intermediates/transforms/dex/debug/folders/1000/8/universal-image-loader-fixed1.9.5_9aa93b5760c8d1a8135bff8454d1906bb8cc5121/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/xuelanbin/Downloads/regenxin/Android-Atar/app/libs/ClientTransferSyncTool_p.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="6d9a13f0c9dfe66578e3c2d94da00285172b4876">
+        <dex dex="/Users/xuelanbin/Downloads/regenxin/Android-Atar/app/build/intermediates/transforms/dex/debug/folders/1000/2/ClientTransferSyncTool_p_1d45f426190470d9afb51024497f7002f3b71e0e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/xuelanbin/Downloads/regenxin/Android-Atar/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="c82741bc129dd5f99f11a4ab8666ae24262053b6">
+        <dex dex="/Users/xuelanbin/Downloads/regenxin/Android-Atar/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_00f9d5f8f10d16d9a76c6315470feb5c9e57570d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/xuelanbin/Downloads/regenxin/Android-Atar/app/libs/bcmail-jdk15-1.46.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="3cdc3ddf5c5e7071f95b61489d96713af095ac30">
+        <dex dex="/Users/xuelanbin/Downloads/regenxin/Android-Atar/app/build/intermediates/transforms/dex/debug/folders/1000/2/bcmail-jdk15-1.46_01d0f7c74c477f3e91c023e5f05f8d31ce5d5258/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/xuelanbin/Downloads/regenxin/Android-Atar/app/libs/alicloud-android-utils-1.0.3.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="000626735e82687be89e3ba1ac481540fcab031c">
+        <dex dex="/Users/xuelanbin/Downloads/regenxin/Android-Atar/app/build/intermediates/transforms/dex/debug/folders/1000/2/alicloud-android-utils-1.0.3_718348dbf0b623d8f06859605dd1fe9ae15bd2ff/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/xuelanbin/Downloads/regenxin/Android-Atar/android-common8/build/intermediates/bundles/default/libs/Xutils-db.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="d751a88732ad4d0a16a315f8185aad5385f7b3d4">
+        <dex dex="/Users/xuelanbin/Downloads/regenxin/Android-Atar/app/build/intermediates/transforms/dex/debug/folders/1000/8/Xutils-db_1039dfdf8661080d952e70c55eef9e50e8548527/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/xuelanbin/Downloads/regenxin/Android-Atar/app/libs/alipaysecsdk.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="7413c074c9edf523050267b93d0875151dc4b644">
+        <dex dex="/Users/xuelanbin/Downloads/regenxin/Android-Atar/app/build/intermediates/transforms/dex/debug/folders/1000/2/alipaysecsdk_a14037c053d11bc4003969671c03b90067ad2b12/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/xuelanbin/Downloads/regenxin/Android-Atar/app/libs/user_profile_mtj_1.3.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="1f454d104e708bfb7059de22291fa70af6e35bb1">
+        <dex dex="/Users/xuelanbin/Downloads/regenxin/Android-Atar/app/build/intermediates/transforms/dex/debug/folders/1000/2/user_profile_mtj_1.3_5ab780413680cbeba00d832373113cebab24ed11/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/xuelanbin/Downloads/regenxin/Android-Atar/app/libs/SocialSDK_tencentWB_3.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="b6156c03b9805c181a24281f297d45bb39ad21cf">
+        <dex dex="/Users/xuelanbin/Downloads/regenxin/Android-Atar/app/build/intermediates/transforms/dex/debug/folders/1000/2/SocialSDK_tencentWB_3_a25b5bd8ec8829c0a2188c467ea848222da78ef4/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/xuelanbin/Downloads/regenxin/Android-Atar/app/libs/locSDK_4.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="41b93335a2753c93f8b8f56741615cb81ea72437">
+        <dex dex="/Users/xuelanbin/Downloads/regenxin/Android-Atar/app/build/intermediates/transforms/dex/debug/folders/1000/2/locSDK_4.2_2e7273bd3406661999c58873a5ab1da59b194dc3/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/xuelanbin/Downloads/regenxin/Android-Atar/app/libs/weex_inspector-0.10.0.5.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="575d72d4a489260763ca62b2b54450fdec3bebd1">
+        <dex dex="/Users/xuelanbin/Downloads/regenxin/Android-Atar/app/build/intermediates/transforms/dex/debug/folders/1000/2/weex_inspector-0.10.0.5_1a1b05ab421a254f0eed85da83e19fa72b8a8e8d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/xuelanbin/Downloads/regenxin/Android-Atar/app/libs/photoview-lib.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="2c4a626310e6dc128d8fb9df9a906ee10820287b">
+        <dex dex="/Users/xuelanbin/Downloads/regenxin/Android-Atar/app/build/intermediates/transforms/dex/debug/folders/1000/2/photoview-lib_de2c30e021f6567d4cc7a90a6b292da2e9efc93f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/xuelanbin/Downloads/regenxin/Android-Atar/app/libs/SocialSDK_tencentWB_2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="6f744074067eb201171c9c8ff1ca45ed821a76a8">
+        <dex dex="/Users/xuelanbin/Downloads/regenxin/Android-Atar/app/build/intermediates/transforms/dex/debug/folders/1000/2/SocialSDK_tencentWB_2_4344954e4fb564d58829ec4d9b9096c05dec70f2/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/xuelanbin/Downloads/regenxin/Android-Atar/app/libs/safe-java-js-webview-bridge-1.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="b0681e34f4d8a43d71ae5886a64af0cd718595c0">
+        <dex dex="/Users/xuelanbin/Downloads/regenxin/Android-Atar/app/build/intermediates/transforms/dex/debug/folders/1000/2/safe-java-js-webview-bridge-1.1_35b9dca5ed115e63fa4fcc39207e9c8820feb816/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/xuelanbin/Downloads/regenxin/Android-Atar/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="a6dc41bcb0e2b49ec7d8884a4a4844f0f4a6fc05">
+        <dex dex="/Users/xuelanbin/Downloads/regenxin/Android-Atar/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_e71344eaf40f699beff84e916cddf289871cfd9a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/xuelanbin/Downloads/regenxin/Android-Atar/app/libs/alipayutdid.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="4345fa0a5a7768f2f9c86aaab7db9e2906765193">
+        <dex dex="/Users/xuelanbin/Downloads/regenxin/Android-Atar/app/build/intermediates/transforms/dex/debug/folders/1000/2/alipayutdid_002faa384d6315b9c7258546b09f395c6798bfaa/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/xuelanbin/Downloads/regenxin/Android-Atar/app/libs/jackson-mapper-asl-1.9.7.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="ef607a88248d8b06bd0abb3b6d0a4d7adb73e06b">
+        <dex dex="/Users/xuelanbin/Downloads/regenxin/Android-Atar/app/build/intermediates/transforms/dex/debug/folders/1000/2/jackson-mapper-asl-1.9.7_8d336eefce2a7fa70871c6a60c027d2ad12590d0/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/xuelanbin/Downloads/regenxin/Android-Atar/app/libs/jpush-sdk-release1.8.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="bea84de265dbd10ec4ea0d0185cf19dce738edd6">
+        <dex dex="/Users/xuelanbin/Downloads/regenxin/Android-Atar/app/build/intermediates/transforms/dex/debug/folders/1000/2/jpush-sdk-release1.8.0_ad2df5ff3b84153d50192047c87472f58ba64bcc/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/xuelanbin/Downloads/regenxin/Android-Atar/app/libs/pinyin4j-2.5.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="ae353005f973da1cd8545b54354504c2503f6865">
+        <dex dex="/Users/xuelanbin/Downloads/regenxin/Android-Atar/app/build/intermediates/transforms/dex/debug/folders/1000/2/pinyin4j-2.5.0_75335f9aec94b9efdac943b3da284eb4c04f6321/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/xuelanbin/Downloads/regenxin/Android-Atar/app/libs/bcprov-jdk16-1.46.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="ce091790943599535cbb4de8ede84535b0c1260c">
+        <dex dex="/Users/xuelanbin/Downloads/regenxin/Android-Atar/app/build/intermediates/transforms/dex/debug/folders/1000/2/bcprov-jdk16-1.46_951dd3517214a7ee98c3d20f8519f399776e3bf7/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/xuelanbin/Downloads/regenxin/Android-Atar/app/libs/open_sdk_r5509.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="538ea8fb21ea76e8cb424598ac38127cb3344d79">
+        <dex dex="/Users/xuelanbin/Downloads/regenxin/Android-Atar/app/build/intermediates/transforms/dex/debug/folders/1000/2/open_sdk_r5509_891e17d4f608432b51dffc639b0bbddba605d690/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/xuelanbin/Downloads/regenxin/Android-Atar/app/libs/cairh-sjkh-client-android-framework1.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="202179548b84b067a189cabd4222f44ba8a8c491">
+        <dex dex="/Users/xuelanbin/Downloads/regenxin/Android-Atar/app/build/intermediates/transforms/dex/debug/folders/1000/2/cairh-sjkh-client-android-framework1.0_22feb441c592b8fdc4fcac81fd28f536fcf3df9d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/xuelanbin/Downloads/regenxin/Android-Atar/app/libs/android-async-http-1.4.6.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="a845a88238be0b5be9d238652c1bc0605ef91f52">
+        <dex dex="/Users/xuelanbin/Downloads/regenxin/Android-Atar/app/build/intermediates/transforms/dex/debug/folders/1000/2/android-async-http-1.4.6_ec19352283f0b7df19f58d210b7cbc380e178aec/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/xuelanbin/Downloads/regenxin/Android-Atar/app/libs/mta-sdk-1.6.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="c184c69f43b1fe46390f7123717c65bd844bccb6">
+        <dex dex="/Users/xuelanbin/Downloads/regenxin/Android-Atar/app/build/intermediates/transforms/dex/debug/folders/1000/2/mta-sdk-1.6.2_2dfe2cd74fcb3cfe6f24da4e50df4d0d1e6522b7/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/xuelanbin/Downloads/regenxin/Android-Atar/app/libs/HwPush_SDK_V2705.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="a0d2207d563e056a2094eace23b5724c0bd2e05e">
+        <dex dex="/Users/xuelanbin/Downloads/regenxin/Android-Atar/app/build/intermediates/transforms/dex/debug/folders/1000/2/HwPush_SDK_V2705_e151550701cea239b89d96ea3edb03ce2ce1fa02/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/xuelanbin/Downloads/regenxin/Android-Atar/app/libs/alipaysdk.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="0c3384f9877b711c3f0b6556ce9ec7f63dc2426e">
+        <dex dex="/Users/xuelanbin/Downloads/regenxin/Android-Atar/app/build/intermediates/transforms/dex/debug/folders/1000/2/alipaysdk_f1a9ec11992dcfc6e443c1342f83cc7a3e053317/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/xuelanbin/Downloads/regenxin/Android-Atar/app/libs/weiboSDKCore_3.1.4.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="f3617ce51258bf3ec0fe2503e3c0a920040b1b53">
+        <dex dex="/Users/xuelanbin/Downloads/regenxin/Android-Atar/app/build/intermediates/transforms/dex/debug/folders/1000/2/weiboSDKCore_3.1.4_ae33c5c6c87ddbb1c9f36fa2dc1d09dda97fe7f9/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/xuelanbin/Downloads/regenxin/Android-Atar/app/libs/umeng_sdk.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="491df7cee794c9c47729c3802e8b252620339642">
+        <dex dex="/Users/xuelanbin/Downloads/regenxin/Android-Atar/app/build/intermediates/transforms/dex/debug/folders/1000/2/umeng_sdk_1f5a799dc07b239829862f4f9a98675571983087/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/xuelanbin/Downloads/regenxin/Android-Atar/app/libs/umeng_social_sdk.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="7e4e845c8d30254af28b8677fd52552afded3455">
+        <dex dex="/Users/xuelanbin/Downloads/regenxin/Android-Atar/app/build/intermediates/transforms/dex/debug/folders/1000/2/umeng_social_sdk_4ca4a210e03c0ef214883a4f5fce057982320589/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/xuelanbin/Downloads/regenxin/Android-Atar/app/libs/TestABC.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="f59ae5dd08f525ac07d4fba92b8388f61fa8e2bb">
+        <dex dex="/Users/xuelanbin/Downloads/regenxin/Android-Atar/app/build/intermediates/transforms/dex/debug/folders/1000/2/TestABC_3396875f91262b4e4a3348aa999ec472510fd3de/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/xuelanbin/Downloads/regenxin/Android-Atar/app/libs/SocialSDK_Sina.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="b2c08fe36f7fe4256a7b94c8b981d986e676d3fd">
+        <dex dex="/Users/xuelanbin/Downloads/regenxin/Android-Atar/app/build/intermediates/transforms/dex/debug/folders/1000/2/SocialSDK_Sina_37edc52712bfe00a0b8cf8a044fea10ef4434b08/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/xuelanbin/Downloads/regenxin/Android-Atar/app/libs/weex_sdk-0.9.56.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="6c529da34f0f2bed303c323de59efe1e02d27063">
+        <dex dex="/Users/xuelanbin/Downloads/regenxin/Android-Atar/app/build/intermediates/transforms/dex/debug/folders/1000/2/weex_sdk-0.9.56_0685286d5f4f37c4e5d483df6698e77b0fd31895/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/xuelanbin/Downloads/regenxin/Android-Atar/app/libs/SocialSDK_QQZone_3.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="036591c6059abd389664a98e192526884822ebf6">
+        <dex dex="/Users/xuelanbin/Downloads/regenxin/Android-Atar/app/build/intermediates/transforms/dex/debug/folders/1000/2/SocialSDK_QQZone_3_4686b4ff14f589c056bcfc977893f9b79c4bc613/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/xuelanbin/Downloads/regenxin/Android-Atar/app/libs/SocialSDK_WeiXin_2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="969120b076efe4dd6781b9fd3320db2065ced572">
+        <dex dex="/Users/xuelanbin/Downloads/regenxin/Android-Atar/app/build/intermediates/transforms/dex/debug/folders/1000/2/SocialSDK_WeiXin_2_9ef45ddba18eb24be569dbc797a512dde3345c1d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/xuelanbin/Downloads/regenxin/Android-Atar/app/libs/okio-1.3.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="1b355f73402020c5a0dcca58affc3ec3dfeabac1">
+        <dex dex="/Users/xuelanbin/Downloads/regenxin/Android-Atar/app/build/intermediates/transforms/dex/debug/folders/1000/2/okio-1.3.0_5e28da60160126cd5f5f094d2b35e3a18d0961fe/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/xuelanbin/Downloads/regenxin/Android-Atar/app/libs/SocialSDK_tencentWB_1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="328c5351cae13f2ab29450d22b6c02d0ac88a855">
+        <dex dex="/Users/xuelanbin/Downloads/regenxin/Android-Atar/app/build/intermediates/transforms/dex/debug/folders/1000/2/SocialSDK_tencentWB_1_0e3c6ae1ed3969c3c97f0e1f42d2893ea942ab2f/classes.dex" />
+    </item>
+
+</items>

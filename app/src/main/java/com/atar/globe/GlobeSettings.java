@@ -1,9 +1,7 @@
 /**
- * 
+ *
  */
 package com.atar.globe;
-
-import com.atar.activitys.R;
 
 import android.annotation.SuppressLint;
 import android.http.HttpRequest;
@@ -12,7 +10,7 @@ import android.os.Environment;
 /**
  ******************************************************************************************
  * 自定义全局变量，系统配置静态属性
- * @author: Atar 
+ * @author: Atar
  * @createTime:2014年7月20日下午5:08:15
  * @modifyTime:
  * @version: 1.0.0
@@ -46,8 +44,9 @@ public class GlobeSettings {
 	public static final int request_code_at_user = 1009;
 	public static final int request_code_select_pic2 = 1010;
 
-	/**K线游戏字体*/
-	public static final String kGameFontsPath = "fonts/zzgflht.OTF";
+	/** 本地总文件夹 */
+	public static final String appCommonDir = "atar";
 
-	public static final int[] refreshImg = { R.anim.anim_refresh_day, R.anim.anim_refresh_night };
+	/** 本地语音文件目录 */
+	public static final String audioDir = appCommonDir + "/audio/";
 }

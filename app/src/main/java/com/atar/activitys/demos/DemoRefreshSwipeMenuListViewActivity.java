@@ -1,7 +1,9 @@
 /**
- * 
+ *
  */
 package com.atar.activitys.demos;
+
+import java.util.List;
 
 import android.common.CommonHandler;
 import android.content.ComponentName;
@@ -11,6 +13,7 @@ import android.content.pm.ResolveInfo;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Message;
+import android.skin.SkinUtils;
 import android.utils.ScreenUtils;
 import android.view.View;
 import android.widget.AdapterView;
@@ -23,11 +26,9 @@ import com.atar.enums.EnumMsgWhat;
 import com.atar.widget.swipmenulistview_lib.SwipeMenu;
 import com.atar.widget.swipmenulistview_lib.SwipeMenuItem;
 
-import java.util.List;
-
 /**
  *****************************************************************************************************************************************************************************
- * 
+ *
  * @author :Atar
  * @createTime:2017-8-23下午5:46:47
  * @version:1.0.0
@@ -63,7 +64,7 @@ public class DemoRefreshSwipeMenuListViewActivity extends AtarRefreshSwipeMenuLi
 		// set item width
 		deleteItem.setWidth((int) ScreenUtils.dpToPx(DemoRefreshSwipeMenuListViewActivity.this, 90));
 		// set a icon
-		deleteItem.setIcon(R.mipmap.ic_delete);
+		deleteItem.setIconDrawable(SkinUtils.getDrawable(this, R.string.drawable_ic_delete));
 		// add to menu
 		menu.addMenuItem(deleteItem);
 	}
@@ -85,22 +86,22 @@ public class DemoRefreshSwipeMenuListViewActivity extends AtarRefreshSwipeMenuLi
 	public void onHandlerData(Message msg) {
 		super.onHandlerData(msg);
 		switch (msg.what) {
-		case EnumMsgWhat.LOAD_FROM_SQL:
-			setRefreshing();
-			break;
-		case EnumMsgWhat.LOAD_FROM_SQL_COMPLETE:
-			break;
-		case EnumMsgWhat.REFRESH_PULL_DOWN:
-		case EnumMsgWhat.REFRESH_PULL_UP:
-		case EnumMsgWhat.REFRESH_HANDLER:
-			CommonHandler.getInstatnce().getHandler().postDelayed(new Runnable() {
+			case EnumMsgWhat.LOAD_FROM_SQL:
+				setRefreshing();
+				break;
+			case EnumMsgWhat.LOAD_FROM_SQL_COMPLETE:
+				break;
+			case EnumMsgWhat.REFRESH_PULL_DOWN:
+			case EnumMsgWhat.REFRESH_PULL_UP:
+			case EnumMsgWhat.REFRESH_HANDLER:
+				CommonHandler.getInstatnce().getHandler().postDelayed(new Runnable() {
 
-				@Override
-				public void run() {
-					onStopRefresh();
-				}
-			}, 1000);
-			break;
+					@Override
+					public void run() {
+						onStopRefresh();
+					}
+				}, 1000);
+				break;
 		}
 	}
 
@@ -119,16 +120,16 @@ public class DemoRefreshSwipeMenuListViewActivity extends AtarRefreshSwipeMenuLi
 	public void onMenuItemClick(int position, SwipeMenu menu, int index) {
 		ApplicationInfo item = mAppList.get(position);
 		switch (index) {
-		case 0:
-			// open
-			open(item);
-			break;
-		case 1:
-			// delete
-			// delete(item);
-			mAppList.remove(position);
-			mAdapter.notifyDataSetChanged();
-			break;
+			case 0:
+				// open
+				open(item);
+				break;
+			case 1:
+				// delete
+				// delete(item);
+				mAppList.remove(position);
+				mAdapter.notifyDataSetChanged();
+				break;
 		}
 	}
 

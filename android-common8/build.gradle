@@ -26,9 +26,9 @@ dependencies {
     //    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
     //        exclude group: 'com.android.support', module: 'support-annotations'
     //    })
-    compile files('libs/universal-image-loader-fixed1.9.5.jar')
-    compile files('libs/xmlpull_1_0_5.jar')
-    compile files('libs/Xutils-db.jar')
+//    compile files('libs/universal-image-loader-fixed1.9.5.jar')
+//    compile files('libs/xmlpull_1_0_5.jar')
+//    compile files('libs/Xutils-db.jar')
     //compile 'com.android.support:appcompat-v7:26.+'
     //    testCompile 'junit:junit:4.12'
     compile 'com.google.code.gson:gson:2.2.4'
