@@ -1,1 +1,1 @@
-include ':app', ':android-common8', ':refresh-library8', ':android-atar_skin', ':speex—library8', ':swithc-button8'
+include ':app', ':android-common8', ':refresh-library8', ':android-atar_skin', ':swithc-button8', ':speex—library8'

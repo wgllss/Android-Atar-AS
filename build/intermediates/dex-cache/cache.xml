@@ -39,15 +39,6 @@
     </item>
     <item
         is-multidex="true"
-        jar="/Users/xuelanbin/Downloads/regenxin/Android-Atar/android-common8/build/intermediates/bundles/default/libs/xmlpull_1_0_5.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.3"
-        sha1="9d8f617a8cfa642d308ac26e2933a7e55e3b43a5">
-        <dex dex="/Users/xuelanbin/Downloads/regenxin/Android-Atar/app/build/intermediates/transforms/dex/debug/folders/1000/8/xmlpull_1_0_5_ec6b2674c9e6ea7e8a028c7f8cdaad1daf2b08a2/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="/Users/xuelanbin/Downloads/regenxin/Android-Atar/app/libs/volley.jar"
         jumboMode="true"
         optimize="true"
@@ -93,15 +84,6 @@
     </item>
     <item
         is-multidex="true"
-        jar="/Users/xuelanbin/Downloads/regenxin/Android-Atar/android-common8/build/intermediates/bundles/default/libs/universal-image-loader-fixed1.9.5.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.3"
-        sha1="6ff199b1d50516b07f9e6c82809bdc5f5b0713dc">
-        <dex dex="/Users/xuelanbin/Downloads/regenxin/Android-Atar/app/build/intermediates/transforms/dex/debug/folders/1000/8/universal-image-loader-fixed1.9.5_9aa93b5760c8d1a8135bff8454d1906bb8cc5121/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="/Users/xuelanbin/Downloads/regenxin/Android-Atar/app/libs/ClientTransferSyncTool_p.jar"
         jumboMode="true"
         optimize="true"
@@ -135,15 +117,6 @@
         revision="25.0.3"
         sha1="000626735e82687be89e3ba1ac481540fcab031c">
         <dex dex="/Users/xuelanbin/Downloads/regenxin/Android-Atar/app/build/intermediates/transforms/dex/debug/folders/1000/2/alicloud-android-utils-1.0.3_718348dbf0b623d8f06859605dd1fe9ae15bd2ff/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/xuelanbin/Downloads/regenxin/Android-Atar/android-common8/build/intermediates/bundles/default/libs/Xutils-db.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.3"
-        sha1="d751a88732ad4d0a16a315f8185aad5385f7b3d4">
-        <dex dex="/Users/xuelanbin/Downloads/regenxin/Android-Atar/app/build/intermediates/transforms/dex/debug/folders/1000/8/Xutils-db_1039dfdf8661080d952e70c55eef9e50e8548527/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -223,7 +196,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.3"
-        sha1="073d3d92c78f3300a5a4976f02a1e1fe9d9d9a68">
+        sha1="8f8519b4c2970f704ee739e17406f31984a0526d">
         <dex dex="/Users/xuelanbin/Downloads/regenxin/Android-Atar/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_e71344eaf40f699beff84e916cddf289871cfd9a/classes.dex" />
     </item>
     <item

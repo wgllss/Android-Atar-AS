@@ -30,6 +30,11 @@ android {
             //signingConfig signingConfigs.release
         }
     }
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
+    }
     lintOptions {
         checkReleaseBuilds false
         // Or, if you prefer, you can continue to check for errors in release builds,
@@ -40,15 +45,20 @@ android {
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile(name: 'speex—library8-release', ext: 'aar')
+    compile(name: 'swithc-button8-release', ext: 'aar')
+    compile(name: 'android-common8-release', ext: 'aar')
+    compile(name: 'refresh-library8-release', ext: 'aar')
     //    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
     //        exclude group: 'com.android.support', module: 'support-annotations'
     //    })
     compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha7'
     compile 'com.android.support:multidex:1.0.1'
-    //    testCompile 'junit:junit:4.12'
-    //compile 'com.google.code.gson:gson:2.2.4'
-    compile project(':android-common8')
-    compile project(':refresh-library8')
-    compile project(':speex—library8')
-    compile project(':swithc-button8')
+    compile 'com.google.code.gson:gson:2.2.4'
+    compile 'com.android.support:support-v4:26.0.0-alpha1'
+//        testCompile 'junit:junit:4.12'
+//    compile project(':android-common8')
+//    compile project(':refresh-library8')
+    //compile project(':speex—library8')
+    //compile project(':swithc-button8')
 }
