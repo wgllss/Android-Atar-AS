@@ -158,6 +158,7 @@
     <orderEntry type="module" module-name="android-atar_skin" exported="" />
     <orderEntry type="module" module-name="refresh-library8" exported="" />
     <orderEntry type="module" module-name="speex—library8" exported="" />
+    <orderEntry type="module" module-name="swithc-button8" exported="" />
     <orderEntry type="library" exported="" name="gson-2.2.4" level="project" />
     <orderEntry type="library" exported="" name="universal-image-loader-fixed1.9.5" level="project" />
     <orderEntry type="library" exported="" name="Xutils-db" level="project" />

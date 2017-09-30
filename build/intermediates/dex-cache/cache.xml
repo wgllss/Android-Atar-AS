@@ -48,21 +48,21 @@
     </item>
     <item
         is-multidex="true"
-        jar="/Users/xuelanbin/Downloads/regenxin/Android-Atar/app/libs/sophix-3.0.9.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.3"
-        sha1="f7e5c97d2da6a53d568cf9fd59f3b2d1d931792d">
-        <dex dex="/Users/xuelanbin/Downloads/regenxin/Android-Atar/app/build/intermediates/transforms/dex/debug/folders/1000/2/sophix-3.0.9_f1f3573054d549e744136886b4b5898323695ddc/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="/Users/xuelanbin/Downloads/regenxin/Android-Atar/app/libs/volley.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.3"
         sha1="c4c0b8d237757dce06738a695d8b5c09d0ea2574">
         <dex dex="/Users/xuelanbin/Downloads/regenxin/Android-Atar/app/build/intermediates/transforms/dex/debug/folders/1000/2/volley_3a7e0fb7f6d721ff74c0a820d5b9d28ec8690854/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/xuelanbin/Downloads/regenxin/Android-Atar/app/libs/sophix-3.0.9.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="f7e5c97d2da6a53d568cf9fd59f3b2d1d931792d">
+        <dex dex="/Users/xuelanbin/Downloads/regenxin/Android-Atar/app/build/intermediates/transforms/dex/debug/folders/1000/2/sophix-3.0.9_f1f3573054d549e744136886b4b5898323695ddc/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -223,7 +223,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.3"
-        sha1="9fe13fbcea3750b51b56be70ae5ee55fb56c4a49">
+        sha1="6db9063bead9bbcc0f127890a46614ed94bcfbe2">
         <dex dex="/Users/xuelanbin/Downloads/regenxin/Android-Atar/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_e71344eaf40f699beff84e916cddf289871cfd9a/classes.dex" />
     </item>
     <item

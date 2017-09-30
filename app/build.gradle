@@ -50,4 +50,5 @@ dependencies {
     compile project(':android-common8')
     compile project(':refresh-library8')
     compile project(':speex—library8')
+    compile project(':swithc-button8')
 }
