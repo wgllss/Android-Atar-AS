@@ -228,7 +228,7 @@ public class SkinResourcesManager {
      *
      * @param activity
      * @param newVersion      皮肤新版本号
-     * @param repalceViersion 皮肤在多少版本以上( >= )下载替换
+     * @param replaceMinVersion 皮肤在多少版本以上( >= )下载替换
      * @author :Atar
      * @createTime:2017-9-22下午2:42:49
      * @version:1.0.0
