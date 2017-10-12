@@ -15,12 +15,14 @@ import android.widget.CommonToast;
 
 import com.atar.activitys.AtarRefreshListViewActivity;
 import com.atar.activitys.R;
+import com.atar.activitys.htmls.AtarDynamicWebViewActivity;
 import com.atar.adapters.MainDemoAdapter;
 import com.atar.beans.MenuItemBean;
 import com.atar.enums.EnumMsgWhat;
 import com.atar.modles.WonderfulTopicJson;
 import com.atar.net.NetWorkInterfaces;
 import com.atar.net.UrlParamCommon;
+import com.atar.weex.utils.WeexUtils;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -58,6 +60,7 @@ public class MainDemoActivity extends AtarRefreshListViewActivity {
         list.add(new MenuItemBean("7", "刷新"));
         list.add(new MenuItemBean("8", "设置"));
         list.add(new MenuItemBean("9", "语音录放"));
+        list.add(new MenuItemBean("10", "动态html"));
 
         // list.add(new MenuItemBean("8", "网络测试1"));
         mMainDemoAdapter.notifyDataSetChanged();
@@ -147,6 +150,9 @@ public class MainDemoActivity extends AtarRefreshListViewActivity {
                 break;
             case 21:
                 startActivity(new Intent(this, DemoRefreshInFragmentActivity.class));
+                break;
+            case 10:
+                AtarDynamicWebViewActivity.startAtarDynamicWebViewActivity(this, WeexUtils.HTML_TEST_URL, "", "", "", "", "0", false);
                 break;
         }
     }

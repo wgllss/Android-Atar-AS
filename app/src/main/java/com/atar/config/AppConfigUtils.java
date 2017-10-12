@@ -26,7 +26,7 @@ import android.utils.ApplicationManagement;
 import android.utils.ShowLog;
 import android.widget.CommonToast;
 
-import com.atar.activitys.weex.WeexUtils;
+import com.atar.weex.utils.WeexUtils;
 import com.atar.utils.IntentUtil;
 import com.google.gson.Gson;
 

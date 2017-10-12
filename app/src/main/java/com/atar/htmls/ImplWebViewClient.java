@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package com.atar.htmls;
 
@@ -23,7 +23,7 @@ import com.handmark.pulltorefresh.library.PullToRefreshWebView;
 
 /**
  *****************************************************************************************************************************************************************************
- * 
+ *
  * @author :Atar
  * @createTime:2017-6-2上午10:30:56
  * @version:1.0.0
@@ -49,11 +49,11 @@ public class ImplWebViewClient extends WebViewClient {
 		if (url.indexOf("tel:") < 0) {
 			view.loadUrl(url);
 		}
-		if (url != null && url.contains("taoguba")) {
-			initUrl(view, url);
-		} else {
-			view.loadUrl(url);
-		}
+		// if (url != null && url.contains("taoguba")) {
+		// initUrl(view, url);
+		// } else {
+		// view.loadUrl(url);
+		// }
 		return true;
 	}
 
@@ -67,7 +67,7 @@ public class ImplWebViewClient extends WebViewClient {
 			CookieTool.getCookieFromWebViewUrl(activity, url);
 		}
 		if (onHandlerDataListener != null) {
-			onHandlerDataListener.sendEmptyMessage(EnumMsgWhat.LOAD_FROM_SQL);
+			onHandlerDataListener.sendEmptyMessage(EnumMsgWhat.REFRESH_HANDLER1);
 		}
 		if (activity != null) {
 			activity.setLoadingViewGone();
@@ -100,6 +100,7 @@ public class ImplWebViewClient extends WebViewClient {
 	public void onReceivedSslError(WebView view, SslErrorHandler handler, SslError error) {
 		// handler.cancel(); 默认的处理方式，WebView变成空白页
 		handler.proceed();// 接受证书
+		super.onReceivedSslError(view, handler, error);
 		// handleMessage(Message msg); 其他处理
 	}
 

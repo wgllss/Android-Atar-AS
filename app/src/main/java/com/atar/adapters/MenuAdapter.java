@@ -26,8 +26,6 @@ import android.widget.TextView;
 import com.atar.activitys.R;
 import com.atar.config.AppConfigUtils;
 import com.atar.config.TabMenuItemBean;
-import com.atar.enums.EnumMsgWhat;
-import com.atar.globe.GlobeSettings;
 
 /**
  * ****************************************************************************************************************************************************************************
@@ -192,13 +190,13 @@ public class MenuAdapter extends CommonAdapter<TabMenuItemBean> {
             mViewHolder.menu_lineLayout_item.setLayoutParams(lp2);
 
             if (getCurrentPostiotn() == position) {
-                SkinUtils.setTextColor(getContext(), R.string.select_tab_txt_color, getSkinType(),mViewHolder.menu_title);
+                SkinUtils.setTextColor(getContext(), R.string.select_tab_txt_color, getSkinType(), mViewHolder.menu_title);
             } else {
                 if (info.getMenuNameColor() != null && info.getMenuNameColor().length() > 0 && info.getMenuNameColor().contains(",")) {
                     String[] menuNameColor = info.getMenuNameColor().split(",");
                     mViewHolder.menu_title.setTextColor(Color.parseColor(menuNameColor[getSkinType()]));
                 } else {
-                    SkinUtils.setTextColor(getContext(), R.string.tab_txt_color,  getSkinType(),mViewHolder.menu_title);
+                    SkinUtils.setTextColor(getContext(), R.string.tab_txt_color, getSkinType(), mViewHolder.menu_title);
                 }
             }
         }

@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package com.atar.activitys.demos;
 
@@ -36,12 +36,12 @@ import com.google.gson.reflect.TypeToken;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.display.RoundedBitmapDisplayer;
-
+import com.atar.weex.utils.WeexUtils;
 import java.util.List;
 
 /**
  *****************************************************************************************************************************************************************************
- * 
+ *
  * @author :Atar
  * @createTime:2017-9-20上午10:47:05
  * @version:1.0.0
@@ -99,6 +99,7 @@ public class AtarLoadActivity extends Activity implements OnPageChangeListener, 
 		}
 
 		setContentView(R.layout.activity_load);
+		WeexUtils.weexInit(this);
 
 		// 获取app配置首页txt文件配置信息 及 开机引导图片 获取配置版本要放在前面getServerTextJson
 		String configVersion = "";

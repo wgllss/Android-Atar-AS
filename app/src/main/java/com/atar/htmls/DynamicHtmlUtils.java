@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package com.atar.htmls;
 
@@ -61,7 +61,7 @@ public class DynamicHtmlUtils {
 	 * @modifyTime:
 	 * @modifyAuthor:
 	 * @param activity
-	 * @param handler
+	 * @param onHandlerDataListener
 	 * @param mPullToRefreshWebView
 	 * @param options
 	 * @param mode
@@ -72,7 +72,7 @@ public class DynamicHtmlUtils {
 	 * @description:
 	 */
 	public static String getInitValue(AtarCommonActivity activity, OnHandlerDataListener<PullToRefreshWebView, WebView> onHandlerDataListener, PullToRefreshWebView mPullToRefreshWebView,
-			String options, String mode, String url, int skinType, ImplOnTouchChanceTextSizeListener mImplOnTouchChanceTextSizeListener) {
+									  String options, String mode, String url, int skinType, ImplOnTouchChanceTextSizeListener mImplOnTouchChanceTextSizeListener) {
 		String optionsJson = "";
 		/* 向html传入初始参数 start */
 		try {
