@@ -1,10 +1,7 @@
 /**
- * 
+ *
  */
 package com.atar.activitys.demos;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import android.common.CommonHandler;
 import android.os.Message;
@@ -17,10 +14,14 @@ import com.atar.activitys.R;
 import com.atar.adapters.MainDemoAdapter;
 import com.atar.beans.MenuItemBean;
 import com.atar.enums.EnumMsgWhat;
+import com.handmark.pulltorefresh.library.PullToRefreshListView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *****************************************************************************************************************************************************************************
- * 
+ *
  * @author :Atar
  * @createTime:2017-8-24上午11:13:52
  * @version:1.0.0
@@ -43,7 +44,9 @@ public class DemoRefreshQuickReturnListViewActivity extends AtarRefreshListViewA
 
 	@Override
 	protected void initControl() {
-		super.initControl();
+		// super.initControl();
+		setRefreshView((PullToRefreshListView) findViewById(R.id.atar_refresh_lst0));
+		setTextView((TextView) findViewById(R.id.txt_list_toast0));
 		mQuickReturnView = (TextView) findViewById(R.id.footer);
 	}
 
@@ -67,22 +70,22 @@ public class DemoRefreshQuickReturnListViewActivity extends AtarRefreshListViewA
 	public void onHandlerData(Message msg) {
 		super.onHandlerData(msg);
 		switch (msg.what) {
-		case EnumMsgWhat.LOAD_FROM_SQL:
-			setRefreshing();
-			break;
-		case EnumMsgWhat.LOAD_FROM_SQL_COMPLETE:
-			break;
-		case EnumMsgWhat.REFRESH_PULL_DOWN:
-		case EnumMsgWhat.REFRESH_PULL_UP:
-		case EnumMsgWhat.REFRESH_HANDLER:
-			CommonHandler.getInstatnce().getHandler().postDelayed(new Runnable() {
+			case EnumMsgWhat.LOAD_FROM_SQL:
+				setRefreshing();
+				break;
+			case EnumMsgWhat.LOAD_FROM_SQL_COMPLETE:
+				break;
+			case EnumMsgWhat.REFRESH_PULL_DOWN:
+			case EnumMsgWhat.REFRESH_PULL_UP:
+			case EnumMsgWhat.REFRESH_HANDLER:
+				CommonHandler.getInstatnce().getHandler().postDelayed(new Runnable() {
 
-				@Override
-				public void run() {
-					onStopRefresh();
-				}
-			}, 1000);
-			break;
+					@Override
+					public void run() {
+						onStopRefresh();
+					}
+				}, 1000);
+				break;
 		}
 	}
 
@@ -93,9 +96,9 @@ public class DemoRefreshQuickReturnListViewActivity extends AtarRefreshListViewA
 			mMainDemoAdapter.setSkinType(skinType);
 		}
 		if (mQuickReturnView != null) {
-			mQuickReturnView.setBackgroundColor(SkinUtils.getColor(this, R.string.home_green_color));
+			mQuickReturnView.setBackgroundColor(SkinUtils.getColor(this, R.string.common_top_title_bar_bg_color));
 			mQuickReturnView.setText(SkinUtils.getString(this, R.string.string_name_app_name));
-			mQuickReturnView.setTextColor(SkinUtils.getColor(this, R.string.linen));
+			mQuickReturnView.setTextColor(SkinUtils.getColor(this, R.string.common_activity_title_color));
 		}
 	}
 }

@@ -6,7 +6,6 @@ package com.atar.fragment.demos;
 import android.common.CommonHandler;
 import android.os.Bundle;
 import android.os.Message;
-import android.skin.SkinUtils;
 import android.utils.QuickReturnViewUtil;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -24,14 +23,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * ****************************************************************************************************************************************************************************
+ *****************************************************************************************************************************************************************************
  *
  * @author :Atar
  * @createTime:2017-8-24上午11:13:52
  * @version:1.0.0
  * @modifyTime:
  * @modifyAuthor:
- * @description: ****************************************************************************************************************************************************************************
+ * @description:
+ *****************************************************************************************************************************************************************************
  */
 public class DemoRefreshQuickReturnListViewFragment extends AtarRefreshListFragment {
     private List<MenuItemBean> list = new ArrayList<MenuItemBean>();
@@ -44,8 +44,8 @@ public class DemoRefreshQuickReturnListViewFragment extends AtarRefreshListFragm
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         if (view == null) {
             view = inflater.inflate(R.layout.activity_quickreturn_buttom, container, false);
-            setTextView((TextView) view.findViewById(R.id.txt_list_toast));
-            setRefreshView((PullToRefreshListView) view.findViewById(R.id.atar_refresh_lst));
+            setTextView((TextView) view.findViewById(R.id.txt_list_toast0));
+            setRefreshView((PullToRefreshListView) view.findViewById(R.id.atar_refresh_lst0));
             mQuickReturnView = (TextView) view.findViewById(R.id.footer);
         }
         if (view != null && view.getParent() != null) {
@@ -99,7 +99,5 @@ public class DemoRefreshQuickReturnListViewFragment extends AtarRefreshListFragm
         if (mMainDemoAdapter != null) {
             mMainDemoAdapter.setSkinType(skinType);
         }
-        SkinUtils.setBackgroundColor(getActivity(), R.string.common_top_title_bar_bg_color, skinType, mQuickReturnView);
-        SkinUtils.setTextColor(getActivity(), R.string.common_activity_title_color, skinType, mQuickReturnView);
     }
 }

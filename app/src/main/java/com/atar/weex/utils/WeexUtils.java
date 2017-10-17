@@ -11,7 +11,6 @@
 package com.atar.weex.utils;
 
 import android.app.Activity;
-import android.appconfig.AppConfigModel;
 import android.os.Build.VERSION;
 import android.os.Build.VERSION_CODES;
 
@@ -26,41 +25,44 @@ import com.atar.weex.moudle.WeexModule;
 import com.taobao.weex.InitConfig;
 import com.taobao.weex.WXSDKEngine;
 import com.taobao.weex.dom.TextAreaEditTextDomObject;
-import com.taobao.weex.ui.SimpleComponentHolder;
 
 /**
- *****************************************************************************************************************************************************************************
+ * ****************************************************************************************************************************************************************************
  *
  * @author :Atar
  * @createTime:2017-3-8下午2:31:48
  * @version:4.2.4
  * @modifyTime:
  * @modifyAuthor:
- * @description:
- *****************************************************************************************************************************************************************************
+ * @description: ****************************************************************************************************************************************************************************
  */
 public class WeexUtils {
     // /**ip*/
-    public static final String IP = AppConfigModel.getInstance().getString("WEEX_IP_KEY", "192.168.1.10:8080");
-    // /**网络请求方式http or https*/
-    public static final String HTTP = IP.contains("com.cn") ? "https" : "http";
+//    public static final String IP = AppConfigModel.getInstance().getString("WEEX_IP_KEY", "192.168.1.10:8080");
+//    // /**网络请求方式http or https*/
+//    public static final String HTTP = IP.contains("com.cn") ? "https" : "http";
 
-    /**打包上线时用 注意 注释掉上面2行 放开下面2行 不用走这么多判断*/
-//	public static final String IP = "raw.githubusercontent.com/wgllss/WeexDemo/master";
-//	public static final String HTTP = "https";
-    /**weex 服务器地址*/
+    /**
+     * 打包上线时用 注意 注释掉上面2行 放开下面2行 不用走这么多判断
+     */
+    public static final String IP = "raw.githubusercontent.com/wgllss/WeexDemo/master";
+    public static final String HTTP = "https";
+    /**
+     * weex 服务器地址
+     */
     public static final String WEEX_HOST = HTTP + "://" + IP + "/";
 
     public static final String HTML_TEST_URL = WEEX_HOST + "assets/html/index.html";
 
     /**
      * 初始化weex项目桥接模块
+     *
+     * @param activity
      * @author :Atar
      * @createTime:2017-3-14下午3:04:37
      * @version:1.0.0
      * @modifyTime:
      * @modifyAuthor:
-     * @param context
      * @description:
      */
     public static void weexInit(Activity activity) {

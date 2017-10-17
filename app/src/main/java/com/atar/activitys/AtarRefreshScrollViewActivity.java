@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package com.atar.activitys;
 
@@ -16,7 +16,7 @@ import com.handmark.pulltorefresh.library.PullToRefreshScrollView;
 
 /**
  *****************************************************************************************************************************************************************************
- * 
+ *
  * @author :Atar
  * @createTime:2017-8-14上午11:03:08
  * @version:1.0.0
@@ -65,13 +65,37 @@ public abstract class AtarRefreshScrollViewActivity extends AtarRefreshActivity<
 			if (getRefreshView() != null) {
 				getRefreshView().addView(v);
 				initScrollControl();
-				initValue();
-				bindEvent();
+				initScrollInitValue();
+				initScrollBindEvent();
 			}
 		} catch (Exception e) {
 			ShowLog.i(TAG, "addScrollView" + e.getMessage());
 		}
 	}
+
+	/**
+	 * 初始化滚动页控件
+	 * @author :Atar
+	 * @createTime:2014-7-15下午1:43:19
+	 * @version:1.0.0
+	 * @modifyTime:
+	 * @modifyAuthor:
+	 * @description:如:setOnClickListener(this)等
+	 */
+	protected void initScrollBindEvent() {
+	};
+
+	/**
+	 * 初始化滚动页控件
+	 * @author :Atar
+	 * @createTime:2014-7-15下午1:43:19
+	 * @version:1.0.0
+	 * @modifyTime:
+	 * @modifyAuthor:
+	 * @description:如:setText("XXXX")
+	 */
+	protected void initScrollInitValue() {
+	};
 
 	/**
 	 * 初始化滚动页控件

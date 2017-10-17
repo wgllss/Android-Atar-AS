@@ -1,9 +1,10 @@
 /**
- * 
+ *
  */
 package com.atar.widgets;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.appconfig.AppConfigSetting;
 import android.content.Context;
 import android.content.pm.PackageManager;
@@ -142,25 +143,25 @@ public class RecordImageView extends ImageView {
 		public void handleMessage(Message msg) {
 			super.handleMessage(msg);
 			switch (msg.what) {
-			case RECORD_ING:
-				if (listener != null && isTimer) {
-					listener.onAudioImageViewStatus(recordStatus, strVoiceName, second, path);
-				}
-				strRecordTime = second;
-				if (second > maxVoiceTime) {
-					recordStop();
-				}
-				break;
-			case PLAYING:
-				if (listener != null && isTimer) {
-					listener.onAudioImageViewStatus(recordStatus, strVoiceName, second, path);
-				}
-				break;
-			case AudioRecord.STATE_UNINITIALIZED:
-				CommonToast.show("请打开录音权限,你当前录音不可用");
-				break;
-			default:
-				break;
+				case RECORD_ING:
+					if (listener != null && isTimer) {
+						listener.onAudioImageViewStatus(recordStatus, strVoiceName, second, path);
+					}
+					strRecordTime = second;
+					if (second > maxVoiceTime) {
+						recordStop();
+					}
+					break;
+				case PLAYING:
+					if (listener != null && isTimer) {
+						listener.onAudioImageViewStatus(recordStatus, strVoiceName, second, path);
+					}
+					break;
+				case AudioRecord.STATE_UNINITIALIZED:
+					CommonToast.show("请打开录音权限,你当前录音不可用");
+					break;
+				default:
+					break;
 			}
 		}
 	};
@@ -248,7 +249,9 @@ public class RecordImageView extends ImageView {
 			timer.cancel();
 		}
 		if (strRecordTime < 1) {
-			CommonToast.show(getContext(), "时间太短", 3, 4, Gravity.CENTER_HORIZONTAL | Gravity.BOTTOM, 600, false);
+			if (!((Activity) getContext()).isFinishing()) {
+				CommonToast.show(getContext(), "时间太短", 3, 4, Gravity.CENTER_HORIZONTAL | Gravity.BOTTOM, 600, false);
+			}
 			if (path != null && path.length() > 0) {
 				File file = new File(path);
 				file.delete();
@@ -302,7 +305,7 @@ public class RecordImageView extends ImageView {
 	 */
 	public interface OnAudioImageViewStatusListener {
 		/**
-		 * 
+		 *
 		 * @author :Atar
 		 * @createTime:2016-6-13下午2:33:18
 		 * @version:1.0.0

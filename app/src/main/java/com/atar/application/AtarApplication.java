@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package com.atar.application;
 
@@ -18,61 +18,61 @@ import com.atar.activitys.R;
 import com.atar.net.UrlParamCommon;
 import com.lidroid.xutils.DbUtils;
 
-/**ø
- *****************************************************************************************************************************************************************************
- * 
+/**
+ * ø
+ * ****************************************************************************************************************************************************************************
+ *
  * @author :Atar
  * @createTime:2017-8-9下午2:54:23
  * @version:1.0.0
  * @modifyTime:
  * @modifyAuthor:
- * @description:
- *****************************************************************************************************************************************************************************
+ * @description: ****************************************************************************************************************************************************************************
  */
 public class AtarApplication extends Application {
-	public static AtarApplication mInstance;
-	private DbUtils db;
-	public static String JSESSIONID;
+    public static AtarApplication mInstance;
+    private DbUtils db;
+    public static String JSESSIONID;
 //	/* 微信登陆 */
 //	private IWXAPI api;
 
-	@Override
-	protected void attachBaseContext(Context base) {
-		super.attachBaseContext(base);
-		MultiDex.install(this);
-	}
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(base);
+        MultiDex.install(this);
+    }
 
-	@TargetApi(Build.VERSION_CODES.GINGERBREAD)
-	@Override
-	public void onCreate() {
-		super.onCreate();
-		mInstance = this;
-		SkinResourcesManager.getInstance(this).initSkinResources(true, "com.atar.skin", UrlParamCommon.download_skin_url);
+    @TargetApi(Build.VERSION_CODES.GINGERBREAD)
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        mInstance = this;
+        SkinResourcesManager.getInstance(this).initSkinResources(true, "com.atar.skin", UrlParamCommon.download_skin_url);
 
-		CommonApplication.initApplication(this);// 初始化全局Context
-		CommonNetWorkExceptionToast.initToastError(this, R.array.err_toast_string);// 初始化全局网络错误提示信息
-		ShowLog.setDebug(true);// 设置不显示日志 上线前记得改成false
-		CommonNetWorkExceptionToast.setIsShowErrorToast(true);// 上线前记得设置不显示错误网络具体提示 测试时可开启
-		CommonApplication.initImageLoader(getApplicationContext());// 初始化加载图片配置
-		// CommonToast.initToastResouseId(R.drawable.corners_toast, R.color.black);// 初始化toast字体颜色和背景
-		CrashHandler.getInstance().init(this);// 接收错误异常
+        CommonApplication.initApplication(this);// 初始化全局Context
+        CommonNetWorkExceptionToast.initToastError(this, R.array.err_toast_string);// 初始化全局网络错误提示信息
+        ShowLog.setDebug(false);// 设置不显示日志 上线前记得改成false
+        CommonNetWorkExceptionToast.setIsShowErrorToast(false);// 上线前记得设置不显示错误网络具体提示 测试时可开启
+        CommonApplication.initImageLoader(getApplicationContext());// 初始化加载图片配置
+        // CommonToast.initToastResouseId(R.drawable.corners_toast, R.color.black);// 初始化toast字体颜色和背景
+        CrashHandler.getInstance().init(this);// 接收错误异常
 
-		db = getDb();
-		// initHotfix();
-	}
+        db = getDb();
+        // initHotfix();
+    }
 
-	public static AtarApplication getApplication() {
-		return mInstance;
-	}
+    public static AtarApplication getApplication() {
+        return mInstance;
+    }
 
-	public DbUtils getDb() {
-		if (db == null) {
-			db = DbUtils.create(this);
-			db.configAllowTransaction(true);
-			db.configDebug(false);
-		}
-		return db;
-	}
+    public DbUtils getDb() {
+        if (db == null) {
+            db = DbUtils.create(this);
+            db.configAllowTransaction(true);
+            db.configDebug(false);
+        }
+        return db;
+    }
 
 //	public IWXAPI getWxApi(Activity activity) {
 //		if (api == null) {
@@ -81,17 +81,17 @@ public class AtarApplication extends Application {
 //		return api;
 //	}
 
-	@Override
-	public void onTerminate() {
-		super.onTerminate();
-		// UrlParamCommon.JSESSIONID = "";
-	}
+    @Override
+    public void onTerminate() {
+        super.onTerminate();
+        // UrlParamCommon.JSESSIONID = "";
+    }
 
-	@Override
-	public void onLowMemory() {
-		super.onLowMemory();
-		// UrlParamCommon.JSESSIONID = "";
-	}
+    @Override
+    public void onLowMemory() {
+        super.onLowMemory();
+        // UrlParamCommon.JSESSIONID = "";
+    }
 
 //	/**
 //	 * 阿里热修复功能

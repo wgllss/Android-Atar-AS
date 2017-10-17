@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package com.atar.utils;
 
@@ -9,6 +9,7 @@ import java.util.List;
 
 import android.annotation.SuppressLint;
 import android.application.CrashHandler;
+import android.common.CommonHandler;
 import android.interfaces.HandlerListener;
 import android.os.Message;
 import android.reflection.ThreadPoolTool;
@@ -46,7 +47,7 @@ public class LoadUtil {
 	 * @version:1.0.0
 	 * @modifyTime:
 	 * @modifyAuthor:
-	 * @param mHandler 
+	 * @param mHandler
 	 * @param whichPage 哪一个页面的json
 	 * @param columnName 等于条件字段
 	 * @param value 等于条件字段值
@@ -63,7 +64,7 @@ public class LoadUtil {
 	 * @version:1.0.0
 	 * @modifyTime:
 	 * @modifyAuthor:
-	 * @param mHandler 
+	 * @param mHandler
 	 * @param whichPage 哪一个页面的json
 	 * @param columnName 等于条件字段
 	 * @param value 等于条件字段值
@@ -137,7 +138,7 @@ public class LoadUtil {
 	 * @description:从数据库查询完居得到Json再次转化为对应的list ：new TypeToken<List<T>>() { }.getType()不能直接映射所以传入Type
 	 */
 	@SuppressWarnings("unchecked")
-	public static <T, P extends PullToRefreshBase<V>, V extends View> List<T> loadFromSqlComelete(Message msg, List<T> allList, BaseAdapter mAdapter, P p, Type typeOfT) {
+	public static <T, P extends PullToRefreshBase<V>, V extends View> List<T> loadFromSqlComelete(Message msg, List<T> allList, BaseAdapter mAdapter, final P p, Type typeOfT) {
 		List<T> mList = null;
 		if (msg.obj != null) {
 			List<JsonBean> list = (List<JsonBean>) msg.obj;
@@ -162,7 +163,14 @@ public class LoadUtil {
 			}
 		}
 		if (p != null) {
-			p.setRefreshing();
+			CommonHandler.getInstatnce().getHandler().postDelayed(new Runnable() {
+
+				@Override
+				public void run() {
+					p.setRefreshing();
+				}
+			}, 60);
+
 		}
 		return mList;
 	}
