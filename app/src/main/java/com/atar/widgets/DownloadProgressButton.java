@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package com.atar.widgets;
 
@@ -25,7 +25,7 @@ import com.atar.activitys.R;
 
 /**
  *****************************************************************************************************************************************************************************
- * 
+ *
  * @author :Atar
  * @createTime:2017-10-16上午10:48:48
  * @version:1.0.0
@@ -97,7 +97,7 @@ public class DownloadProgressButton extends TextView {
 
 	private ValueAnimator mProgressAnimation;
 
-	private CharSequence mCurrentText;
+	private String mCurrentText;
 
 	public static final int NORMAL = 1;
 	public static final int DOWNLOADING = 2;
@@ -128,7 +128,8 @@ public class DownloadProgressButton extends TextView {
 		TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.DownloadProgressButton);
 		mBackgroundColor = a.getColor(R.styleable.DownloadProgressButton_backgroud_color, Color.parseColor("#6699ff"));
 		mBackgroundSecondColor = a.getColor(R.styleable.DownloadProgressButton_backgroud_second_color, Color.LTGRAY);
-		mButtonRadius = a.getFloat(R.styleable.DownloadProgressButton_radius, getMeasuredHeight() / 2);
+		// mButtonRadius = a.getFloat(R.styleable.DownloadProgressButton_radius, getMeasuredHeight() / 2);
+		mButtonRadius = a.getFloat(R.styleable.DownloadProgressButton_radius, 0);
 		mTextColor = a.getColor(R.styleable.DownloadProgressButton_text_color, mBackgroundColor);
 		mTextCoverColor = a.getColor(R.styleable.DownloadProgressButton_text_covercolor, Color.WHITE);
 		backgroud_strokeWidth = a.getDimension(R.styleable.DownloadProgressButton_backgroud_strokeWidth, 3F);
@@ -264,31 +265,31 @@ public class DownloadProgressButton extends TextView {
 	private void drawBackground(Canvas canvas) {
 		if (mBackgroundBounds == null) {
 			mBackgroundBounds = new RectF();
-			if (mButtonRadius == 0) {
-				mButtonRadius = getMeasuredHeight() / 2;
-			}
+			// if (mButtonRadius == 0) {
+			// mButtonRadius = getMeasuredHeight() / 2;
+			// }
 			mBackgroundBounds.left = backgroud_strokeWidth;
 			mBackgroundBounds.top = backgroud_strokeWidth;
 			mBackgroundBounds.right = getMeasuredWidth() - backgroud_strokeWidth;
 			mBackgroundBounds.bottom = getMeasuredHeight() - backgroud_strokeWidth;
 		}
 		switch (mState) {
-		case NORMAL:
-			break;
-		case DOWNLOADING:
-		case PAUSE:
-			mProgressPercent = mProgress / (mMaxProgress + 0f);
-			mProgressBgGradient = new LinearGradient(backgroud_strokeWidth, 0, getMeasuredWidth() - backgroud_strokeWidth, 0, new int[] { mBackgroundColor, mBackgroundSecondColor }, new float[] {
-					mProgressPercent, mProgressPercent + 0.001f }, Shader.TileMode.CLAMP);
-			mBackgroundPaint.setColor(mBackgroundColor);
-			mBackgroundPaint.setShader(mProgressBgGradient);
-			canvas.drawRoundRect(mBackgroundBounds, mButtonRadius, mButtonRadius, mBackgroundPaint);
-			break;
-		case FINISH:
-			mBackgroundPaint.setShader(null);
-			mBackgroundPaint.setColor(mBackgroundColor);
-			canvas.drawRoundRect(mBackgroundBounds, mButtonRadius, mButtonRadius, mBackgroundPaint);
-			break;
+			case NORMAL:
+				break;
+			case DOWNLOADING:
+			case PAUSE:
+				mProgressPercent = mProgress / (mMaxProgress + 0f);
+				mProgressBgGradient = new LinearGradient(backgroud_strokeWidth, 0, getMeasuredWidth() - backgroud_strokeWidth, 0, new int[] { mBackgroundColor, mBackgroundSecondColor }, new float[] {
+						mProgressPercent, mProgressPercent + 0.001f }, Shader.TileMode.CLAMP);
+				mBackgroundPaint.setColor(mBackgroundColor);
+				mBackgroundPaint.setShader(mProgressBgGradient);
+				canvas.drawRoundRect(mBackgroundBounds, mButtonRadius, mButtonRadius, mBackgroundPaint);
+				break;
+			case FINISH:
+				mBackgroundPaint.setShader(null);
+				mBackgroundPaint.setColor(mBackgroundColor);
+				canvas.drawRoundRect(mBackgroundBounds, mButtonRadius, mButtonRadius, mBackgroundPaint);
+				break;
 		}
 		canvas.drawRoundRect(mBackgroundBounds, mButtonRadius, mButtonRadius, mBackgroundBorderPaint);// 绘制边框
 	}
@@ -299,43 +300,43 @@ public class DownloadProgressButton extends TextView {
 		if (mCurrentText == null) {
 			mCurrentText = "";
 		}
-		final float textWidth = mTextPaint.measureText(mCurrentText.toString());
+		final float textWidth = mTextPaint.measureText(mCurrentText);
 		switch (mState) {
-		case NORMAL:
-			mTextPaint.setShader(null);
-			mTextPaint.setColor(mTextColor);
-			canvas.drawText(mCurrentText.toString(), (getMeasuredWidth() - textWidth) / 2, y, mTextPaint);
-			break;
-		case DOWNLOADING:
-		case PAUSE:
-			float w = getMeasuredWidth() - 2 * backgroud_strokeWidth;
-			// 进度条压过距离
-			float coverlength = w * mProgressPercent;
-			// 开始渐变指示器
-			float indicator1 = w / 2 - textWidth / 2;
-			// 结束渐变指示器
-			float indicator2 = w / 2 + textWidth / 2;
-			// 文字变色部分的距离
-			float coverTextLength = textWidth / 2 - w / 2 + coverlength;
-			float textProgress = coverTextLength / textWidth;
-			if (coverlength <= indicator1) {
+			case NORMAL:
 				mTextPaint.setShader(null);
 				mTextPaint.setColor(mTextColor);
-			} else if (indicator1 < coverlength && coverlength <= indicator2) {
-				mProgressTextGradient = new LinearGradient((w - textWidth) / 2 + backgroud_strokeWidth, 0, (w + textWidth) / 2 + backgroud_strokeWidth, 0, new int[] { mTextCoverColor, mTextColor },
-						new float[] { textProgress, textProgress + 0.001f }, Shader.TileMode.CLAMP);
-				mTextPaint.setColor(mTextColor);
-				mTextPaint.setShader(mProgressTextGradient);
-			} else {
-				mTextPaint.setShader(null);
+				canvas.drawText(mCurrentText.toString(), (getMeasuredWidth() - textWidth) / 2, y, mTextPaint);
+				break;
+			case DOWNLOADING:
+			case PAUSE:
+				float w = getMeasuredWidth() - 2 * backgroud_strokeWidth;
+				// 进度条压过距离
+				float coverlength = w * mProgressPercent;
+				// 开始渐变指示器
+				float indicator1 = w / 2 - textWidth / 2;
+				// 结束渐变指示器
+				float indicator2 = w / 2 + textWidth / 2;
+				// 文字变色部分的距离
+				float coverTextLength = textWidth / 2 - w / 2 + coverlength;
+				float textProgress = coverTextLength / textWidth;
+				if (coverlength <= indicator1) {
+					mTextPaint.setShader(null);
+					mTextPaint.setColor(mTextColor);
+				} else if (indicator1 < coverlength && coverlength <= indicator2) {
+					mProgressTextGradient = new LinearGradient((w - textWidth) / 2 + backgroud_strokeWidth, 0, (w + textWidth) / 2 + backgroud_strokeWidth, 0, new int[] { mTextCoverColor, mTextColor },
+							new float[] { textProgress, textProgress + 0.001f }, Shader.TileMode.CLAMP);
+					mTextPaint.setColor(mTextColor);
+					mTextPaint.setShader(mProgressTextGradient);
+				} else {
+					mTextPaint.setShader(null);
+					mTextPaint.setColor(mTextCoverColor);
+				}
+				canvas.drawText(mCurrentText.toString(), (w - textWidth) / 2 + backgroud_strokeWidth, y, mTextPaint);
+				break;
+			case FINISH:
 				mTextPaint.setColor(mTextCoverColor);
-			}
-			canvas.drawText(mCurrentText.toString(), (w - textWidth) / 2 + backgroud_strokeWidth, y, mTextPaint);
-			break;
-		case FINISH:
-			mTextPaint.setColor(mTextCoverColor);
-			canvas.drawText(mCurrentText.toString(), (getMeasuredWidth() - textWidth) / 2, y, mTextPaint);
-			break;
+				canvas.drawText(mCurrentText.toString(), (getMeasuredWidth() - textWidth) / 2, y, mTextPaint);
+				break;
 		}
 	}
 
@@ -367,7 +368,7 @@ public class DownloadProgressButton extends TextView {
 		}
 	}
 
-	public void setCurrentText(CharSequence charSequence) {
+	public void setCurrentText(String charSequence) {
 		mCurrentText = charSequence;
 		invalidate();
 	}
@@ -411,6 +412,7 @@ public class DownloadProgressButton extends TextView {
 
 	public void setButtonRadius(float buttonRadius) {
 		mButtonRadius = buttonRadius;
+		invalidate();
 	}
 
 	public int getTextColor() {
