@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package com.atar.config;
 
@@ -26,13 +26,14 @@ import android.utils.ApplicationManagement;
 import android.utils.ShowLog;
 import android.widget.CommonToast;
 
-import com.atar.weex.utils.WeexUtils;
+import com.atar.activitys.demos.AtarLoadActivity;
 import com.atar.utils.IntentUtil;
+import com.atar.weex.utils.WeexUtils;
 import com.google.gson.Gson;
 
 /**
  *****************************************************************************************************************************************************************************
- * 
+ *
  * @author :Atar
  * @createTime:2017-5-24上午11:13:53
  * @version:1.0.0
@@ -46,8 +47,8 @@ public class AppConfigUtils {
 
 	/**下载配置andriodAppConfig地址key*/
 	// public static final String andriod_app_config_home_url = WeexUtils.WEEX_HOST + "andriodAppConfig.txt";
-
-	public static final String andriod_app_config_home_url = "http://192.168.1.10:8080/andriodAppConfig.txt";
+	public static final String andriod_app_config_home_url = "https://raw.githubusercontent.com/wgllss/atar-demo-eclipse/master/andriodAppConfig.txt";
+	// public static final String andriod_app_config_home_url = "http://192.168.1.10:8080/andriodAppConfig.txt";
 	/**保存配置文件json key*/
 	public static final String ANDRIOD_APP_CONFIG_HOME_KEY = "ANDRIOD_APP_CONFIG_HOME_KEY";
 	/**保存开机引道json key*/
@@ -144,12 +145,13 @@ public class AppConfigUtils {
 					if (versionName.compareToIgnoreCase(localVersion) > 0) {
 						if (isReplace) {
 							AppConfigModel.getInstance().putString(saveToSharedPreferencesKey, result, true);
+							AppConfigModel.getInstance().putString(AtarLoadActivity.LOADIMAGE_VERSION_KEY, mAppConfigJson.getLoadImage_Version(), true);
 						}
 					} else {
 						AppConfigModel.getInstance().putString(saveToSharedPreferencesKey, result, true);
 					}
 					if (mAppConfigJson.getLoading_images() != null && mAppConfigJson.getLoading_images().size() > 0 && handlerListener != null) {
-						AppConfigModel.getInstance().putString(APP_LOADING_IMAGES_KEY, gson.toJson(mAppConfigJson.getLoading_images()),true);
+						AppConfigModel.getInstance().putString(APP_LOADING_IMAGES_KEY, gson.toJson(mAppConfigJson.getLoading_images()), true);
 						CommonHandler.getInstatnce().handerMessage(handlerListener, resultMsgWhat, 0, 0, mAppConfigJson.getLoading_images());
 					}
 					// 处理下载皮肤
@@ -160,7 +162,7 @@ public class AppConfigUtils {
 	}
 
 	/**
-	 * 
+	 *
 	 * @author :Atar
 	 * @createTime:2017-5-24下午3:17:37
 	 * @version:1.0.0

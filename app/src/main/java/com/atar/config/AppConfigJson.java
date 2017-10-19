@@ -1,13 +1,15 @@
 /**
- * 
+ *
  */
 package com.atar.config;
+
+import com.atar.activitys.demos.AtarLoadActivity;
 
 import java.util.List;
 
 /**
  *****************************************************************************************************************************************************************************
- * 
+ *
  * @author :Atar
  * @createTime:2017-5-23下午4:18:01
  * @version:1.0.0
@@ -22,12 +24,18 @@ public class AppConfigJson {
 	private String skinVersion;// 皮肤版本
 	private String replaceMinVersion;// 替换皮肤的最小版本
 
+	private List<String> all_skins; // 所有种类的皮肤
 	private FunctionMenu topMenu;// 顶部功能菜单
 	private FunctionMenu centerMenu;// 广告下面功能菜单
+	private String loadImage_Version;// 开机引导图版本， 更新功能但不用升级apk, 又需要更新引导图 就改成比线上版本号大点，否则可不用配置 (改loadImage_Version 必须改versionName版本大点 和 isReplace为true)
 	private List<String> loading_images;// 开机引道页图片
 	private HtmlsViewPagerJson CommunityActivityJson;// 社区配置json
 	private String tpyTel;// 太平洋开户联系电话
 	private String fmTel;// 福米开户联系电话
+
+	public List<String> getAll_skins() {
+		return all_skins;
+	}
 
 	public FunctionMenu getCenterMenu() {
 		return centerMenu;
@@ -75,6 +83,10 @@ public class AppConfigJson {
 
 	public String getFmTel() {
 		return fmTel;
+	}
+
+	public String getLoadImage_Version() {
+		return loadImage_Version == null ? AtarLoadActivity.loadImage_Version : loadImage_Version;
 	}
 
 	public class FunctionMenu {
