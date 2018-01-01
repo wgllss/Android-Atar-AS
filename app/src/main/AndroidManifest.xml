@@ -1,22 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.atar.activitys"
     android:versionCode="1"
-    android:versionName="1.0" >
+    android:versionName="1.0">
 
     <uses-sdk
         android:minSdkVersion="8"
         android:targetSdkVersion="19" />
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.INTERACT_ACROSS_USERS_FULL" />
+    <uses-permission android:name="android.permission.RESTART_PACKAGES" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" /> <!-- 录音权限 -->
     <application
         android:name="com.atar.application.AtarApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme">
         <activity
-            android:name="com.atar.activitys.demos.AtarLoadActivity"
+            android:name=".demos.AtarLoadActivity"
             android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" >
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -24,110 +43,111 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.atar.activitys.demos.MainDemoActivity"
+            android:name=".demos.MainDemoActivity"
             android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.NoTitleBar" >
-        </activity>
+            android:theme="@android:style/Theme.NoTitleBar"></activity>
         <activity
-            android:name="com.atar.activitys.demos.ViewPagerDemoActivity"
-            android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-        <activity
-            android:name="com.atar.activitys.demos.AlbumActivity"
+            android:name=".demos.ViewPagerDemoActivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
         <activity
-            android:name="com.atar.activitys.demos.AlbumChildrenActivity"
+            android:name=".demos.AlbumActivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
         <activity
-            android:name="com.atar.activitys.demos.DemoRefreshListViewActivity"
+            android:name=".demos.AlbumChildrenActivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
         <activity
-            android:name="com.atar.activitys.demos.ShowImageActivity"
+            android:name=".demos.DemoRefreshListViewActivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
         <activity
-            android:name="com.atar.activitys.demos.DownLoadActivity"
+            android:name=".demos.ShowImageActivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
         <activity
-            android:name="com.atar.activitys.demos.DemoRefreshActivity"
+            android:name=".demos.DownLoadActivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
         <activity
-            android:name="com.atar.activitys.demos.DemoRefreshGridViewActivity"
+            android:name=".demos.DemoRefreshActivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
         <activity
-            android:name="com.atar.activitys.demos.DemoRefreshScrollViewActivity"
+            android:name=".demos.DemoRefreshGridViewActivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
         <activity
-            android:name="com.atar.activitys.demos.DemoRefreshWebViewActivity"
+            android:name=".demos.DemoRefreshScrollViewActivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
         <activity
-            android:name="com.atar.activitys.demos.DemoRefreshPinnedSectionListViewActivity"
+            android:name=".demos.DemoRefreshWebViewActivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
         <activity
-            android:name="com.atar.activitys.demos.DemoRefreshDragSortListViewActivity"
+            android:name=".demos.DemoRefreshPinnedSectionListViewActivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
         <activity
-            android:name="com.atar.activitys.demos.DemoRefreshSwipeMenuListViewActivity"
+            android:name=".demos.DemoRefreshDragSortListViewActivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
         <activity
-            android:name="com.atar.activitys.demos.DemoRefreshSwipeMenuListViewDiffActivity"
+            android:name=".demos.DemoRefreshSwipeMenuListViewActivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
         <activity
-            android:name="com.atar.activitys.demos.DemoRefreshExpandableListViewActivity"
+            android:name=".demos.DemoRefreshSwipeMenuListViewDiffActivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
         <activity
-            android:name="com.atar.activitys.demos.DemoRefreshQuickReturnListViewActivity"
+            android:name=".demos.DemoRefreshExpandableListViewActivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
         <activity
-            android:name="com.atar.activitys.demos.DemoRefreshTitleBarActivity"
+            android:name=".demos.DemoRefreshQuickReturnListViewActivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
         <activity
-            android:name="com.atar.activitys.demos.DemoRefreshViewPagerTabActivity"
+            android:name=".demos.DemoRefreshTitleBarActivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
         <activity
-            android:name="com.atar.activitys.demos.DemoRefreshViewPagerTabTopActivity"
+            android:name=".demos.DemoRefreshViewPagerTabActivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
         <activity
-            android:name="com.atar.activitys.demos.DemoRefreshInFragmentActivity"
+            android:name=".demos.DemoRefreshViewPagerTabTopActivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
         <activity
-            android:name="com.atar.activitys.demos.DemoSpeexAudioActivity"
-            android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-
-        <activity
-            android:name="com.atar.activitys.demos.DemoSettingActivity"
-            android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-
-        <activity
-            android:name="com.atar.activitys.htmls.AtarDynamicWebViewActivity"
+            android:name=".demos.DemoRefreshInFragmentActivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
         <activity
-            android:name="com.atar.activitys.htmls.WebViewPagerActivity"
+            android:name=".demos.DemoSpeexAudioActivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
         <activity
-            android:name="com.atar.activitys.htmls.WeexTabHostWithWebViewActivity"
+            android:name=".demos.DemoSettingActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity
+            android:name=".htmls.AtarDynamicWebViewActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity
+            android:name=".htmls.WebViewPagerActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity
+            android:name=".htmls.WeexTabHostWithWebViewActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity
+            android:name=".demos.TestJNIActivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
 
@@ -138,7 +158,7 @@
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
         <activity
             android:name="com.atar.weex.WeexNavigatorActivity"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+            android:theme="@android:style/Theme.Translucent.NoTitleBar">
             <intent-filter>
                 <action android:name="com.taobao.android.intent.action.WEEX" />
 
@@ -157,16 +177,16 @@
 
 
         <!-- 阿里热修复 start -->
-        
+
         <service
             android:name="com.taobao.atlas.dexmerge.DexMergeService"
-            android:process=":dexmerge" >
+            android:process=":dexmerge">
             <intent-filter>
                 <action android:name="com.taobao.atlas.dexmerge.DexMergeService" />
             </intent-filter>
         </service>
 
-        <receiver android:name="com.taobao.atlas.update.AwoPatchReceiver" >
+        <receiver android:name="com.taobao.atlas.update.AwoPatchReceiver">
             <intent-filter>
                 <action android:name="com.taobao.atlas.intent.PATCH_APP" />
             </intent-filter>
@@ -199,22 +219,4 @@
         <!-- 阿里热修复 start -->
     </application>
 
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.GET_TASKS" />
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.READ_LOGS" />
-    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
-    <uses-permission android:name="android.permission.INTERACT_ACROSS_USERS_FULL" />
-    <uses-permission android:name="android.permission.RESTART_PACKAGES" />
-    <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.RECORD_AUDIO" /> <!-- 录音权限 -->
 </manifest>

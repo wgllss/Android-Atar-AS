@@ -61,6 +61,8 @@ public class MainDemoActivity extends AtarRefreshListViewActivity {
         list.add(new MenuItemBean("8", "设置"));
         list.add(new MenuItemBean("9", "语音录放"));
         list.add(new MenuItemBean("10", "动态html"));
+        list.add(new MenuItemBean("11", "jni"));
+
 
         // list.add(new MenuItemBean("8", "网络测试1"));
         mMainDemoAdapter.notifyDataSetChanged();
@@ -153,6 +155,9 @@ public class MainDemoActivity extends AtarRefreshListViewActivity {
                 break;
             case 10:
                 AtarDynamicWebViewActivity.startAtarDynamicWebViewActivity(this, WeexUtils.HTML_TEST_URL, "", "", "", "", "0", false);
+                break;
+            case 11:
+                startActivity(new Intent(this, TestJNIActivity.class));
                 break;
         }
     }

@@ -10,8 +10,22 @@ android {
         versionCode 1
         versionName "1.0"
         multiDexEnabled true
-        //testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+//        ndk{
+//
+//            moduleName "hello-jni"
+//            abiFilters "armeabi", "armeabi-v7a", "x86"
+//
+//        }
+//        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
+
+    externalNativeBuild {
+        ndkBuild {
+            path file("src\\main\\jni\\Android.mk")
+        }
+    }
+
 //   signingConfigs {
 //         release {
 //                 keyAlias 'atar'
@@ -45,6 +59,7 @@ android {
             jniLibs.srcDirs = ['libs']
             // 如果是单个文件夹 可以直接这样如下配置
             // jniLibs.srcDir 'libs'
+            jni.srcDirs = ['src/main/jni', 'src/main/jni/']
         }
     }
 }
@@ -54,12 +69,28 @@ dependencies {
     //    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
     //        exclude group: 'com.android.support', module: 'support-annotations'
     //    })
+
+//    androidTestCompile 'com.android.support.test:runner:0.3'
+//    androidTestCompile 'com.android.support.test:rules:0.2'
+//    androidTestCompile 'com.android.support.test.espresso:espresso-core:2.1'
+
+//    androidTestCompile 'com.android.support.test:runner:0.5'
+//    // Set this dependency to use JUnit 4 rules
+//    androidTestCompile 'com.android.support.test:rules:0.4'
+//    // Set this dependency to build and run Espresso tests
+//    androidTestCompile 'com.android.support.test.espresso:espresso-core:2.2.1'
+//    // Set this dependency to build and run UI Automator tests
+//    androidTestCompile 'com.android.support.test.uiautomator:uiautomator-v18:2.1.2'
+
+
+
     compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha7'
     compile 'com.android.support:multidex:1.0.1'
-    //    testCompile 'junit:junit:4.12'
+        testCompile 'junit:junit:4.12'
     //compile 'com.google.code.gson:gson:2.2.4'
     compile project(':android-common8')
     compile project(':refresh-library8')
     compile project(':speex—library8')
     compile project(':swithc-button8')
+    compile 'com.android.support:appcompat-v7:22.2.1'
 }
