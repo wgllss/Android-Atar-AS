@@ -88,6 +88,7 @@
       <sourceFolder url="file://$MODULE_DIR$/src/test/shaders" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/assets" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/blame" />
+      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/builds" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/classes" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/incremental" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/incremental-classes" />
@@ -114,60 +115,58 @@
     <orderEntry type="jdk" jdkName="Android API 22 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" name="com.android.support:multidex-1.0.1" level="project" />
-    <orderEntry type="library" exported="" name="__local_jars__:D.\shouji\git20171007\Android-Atar-AS\app\libs\alipayutdid.jar:unspecified@jar" level="project" />
-    <orderEntry type="library" exported="" name="__local_jars__:D.\shouji\git20171007\Android-Atar-AS\app\libs\volley.jar:unspecified@jar" level="project" />
-    <orderEntry type="library" exported="" name="__local_jars__:D.\shouji\git20171007\Android-Atar-AS\app\libs\weiboSDKCore_3.1.4.jar:unspecified@jar" level="project" />
-    <orderEntry type="library" exported="" name="__local_jars__:D.\shouji\git20171007\Android-Atar-AS\app\libs\cairh-sjkh-client-android-framework1.0.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" exported="" name="__local_jars__:D.\android_workspace\Android-Atar-AS\app\libs\jpush-sdk-release1.8.0.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" exported="" name="__local_jars__:D.\android_workspace\Android-Atar-AS\app\libs\bcmail-jdk15-1.46.jar:unspecified@jar" level="project" />
     <orderEntry type="library" exported="" name="com.android.support:support-media-compat-26.0.0-alpha1" level="project" />
-    <orderEntry type="library" exported="" name="__local_jars__:D.\shouji\git20171007\Android-Atar-AS\app\libs\umeng_social_sdk.jar:unspecified@jar" level="project" />
     <orderEntry type="library" exported="" name="com.android.support:support-compat-26.0.0-alpha1" level="project" />
     <orderEntry type="library" exported="" name="com.android.support.constraint:constraint-layout-solver:1.0.0-alpha7@jar" level="project" />
-    <orderEntry type="library" exported="" name="__local_jars__:D.\shouji\git20171007\Android-Atar-AS\app\libs\weex_sdk-0.9.56.jar:unspecified@jar" level="project" />
     <orderEntry type="library" exported="" name="com.android.support:support-core-utils-26.0.0-alpha1" level="project" />
-    <orderEntry type="library" exported="" name="__local_jars__:D.\shouji\git20171007\Android-Atar-AS\app\libs\photoview-lib.jar:unspecified@jar" level="project" />
-    <orderEntry type="library" exported="" name="__local_jars__:D.\shouji\git20171007\Android-Atar-AS\app\libs\SocialSDK_WeiXin_2.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" exported="" name="__local_jars__:D.\android_workspace\Android-Atar-AS\app\libs\jackson-mapper-asl-1.9.7.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" exported="" name="__local_jars__:D.\android_workspace\Android-Atar-AS\app\libs\android-support-v7-recyclerview.jar:unspecified@jar" level="project" />
     <orderEntry type="library" exported="" name="com.android.support:appcompat-v7-22.2.1" level="project" />
-    <orderEntry type="library" exported="" name="__local_jars__:D.\shouji\git20171007\Android-Atar-AS\app\libs\bcmail-jdk15-1.46.jar:unspecified@jar" level="project" />
-    <orderEntry type="library" exported="" name="__local_jars__:D.\shouji\git20171007\Android-Atar-AS\app\libs\fastjson-1.1.46.android.jar:unspecified@jar" level="project" />
-    <orderEntry type="library" exported="" scope="TEST" name="org.hamcrest:hamcrest-core:1.3@jar" level="project" />
+    <orderEntry type="library" exported="" name="__local_jars__:D.\android_workspace\Android-Atar-AS\app\libs\SocialSDK_WeiXin_2.jar:unspecified@jar" level="project" />
     <orderEntry type="library" exported="" name="com.android.support:support-annotations:26.0.0-alpha1@jar" level="project" />
-    <orderEntry type="library" exported="" name="__local_jars__:D.\shouji\git20171007\Android-Atar-AS\app\libs\user_profile_mtj_1.3.jar:unspecified@jar" level="project" />
-    <orderEntry type="library" exported="" name="__local_jars__:D.\shouji\git20171007\Android-Atar-AS\app\libs\alipaysdk.jar:unspecified@jar" level="project" />
-    <orderEntry type="library" exported="" name="__local_jars__:D.\shouji\git20171007\Android-Atar-AS\app\libs\mta-sdk-1.6.2.jar:unspecified@jar" level="project" />
-    <orderEntry type="library" exported="" name="__local_jars__:D.\shouji\git20171007\Android-Atar-AS\app\libs\alicloud-android-utils-1.0.3.jar:unspecified@jar" level="project" />
-    <orderEntry type="library" exported="" name="__local_jars__:D.\shouji\git20171007\Android-Atar-AS\app\libs\SocialSDK_Sina.jar:unspecified@jar" level="project" />
-    <orderEntry type="library" exported="" name="__local_jars__:D.\shouji\git20171007\Android-Atar-AS\app\libs\safe-java-js-webview-bridge-1.1.jar:unspecified@jar" level="project" />
-    <orderEntry type="library" exported="" name="__local_jars__:D.\shouji\git20171007\Android-Atar-AS\app\libs\locSDK_4.2.jar:unspecified@jar" level="project" />
-    <orderEntry type="library" exported="" name="__local_jars__:D.\shouji\git20171007\Android-Atar-AS\app\libs\weex_inspector-0.10.0.5.jar:unspecified@jar" level="project" />
-    <orderEntry type="library" exported="" name="__local_jars__:D.\shouji\git20171007\Android-Atar-AS\app\libs\okhttp-2.3.0.jar:unspecified@jar" level="project" />
-    <orderEntry type="library" exported="" name="__local_jars__:D.\shouji\git20171007\Android-Atar-AS\app\libs\bcprov-jdk16-1.46.jar:unspecified@jar" level="project" />
-    <orderEntry type="library" exported="" name="__local_jars__:D.\shouji\git20171007\Android-Atar-AS\app\libs\SocialSDK_WeiXin_1.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" exported="" name="__local_jars__:D.\android_workspace\Android-Atar-AS\app\libs\alipaysecsdk.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" exported="" name="__local_jars__:D.\android_workspace\Android-Atar-AS\app\libs\mta-sdk-1.6.2.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" exported="" name="__local_jars__:D.\android_workspace\Android-Atar-AS\app\libs\android-async-http-1.4.6.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" exported="" name="__local_jars__:D.\android_workspace\Android-Atar-AS\app\libs\alicloud-android-utils-1.0.3.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" exported="" name="__local_jars__:D.\android_workspace\Android-Atar-AS\app\libs\cairh-sjkh-client-android-framework1.0.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" exported="" name="__local_jars__:D.\android_workspace\Android-Atar-AS\app\libs\SocialSDK_Sina.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" exported="" name="__local_jars__:D.\android_workspace\Android-Atar-AS\app\libs\ClientTransferSyncTool_p.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" exported="" name="__local_jars__:D.\android_workspace\Android-Atar-AS\app\libs\pinyin4j-2.5.0.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" exported="" name="__local_jars__:D.\android_workspace\Android-Atar-AS\app\libs\okhttp-2.3.0.jar:unspecified@jar" level="project" />
     <orderEntry type="library" exported="" name="com.android.support.constraint:constraint-layout-1.0.0-alpha7" level="project" />
-    <orderEntry type="library" exported="" name="__local_jars__:D.\shouji\git20171007\Android-Atar-AS\app\libs\jackson-core-asl-1.9.7.jar:unspecified@jar" level="project" />
-    <orderEntry type="library" exported="" name="__local_jars__:D.\shouji\git20171007\Android-Atar-AS\app\libs\okhttp-ws-2.3.0.jar:unspecified@jar" level="project" />
-    <orderEntry type="library" exported="" name="__local_jars__:D.\shouji\git20171007\Android-Atar-AS\app\libs\okio-1.3.0.jar:unspecified@jar" level="project" />
-    <orderEntry type="library" exported="" name="__local_jars__:D.\shouji\git20171007\Android-Atar-AS\app\libs\pinyin4j-2.5.0.jar:unspecified@jar" level="project" />
-    <orderEntry type="library" exported="" name="__local_jars__:D.\shouji\git20171007\Android-Atar-AS\app\libs\TestABC.jar:unspecified@jar" level="project" />
-    <orderEntry type="library" exported="" name="__local_jars__:D.\shouji\git20171007\Android-Atar-AS\app\libs\SocialSDK_tencentWB_2.jar:unspecified@jar" level="project" />
-    <orderEntry type="library" exported="" scope="TEST" name="junit:junit:4.12@jar" level="project" />
+    <orderEntry type="library" exported="" name="__local_jars__:D.\android_workspace\Android-Atar-AS\app\libs\locSDK_4.2.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" exported="" name="__local_jars__:D.\android_workspace\Android-Atar-AS\app\libs\safe-java-js-webview-bridge-1.1.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" exported="" name="__local_jars__:D.\android_workspace\Android-Atar-AS\app\libs\HwPush_SDK_V2705.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" exported="" name="__local_jars__:D.\android_workspace\Android-Atar-AS\app\libs\volley.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" exported="" name="__local_jars__:D.\android_workspace\Android-Atar-AS\app\libs\bcprov-jdk16-1.46.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" exported="" name="__local_jars__:D.\android_workspace\Android-Atar-AS\app\libs\SocialSDK_WeiXin_1.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" exported="" name="__local_jars__:D.\android_workspace\Android-Atar-AS\app\libs\MiPush_SDK_Client_3_0_3.jar:unspecified@jar" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="com.android.support:multidex-instrumentation-1.0.1" level="project" />
-    <orderEntry type="library" exported="" name="__local_jars__:D.\shouji\git20171007\Android-Atar-AS\app\libs\MiPush_SDK_Client_3_0_3.jar:unspecified@jar" level="project" />
-    <orderEntry type="library" exported="" name="__local_jars__:D.\shouji\git20171007\Android-Atar-AS\app\libs\ClientTransferSyncTool_p.jar:unspecified@jar" level="project" />
-    <orderEntry type="library" exported="" name="__local_jars__:D.\shouji\git20171007\Android-Atar-AS\app\libs\alipaysecsdk.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" exported="" name="__local_jars__:D.\android_workspace\Android-Atar-AS\app\libs\open_sdk_r5509.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" exported="" name="__local_jars__:D.\android_workspace\Android-Atar-AS\app\libs\fastjson-1.1.46.android.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" exported="" name="__local_jars__:D.\android_workspace\Android-Atar-AS\app\libs\SocialSDK_tencentWB_1.jar:unspecified@jar" level="project" />
     <orderEntry type="library" exported="" name="com.android.support:support-v4-26.0.0-alpha1" level="project" />
-    <orderEntry type="library" exported="" name="__local_jars__:D.\shouji\git20171007\Android-Atar-AS\app\libs\SocialSDK_tencentWB_1.jar:unspecified@jar" level="project" />
-    <orderEntry type="library" exported="" name="__local_jars__:D.\shouji\git20171007\Android-Atar-AS\app\libs\SocialSDK_QQZone_3.jar:unspecified@jar" level="project" />
-    <orderEntry type="library" exported="" name="__local_jars__:D.\shouji\git20171007\Android-Atar-AS\app\libs\jackson-mapper-asl-1.9.7.jar:unspecified@jar" level="project" />
-    <orderEntry type="library" exported="" name="__local_jars__:D.\shouji\git20171007\Android-Atar-AS\app\libs\SocialSDK_tencentWB_3.jar:unspecified@jar" level="project" />
-    <orderEntry type="library" exported="" name="__local_jars__:D.\shouji\git20171007\Android-Atar-AS\app\libs\sophix-3.0.9.jar:unspecified@jar" level="project" />
-    <orderEntry type="library" exported="" name="__local_jars__:D.\shouji\git20171007\Android-Atar-AS\app\libs\android-async-http-1.4.6.jar:unspecified@jar" level="project" />
-    <orderEntry type="library" exported="" name="__local_jars__:D.\shouji\git20171007\Android-Atar-AS\app\libs\HwPush_SDK_V2705.jar:unspecified@jar" level="project" />
-    <orderEntry type="library" exported="" name="__local_jars__:D.\shouji\git20171007\Android-Atar-AS\app\libs\jpush-sdk-release1.8.0.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" exported="" name="__local_jars__:D.\android_workspace\Android-Atar-AS\app\libs\okhttp-ws-2.3.0.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" exported="" name="__local_jars__:D.\android_workspace\Android-Atar-AS\app\libs\okio-1.3.0.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" exported="" name="__local_jars__:D.\android_workspace\Android-Atar-AS\app\libs\photoview-lib.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" exported="" name="__local_jars__:D.\android_workspace\Android-Atar-AS\app\libs\user_profile_mtj_1.3.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" exported="" name="__local_jars__:D.\android_workspace\Android-Atar-AS\app\libs\alipaysdk.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" exported="" name="__local_jars__:D.\android_workspace\Android-Atar-AS\app\libs\jackson-core-asl-1.9.7.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" exported="" name="__local_jars__:D.\android_workspace\Android-Atar-AS\app\libs\TestABC.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" exported="" name="__local_jars__:D.\android_workspace\Android-Atar-AS\app\libs\weiboSDKCore_3.1.4.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" exported="" name="__local_jars__:D.\android_workspace\Android-Atar-AS\app\libs\alipayutdid.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" exported="" name="__local_jars__:D.\android_workspace\Android-Atar-AS\app\libs\SocialSDK_tencentWB_3.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" exported="" name="__local_jars__:D.\android_workspace\Android-Atar-AS\app\libs\weex_inspector-0.10.0.5.jar:unspecified@jar" level="project" />
     <orderEntry type="library" exported="" name="com.android.support:support-core-ui-26.0.0-alpha1" level="project" />
-    <orderEntry type="library" exported="" name="__local_jars__:D.\shouji\git20171007\Android-Atar-AS\app\libs\android-support-v7-recyclerview.jar:unspecified@jar" level="project" />
-    <orderEntry type="library" exported="" name="__local_jars__:D.\shouji\git20171007\Android-Atar-AS\app\libs\open_sdk_r5509.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" exported="" name="__local_jars__:D.\android_workspace\Android-Atar-AS\app\libs\umeng_sdk.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" exported="" name="__local_jars__:D.\android_workspace\Android-Atar-AS\app\libs\sophix-3.0.9.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" exported="" name="__local_jars__:D.\android_workspace\Android-Atar-AS\app\libs\SocialSDK_QQZone_3.jar:unspecified@jar" level="project" />
     <orderEntry type="library" exported="" name="com.android.support:support-fragment-26.0.0-alpha1" level="project" />
-    <orderEntry type="library" exported="" name="__local_jars__:D.\shouji\git20171007\Android-Atar-AS\app\libs\umeng_sdk.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" exported="" name="__local_jars__:D.\android_workspace\Android-Atar-AS\app\libs\SocialSDK_tencentWB_2.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" exported="" name="__local_jars__:D.\android_workspace\Android-Atar-AS\app\libs\umeng_social_sdk.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" exported="" name="__local_jars__:D.\android_workspace\Android-Atar-AS\app\libs\weex_sdk-0.9.56.jar:unspecified@jar" level="project" />
     <orderEntry type="module" module-name="android-common8" exported="" />
     <orderEntry type="module" module-name="android-atar_skin" exported="" />
     <orderEntry type="module" module-name="refresh-library8" exported="" />

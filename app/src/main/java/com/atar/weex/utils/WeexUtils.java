@@ -45,8 +45,8 @@ public class WeexUtils {
     /**
      * 打包上线时用 注意 注释掉上面2行 放开下面2行 不用走这么多判断
      */
-    public static final String IP = "raw.githubusercontent.com/wgllss/WeexDemo/master";
-    public static final String HTTP = "https";
+    public static final String IP = "192.168.0.130:8080";
+    public static final String HTTP = "http";
     /**
      * weex 服务器地址
      */
