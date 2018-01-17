@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.handmark.pulltorefresh.library.PullToRefreshRecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ptr="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/common_pull_refresh_recyclerview"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    ptr:ptrAnimationStyle="flip"
+    ptr:ptrHeaderBackground="#00000000"
+    ptr:ptrMode="both" />

@@ -25,7 +25,9 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.RECORD_AUDIO" /> <!-- 录音权限 -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
+    <!-- 录音权限 -->
     <application
         android:name="com.atar.application.AtarApplication"
         android:allowBackup="true"
@@ -45,7 +47,7 @@
         <activity
             android:name=".demos.MainDemoActivity"
             android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.NoTitleBar"></activity>
+            android:theme="@android:style/Theme.NoTitleBar" />
         <activity
             android:name=".demos.ViewPagerDemoActivity"
             android:screenOrientation="portrait"
@@ -106,6 +108,12 @@
             android:name=".demos.DemoRefreshExpandableListViewActivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <activity
+            android:name=".demos.DemoRefreshRecyclerViewActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
         <activity
             android:name=".demos.DemoRefreshQuickReturnListViewActivity"
             android:screenOrientation="portrait"
@@ -217,6 +225,7 @@
 
 
         <!-- 阿里热修复 start -->
+
     </application>
 
 </manifest>

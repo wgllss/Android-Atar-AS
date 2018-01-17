@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package com.atar.activitys;
 
@@ -15,61 +15,61 @@ import android.widget.TextView;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
 
 /**
- *****************************************************************************************************************************************************************************
- * 
+ * ****************************************************************************************************************************************************************************
+ *
  * @author :Atar
  * @createTime:2017-8-14上午11:26:16
  * @version:1.0.0
  * @modifyTime:
  * @modifyAuthor:
- * @description:
- *****************************************************************************************************************************************************************************
+ * @description: ****************************************************************************************************************************************************************************
  */
 public class AtarRefreshListViewActivity extends AtarRefreshActivity<PullToRefreshListView, ListView> implements OnItemLongClickListener, OnItemClickListener {
 
-	@Override
-	protected void onCreate(Bundle bundle) {
-		super.onCreate(bundle);
-		if (getResLayoutID() > 0) {
-			addContentView(getResLayoutID());
-		}
-	}
+    @Override
+    protected void onCreate(Bundle bundle) {
+        super.onCreate(bundle);
+        if (getResLayoutID() > 0) {
+            addContentView(getResLayoutID());
+        }
+    }
 
-	protected int getResLayoutID() {
-		return R.layout.common_refresh_listview;
-	}
+    protected int getResLayoutID() {
+        return R.layout.common_refresh_listview;
+    }
 
-	@Override
-	protected void initControl() {
-		setRefreshView((PullToRefreshListView) findViewById(R.id.atar_refresh_lst));
-		setTextView((TextView) findViewById(R.id.txt_list_toast));
-	}
+    @Override
+    protected void initControl() {
+        setRefreshView((PullToRefreshListView) findViewById(R.id.atar_refresh_lst));
+        setTextView((TextView) findViewById(R.id.txt_list_toast));
+    }
 
-	/**
-	 * 设置listview 适配器
-	 * @author :Atar
-	 * @createTime:2015-6-3上午10:44:38
-	 * @version:1.0.0
-	 * @modifyTime:
-	 * @modifyAuthor:
-	 * @param adapter
-	 * @description:
-	 */
-	public void setAdapter(BaseAdapter adapter) {
-		if (getRefreshView() != null) {
-			getRefreshView().setAdapter(adapter);
-			getRefreshView().setOnItemLongClickListener(this);
-			getRefreshView().setOnItemClickListener(this);
-			listView = getRefreshView();
-		}
-	}
+    /**
+     * 设置listview 适配器
+     *
+     * @param adapter
+     * @author :Atar
+     * @createTime:2015-6-3上午10:44:38
+     * @version:1.0.0
+     * @modifyTime:
+     * @modifyAuthor:
+     * @description:
+     */
+    public void setAdapter(BaseAdapter adapter) {
+        if (getRefreshView() != null) {
+            getRefreshView().setAdapter(adapter);
+            getRefreshView().setOnItemLongClickListener(this);
+            getRefreshView().setOnItemClickListener(this);
+            listView = getRefreshView();
+        }
+    }
 
-	@Override
-	public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
-	}
+    @Override
+    public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
+    }
 
-	@Override
-	public boolean onItemLongClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
-		return false;
-	}
+    @Override
+    public boolean onItemLongClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
+        return false;
+    }
 }
