@@ -118,7 +118,7 @@ public class AtarCommonWebViewPagerActivity extends AtarDropTitleBarActivity imp
                 setTitleBarGone();
             }
             /* 标题end */
-			/* 顶部右边部分处理start */
+            /* 顶部右边部分处理start */
             String top_right_img_url = mHtmlsViewPagerJson.getTOP_RIGHT_IMG_URL();
             String top_right_txt = mHtmlsViewPagerJson.getTOP_RIGHT_TXT();
             if (top_right_txt != null && top_right_txt.length() > 0) {
@@ -128,7 +128,7 @@ public class AtarCommonWebViewPagerActivity extends AtarDropTitleBarActivity imp
                 imgCommonTopRight.setVisibility(View.VISIBLE);
                 LoadImageView(top_right_img_url, imgCommonTopRight, 0);
             }
-			/* 顶部右边部分处理end */
+            /* 顶部右边部分处理end */
             listMenu.clear();
             for (TabMenuItemBean mTabMenuItemBean : mHtmlsViewPagerJson.getListFragment()) {
                 listMenu.add(mTabMenuItemBean);

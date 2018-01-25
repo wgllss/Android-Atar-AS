@@ -47,8 +47,6 @@ public class AtarApplication extends Application {
     public void onCreate() {
         super.onCreate();
         mInstance = this;
-        SkinResourcesManager.getInstance(this).initSkinResources(true, "com.atar.skin", UrlParamCommon.download_skin_url);
-
         CommonApplication.initApplication(this);// 初始化全局Context
         CommonNetWorkExceptionToast.initToastError(this, R.array.err_toast_string);// 初始化全局网络错误提示信息
         ShowLog.setDebug(true);// 设置不显示日志 上线前记得改成false
@@ -56,7 +54,7 @@ public class AtarApplication extends Application {
         CommonApplication.initImageLoader(getApplicationContext());// 初始化加载图片配置
         // CommonToast.initToastResouseId(R.drawable.corners_toast, R.color.black);// 初始化toast字体颜色和背景
         CrashHandler.getInstance().init(this);// 接收错误异常
-
+        SkinResourcesManager.getInstance(this).initSkinResources(true, "com.atar.skin", UrlParamCommon.download_skin_url);
         db = getDb();
         // initHotfix();
     }

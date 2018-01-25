@@ -11,6 +11,7 @@
 package com.atar.weex.utils;
 
 import android.app.Activity;
+import android.appconfig.AppConfigModel;
 import android.os.Build.VERSION;
 import android.os.Build.VERSION_CODES;
 
@@ -38,15 +39,15 @@ import com.taobao.weex.dom.TextAreaEditTextDomObject;
  */
 public class WeexUtils {
     // /**ip*/
-//    public static final String IP = AppConfigModel.getInstance().getString("WEEX_IP_KEY", "192.168.1.10:8080");
-//    // /**网络请求方式http or https*/
-//    public static final String HTTP = IP.contains("com.cn") ? "https" : "http";
+    public static final String IP = AppConfigModel.getInstance().getString("WEEX_IP_KEY", "192.168.0.121:8080");
+    // /**网络请求方式http or https*/
+    public static final String HTTP = IP.contains("com.cn") ? "https" : "http";
 
     /**
      * 打包上线时用 注意 注释掉上面2行 放开下面2行 不用走这么多判断
      */
-    public static final String IP = "192.168.0.130:8080";
-    public static final String HTTP = "http";
+//    public static final String IP = "192.168.0.106:8080";
+//    public static final String HTTP = "http";
     /**
      * weex 服务器地址
      */

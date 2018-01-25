@@ -5,8 +5,6 @@ package com.atar.activitys.demos;
 
 import android.appconfig.AppConfigModel;
 import android.common.CommonHandler;
-import android.interfaces.ScrollListListener;
-import android.support.v7.widget.RecyclerView;
 
 import com.atar.activitys.htmls.AtarCommonWebViewPagerActivity;
 import com.atar.config.AppConfigJson;
@@ -19,7 +17,6 @@ import com.atar.fragment.demos.DemoRefreshGridViewFragment;
 import com.atar.fragment.demos.DemoRefreshListViewFragment;
 import com.atar.fragment.demos.DemoRefreshPinnedSectionListViewFragment;
 import com.atar.fragment.demos.DemoRefreshQuickReturnListViewFragment;
-import com.atar.fragment.demos.DemoRefreshRecyclerViewFragment;
 import com.atar.fragment.demos.DemoRefreshScrollViewFragment;
 import com.atar.fragment.demos.DemoRefreshWebViewFragment;
 import com.google.gson.Gson;
@@ -101,8 +98,9 @@ public class DemoRefreshInFragmentActivity extends AtarCommonWebViewPagerActivit
                 addFragmentToList(new DemoRefreshWebViewFragment());
                 break;
             case 10://固定ID
-                addFragmentToList(new DemoRefreshRecyclerViewFragment());
-                ;
+                addFragmentToList(new DemoRefreshWebViewFragment());
+                //addFragmentToList(new DemoRefreshRecyclerViewFragment());
+                break;
             default:
                 super.setDynamicFragment(mTabMenuItemBean);
                 break;
@@ -116,12 +114,12 @@ public class DemoRefreshInFragmentActivity extends AtarCommonWebViewPagerActivit
         setActivityTitle(listMenu.get(getCurrentItem()).getMenuName());
     }
 
-    @Override
-    protected void applyScrollListener() {
-
-    }
-
-    public void setApplyScrollListenre(RecyclerView recyclerView) {
-        recyclerView.setOnScrollListener(new ScrollListListener(imageLoader));
-    }
+//    @Override
+//    protected void applyScrollListener() {
+//
+//    }
+//
+//    public void setApplyScrollListenre(RecyclerView recyclerView) {
+//        recyclerView.setOnScrollListener(new ScrollListListener(imageLoader));
+//    }
 }
