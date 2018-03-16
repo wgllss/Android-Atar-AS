@@ -5,12 +5,16 @@ package com.atar.activitys.demos;
 
 import android.appconfig.AppConfigModel;
 import android.common.CommonHandler;
+import android.interfaces.ScrollListListener;
+import android.support.v7.widget.RecyclerView;
+import android.utils.ShowLog;
 
 import com.atar.activitys.htmls.AtarCommonWebViewPagerActivity;
 import com.atar.config.AppConfigJson;
 import com.atar.config.AppConfigUtils;
 import com.atar.config.HtmlsViewPagerJson;
 import com.atar.config.TabMenuItemBean;
+import com.atar.fragment.AtarRefreshRecyclerViewFragment;
 import com.atar.fragment.demos.DemoRefreshDragSortListViewFragment;
 import com.atar.fragment.demos.DemoRefreshExpandableListViewFragment;
 import com.atar.fragment.demos.DemoRefreshGridViewFragment;
@@ -114,14 +118,19 @@ public class DemoRefreshInFragmentActivity extends AtarCommonWebViewPagerActivit
         super.onPageSelected(arg0);
         setOnDrawerBackEnabled(arg0 == 0);
         setActivityTitle(listMenu.get(getCurrentItem()).getMenuName());
+        try {
+            switch (listMenu.get(arg0).getID()) {
+                case 10:
+                    if (getFragmentList().get(arg0) != null) {
+                        ((AtarRefreshRecyclerViewFragment) getFragmentList().get(arg0)).getRefreshView().setOnScrollListener(new ScrollListListener(imageLoader));
+                    }
+                    break;
+                default:
+                    super.applyScrollListener();
+                    break;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
-
-//    @Override
-//    protected void applyScrollListener() {
-//
-//    }
-//
-//    public void setApplyScrollListenre(RecyclerView recyclerView) {
-//        recyclerView.setOnScrollListener(new ScrollListListener(imageLoader));
-//    }
 }

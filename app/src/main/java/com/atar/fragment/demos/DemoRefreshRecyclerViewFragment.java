@@ -86,10 +86,6 @@ public class DemoRefreshRecyclerViewFragment extends AtarRefreshRecyclerViewFrag
         view0.setLayoutParams(new ViewGroup.LayoutParams(size, size));
         view0.setBackgroundColor(Color.parseColor("#ff0000"));
         addItemDecoration(new DividerGridItemDecoration(getActivity(), GridLayoutManager.VERTICAL, view0));
-
-//        if (getActivity() != null) {
-//            ((DemoRefreshInFragmentActivity) getActivity()).setApplyScrollListenre(getRefreshView());
-//        }
     }
 
     @Override
