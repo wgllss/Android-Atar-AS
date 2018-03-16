@@ -96,8 +96,8 @@ public class DemoRefreshInFragmentActivity extends AtarCommonWebViewPagerActivit
             // addFragmentToList(new DemoRefreshSwipeMenuListViewDiffFragment());
             // break;
             case 9:// 固定ID
-//                addFragmentToList(new DemoRefreshWebViewFragment());
-                addFragmentToList(new DemoRefreshRecyclerViewFragment());
+                addFragmentToList(new DemoRefreshWebViewFragment());
+//                addFragmentToList(new DemoRefreshRecyclerViewFragment());
                 break;
             case 10://固定ID
 //                addFragmentToList(new DemoRefreshWebViewFragment());
