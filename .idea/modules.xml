@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Android-Atar.iml" filepath="$PROJECT_DIR$/Android-Atar.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Android-Atar-AS.iml" filepath="$PROJECT_DIR$/Android-Atar-AS.iml" />
       <module fileurl="file://$PROJECT_DIR$/android-atar_skin/android-atar_skin.iml" filepath="$PROJECT_DIR$/android-atar_skin/android-atar_skin.iml" />
       <module fileurl="file://$PROJECT_DIR$/android-common8/android-common8.iml" filepath="$PROJECT_DIR$/android-common8/android-common8.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />

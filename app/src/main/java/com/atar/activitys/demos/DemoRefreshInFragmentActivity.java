@@ -17,6 +17,7 @@ import com.atar.fragment.demos.DemoRefreshGridViewFragment;
 import com.atar.fragment.demos.DemoRefreshListViewFragment;
 import com.atar.fragment.demos.DemoRefreshPinnedSectionListViewFragment;
 import com.atar.fragment.demos.DemoRefreshQuickReturnListViewFragment;
+import com.atar.fragment.demos.DemoRefreshRecyclerViewFragment;
 import com.atar.fragment.demos.DemoRefreshScrollViewFragment;
 import com.atar.fragment.demos.DemoRefreshWebViewFragment;
 import com.google.gson.Gson;
@@ -95,11 +96,12 @@ public class DemoRefreshInFragmentActivity extends AtarCommonWebViewPagerActivit
             // addFragmentToList(new DemoRefreshSwipeMenuListViewDiffFragment());
             // break;
             case 9:// 固定ID
-                addFragmentToList(new DemoRefreshWebViewFragment());
+//                addFragmentToList(new DemoRefreshWebViewFragment());
+                addFragmentToList(new DemoRefreshRecyclerViewFragment());
                 break;
             case 10://固定ID
-                addFragmentToList(new DemoRefreshWebViewFragment());
-                //addFragmentToList(new DemoRefreshRecyclerViewFragment());
+//                addFragmentToList(new DemoRefreshWebViewFragment());
+                addFragmentToList(new DemoRefreshRecyclerViewFragment());
                 break;
             default:
                 super.setDynamicFragment(mTabMenuItemBean);

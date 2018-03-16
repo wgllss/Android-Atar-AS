@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="ClientTransferSyncTool_p">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/app/libs/ClientTransferSyncTool_p.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

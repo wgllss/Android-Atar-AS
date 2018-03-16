@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Message;
 import android.recycler.DividerGridItemDecoration;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
 import android.utils.DeviceManager;
@@ -55,8 +56,13 @@ public class DemoRefreshRecyclerViewFragment extends AtarRefreshRecyclerViewFrag
             "http://img5.imgtn.bdimg.com/it/u=3670258880,1432604197&fm=200&gp=0.jpg",};
 
     @Override
-    public void onViewCreated(View view, Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+//    }
+//
+//    @Override
+//    public void onViewCreated(View view, Bundle savedInstanceState) {
+//        super.onViewCreated(view, savedInstanceState);
         //LinearLayoutManager
         //setLayoutManager(new StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.VERTICAL));//瀑布流布局
 

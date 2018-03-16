@@ -1,5 +1,6 @@
 package com.atar.adapters;
 
+import android.activity.CommonActivity;
 import android.adapter.CommonRecyclerAdapter;
 import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
@@ -16,7 +17,7 @@ import com.atar.activitys.demos.DemoRefreshRecyclerViewActivity;
 import java.util.List;
 
 /**
- * Created by Administrator on 2018/1/17 0017.
+ * Created by atar on 2018/1/17 0017.
  */
 
 public class RecyclerViewAdapter extends CommonRecyclerAdapter<String> {
@@ -41,8 +42,9 @@ public class RecyclerViewAdapter extends CommonRecyclerAdapter<String> {
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder viewHolder, int position) {
-        if (getList() != null && getList().get(position) != null && getList().get(position).length() > 0)
-            ((DemoRefreshRecyclerViewActivity) getContext()).LoadImageView(getList().get(position), ((MyViewHolder) viewHolder).img_pic, 0, getAnimateFirstListener(), 0);
+        if (getList() != null && getList().get(position) != null && getList().get(position).length() > 0) {
+            ((CommonActivity) getContext()).LoadImageView(getList().get(position), ((MyViewHolder) viewHolder).img_pic, 0, getAnimateFirstListener(), 0);
+        }
     }
 
 

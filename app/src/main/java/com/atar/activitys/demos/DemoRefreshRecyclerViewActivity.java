@@ -62,11 +62,11 @@ public class DemoRefreshRecyclerViewActivity extends PullToRefreshRecycleActivit
         //LinearLayoutManager
         //setLayoutManager(new StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.VERTICAL));//瀑布流布局
 
-//        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
-//        layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
-//        setLayoutManager(layoutManager);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        setLayoutManager(layoutManager);
 
-        setLayoutManager(new GridLayoutManager(this, spanCount));//Grid布局列表
+//        setLayoutManager(new GridLayoutManager(this, spanCount));//Grid布局列表
 
         int columnWidth = (DeviceManager.getScreenWidth(this) - (int) (ScreenUtils.getIntToDip(5) * (spanCount - 1))) / spanCount;
         mRecyclerViewAdapter.setColumnWidth(columnWidth);

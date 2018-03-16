@@ -21,7 +21,7 @@ public class AtarRefreshRecyclerViewFragment extends AratRefreshAbsListViewFragm
         if (view == null) {
             view = inflater.inflate(R.layout.common_pull_to_refresh_recycle, container, false);
             setTextView((TextView) view.findViewById(R.id.txt_list_toast));
-            setRefreshView((PullToRefreshRecyclerView) view.findViewById(R.id.atar_refresh_lst));
+            setRefreshView((PullToRefreshRecyclerView) view.findViewById(R.id.common_pull_refresh_recyclerview));
         }
         if (view != null && view.getParent() != null) {
             ViewGroup parent = (ViewGroup) view.getParent();
