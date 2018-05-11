@@ -39,7 +39,7 @@ import com.taobao.weex.dom.TextAreaEditTextDomObject;
  */
 public class WeexUtils {
     // /**ip*/
-    public static final String IP = AppConfigModel.getInstance().getString("WEEX_IP_KEY", "192.168.0.121:8080");
+    public static final String IP = AppConfigModel.getInstance().getString("WEEX_IP_KEY", "192.168.2.182:8080");
     // /**网络请求方式http or https*/
     public static final String HTTP = IP.contains("com.cn") ? "https" : "http";
 
