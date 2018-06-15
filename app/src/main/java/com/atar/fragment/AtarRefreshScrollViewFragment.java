@@ -16,7 +16,7 @@ import com.handmark.pulltorefresh.library.PullToRefreshScrollView;
 
 /**
  *****************************************************************************************************************************************************************************
- * 淘股吧含有滚动视图的ScrollView fragment
+ * 含有滚动视图的ScrollView fragment
  * @author :Atar
  * @createTime:2015-3-16下午5:25:01
  * @version:1.0.0

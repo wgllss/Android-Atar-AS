@@ -467,7 +467,7 @@ package android.utils;//package android.utils;
 //	}
 //
 //	/**
-//	 * 替换淘股吧自定义表情 html
+//	 * 替换自定义表情 html
 //	 * @author :Atar
 //	 * @createTime:2015-3-13下午3:53:24
 //	 * @version:1.0.0
@@ -1058,7 +1058,7 @@ package android.utils;//package android.utils;
 //					+ "/$2$3\" />", pattern, matcher, true);
 //			// 转换站外图
 //			strContent = ubbItem(strContent, "\\[img\\]\\s*[javascript]*(.+?)(.JPEG|.jpeg|.JPG|.jpg|.GIF|.gif|.png|.PNG|.BMP|.bmp)\\[\\/img\\]", "<img src=\"/$1$2\" />", pattern, matcher, true);
-//			strContent = ubbItem(strContent, "\\<span style=\\\"display:none;\\\"\\>\\[淘股吧\\]\\<\\/span\\>", // \\Æ
+//			strContent = ubbItem(strContent, "\\<span style=\\\"display:none;\\\"\\>\\[\\]\\<\\/span\\>", // \\Æ
 //					"", pattern, matcher, true);
 //			// 视频
 //			strContent = ubbItem(strContent, "\\[video\\](.*?)\\[\\/video\\]", "[视频]", pattern, matcher, true);

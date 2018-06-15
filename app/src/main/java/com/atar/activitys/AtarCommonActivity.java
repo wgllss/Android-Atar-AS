@@ -6,6 +6,7 @@ import android.application.CrashHandler;
 import android.common.CommonHandler;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.drawable.AnimationDrawable;
 import android.graphics.drawable.Drawable;
 import android.interfaces.HandlerListener;
@@ -17,6 +18,7 @@ import android.os.Build.VERSION_CODES;
 import android.os.Bundle;
 import android.reflection.NetWorkMsg;
 import android.skin.SkinUtils;
+import android.support.v4.view.ViewCompat;
 import android.utils.ApplicationManagement;
 import android.utils.ScreenUtils;
 import android.utils.ShowLog;
@@ -25,6 +27,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.view.WindowManager;
 import android.widget.CommonToast;
 import android.widget.FrameLayout;
@@ -83,9 +86,23 @@ public class AtarCommonActivity extends CommonActivity implements OnClickListene
 	protected void onCreate(Bundle bundle) {
 		super.onCreate(bundle);
 		setOnOpenDrawerCompleteListener(this);
-		if (VERSION.SDK_INT >= VERSION_CODES.KITKAT && isFlagTranslucentStatus) {
-			// 透明状态栏
-			getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+		if(isFlagTranslucentStatus){
+			if (VERSION.SDK_INT >= VERSION_CODES.LOLLIPOP ) {
+				Window window = getWindow();
+				window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+				window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+				window.setStatusBarColor(Color.TRANSPARENT);
+				window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
+//				ViewGroup mContentView = (ViewGroup) window.findViewById(Window.ID_ANDROID_CONTENT);
+//				View mChildView = mContentView.getChildAt(0);
+//				if (mChildView != null) {
+//					ViewCompat.setFitsSystemWindows(mChildView, false);
+//					ViewCompat.requestApplyInsets(mChildView);
+//				}
+			}else if (VERSION.SDK_INT >= VERSION_CODES.KITKAT ) {
+				// 透明状态栏
+				getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+			}
 		}
 		if (isExtendsAtarCommonActivity) {
 			setContentView(R.layout.activity_atar_common);
@@ -375,7 +392,6 @@ public class AtarCommonActivity extends CommonActivity implements OnClickListene
 	 * @version:1.0.0
 	 * @modifyTime:
 	 * @modifyAuthor:
-	 * @param resId
 	 * @description:
 	 */
 	protected void setRightImageDrawable(Drawable drawable) {
@@ -691,7 +707,6 @@ public class AtarCommonActivity extends CommonActivity implements OnClickListene
 	 * @version:1.0.0
 	 * @modifyTime:
 	 * @modifyAuthor:
-	 * @param strAudioPath
 	 * @description:
 	 */
 	public void play(String strAudioPath0, HandlerListener mHandlerListener) {
@@ -804,7 +819,6 @@ public class AtarCommonActivity extends CommonActivity implements OnClickListene
 	/**
 	 * 判断是否是从二维码扫描
 	 *
-	 * @param boolean
 	 */
 	public boolean isQRCode() {
 		boolean isQRcode = false;

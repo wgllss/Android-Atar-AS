@@ -447,7 +447,7 @@ public class ImplInAndroidScript {
 	// }
 
 	// /**
-	// * 替换淘股吧自定义表情 html
+	// * 替换自定义表情 html
 	// * @author :Atar
 	// * @createTime:2017-6-2下午2:34:11
 	// * @version:1.0.0
@@ -683,7 +683,7 @@ public class ImplInAndroidScript {
 
 	/**
 	 {
-	 "shareContent":"淘股吧是中国知名的移动互联投资社交化平台",
+	 "shareContent":"是中国知名的移动互联投资社交化平台",
 	 "shareUrl":"http://m.taoguba.com.cn/downloadApp",
 	 "shareTitle":"v_5.5.5",
 	 "ShareImgResID":"",

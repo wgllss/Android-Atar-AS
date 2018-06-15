@@ -14,7 +14,7 @@ import com.handmark.pulltorefresh.library.PullToRefreshWebView;
 
 /**
  *****************************************************************************************************************************************************************************
- * 淘股吧带刷新的webview fragment
+ * 带刷新的webview fragment
  * @author :Atar
  * @createTime:2015-5-6下午2:36:20
  * @version:1.0.0

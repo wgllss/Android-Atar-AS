@@ -154,7 +154,7 @@ public class IntentUtil {
 	}
 
 	/**
-	 * 淘股吧订制关闭当前Activity,带有从左向右动画
+	 * 订制关闭当前Activity,带有从左向右动画
 	 * @author :Atar
 	 * @createTime:2014-6-20下午4:14:25
 	 * @version:1.0.0
@@ -176,7 +176,7 @@ public class IntentUtil {
 	}
 
 	/**
-	 * 淘股吧订制关闭当前Activity,不带动画
+	 * 订制关闭当前Activity,不带动画
 	 * @author :Atar
 	 * @createTime:2014-6-20下午4:14:25
 	 * @version:1.0.0
@@ -198,7 +198,7 @@ public class IntentUtil {
 	}
 
 	/**
-	 * 淘股吧订制关闭当前Activity,带渐变退出动画
+	 * 订制关闭当前Activity,带渐变退出动画
 	 * @author :Atar
 	 * @createTime:2014-6-20下午4:14:25
 	 * @version:1.0.0

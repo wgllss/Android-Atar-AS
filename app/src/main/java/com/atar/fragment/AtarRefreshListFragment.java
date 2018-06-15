@@ -13,7 +13,7 @@ import com.handmark.pulltorefresh.library.PullToRefreshListView;
 
 /**
  *****************************************************************************************************************************************************************************
- * 淘股吧订制 公用部分fragment 大多数都只有ListView ,写在此处
+ * 订制 公用部分fragment 大多数都只有ListView ,写在此处
  * @author :Atar
  * @createTime:2014-7-4下午5:36:25
  * @version:1.0.0

@@ -46,7 +46,7 @@ package com.atar.push;
 //	private static TaogubaPushTool mTaogubaPushTool;
 //	/** 是否绑定极光服务器 */
 //	private boolean isBindJpushSuccessed;
-//	/** 是否绑定淘股吧服务器 */
+//	/** 是否绑定服务器 */
 //	private boolean isBindTaogubaServer;
 //	/** 单个线程池开启向极光发送 */
 //	private ExecutorService exec = Executors.newSingleThreadExecutor();
@@ -369,7 +369,7 @@ package com.atar.push;
 //					NetWorkInterfaces.BindPush(TaogubaPushTool.this, getAlias(), "android");
 //				}
 //			} else if (isBindTaogubaServer && !isBindJpushSuccessed && AppConfigSetting.getInstance().IsBindOpen()) {
-//				// 绑定淘股吧 并且推送打开 但绑定极光失败
+//				// 绑定 并且推送打开 但绑定极光失败
 //				exec.execute(mPushToJGRunnable);
 //			}
 //		}

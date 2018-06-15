@@ -38,7 +38,7 @@ public class AppConfigSetting {
 	private final static String REMEMBER_PASSWORD = TAG + ".REMEMBER_PASSWORD";
 	private final static String IS_YingDao = TAG + ".IS_YingDao";
 	private final static String IS_BING_SUCCESS = TAG + "IS_BING_SUCCESS";// 绑定极光推送系统打开
-	private final static String IS_BING_OPEN = TAG + "IS_BING_OPEN";// 是否绑定淘股吧推送系统是否打开
+	private final static String IS_BING_OPEN = TAG + "IS_BING_OPEN";// 是否绑定推送系统是否打开
 	private final static String IS_VISITOR_LOGIN = TAG + "IS_VISITOR_LOGIN";// 是否浏览用户登陆
 
 	private SharedPreferences mSettings;

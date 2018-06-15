@@ -15,7 +15,7 @@ import com.handmark.pulltorefresh.library.PullToRefreshGridView;
 
 /**
  *****************************************************************************************************************************************************************************
- * 淘股吧带刷新的GridView fragment
+ * 带刷新的GridView fragment
  * @author :Atar
  * @createTime:2015-5-6下午2:36:20
  * @version:1.0.0
