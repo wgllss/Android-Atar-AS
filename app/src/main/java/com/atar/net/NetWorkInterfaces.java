@@ -9,13 +9,14 @@ import android.reflection.ThreadPoolTool;
 import android.utils.CommonStringUtil;
 
 import com.atar.enums.EnumMsgWhat;
+import com.atar.modles.WonderfulTopicJson;
 
 import java.lang.reflect.Type;
+import java.util.HashMap;
 import java.util.Map;
 
 /**
- *
- *****************************************************************************************************************************************************************************
+ * ****************************************************************************************************************************************************************************
  * 网络层异步调用接口
  *
  * @author :Atar
@@ -24,64 +25,67 @@ import java.util.Map;
  * @modifyTime:
  * @modifyAuthor:
  * @description: 已经实现异步请求
- *****************************************************************************************************************************************************************************
+ * ****************************************************************************************************************************************************************************
  */
 public class NetWorkInterfaces {
 
-	/**
-	 * 适用所有请求方法
-	 * @author :Atar
-	 * @createTime:2017-8-10上午10:58:01
-	 * @version:1.0.0
-	 * @modifyTime:
-	 * @modifyAuthor:
-	 * @param activity
-	 * @param mNetWorkCallTListenet
-	 * @param url
-	 * @param method
-	 * @param map
-	 * @param typeOfT
-	 * @description:
-	 */
-	public static <T> void NetWorkCall(Activity activity, final NetWorkCallTListenet<T> mNetWorkCallTListenet, String url, String method, Map<String, String> map, Type typeOfT) {
-		method = "POST".equals(method) ? HttpUrlConnectionRequest.POST : HttpUrlConnectionRequest.GET;
-		Object[] params = null;
-		if (activity != null) {
-			params = new Object[] { url, map, UrlParamCommon.UTF_8, activity };
-		} else {
-			params = new Object[] { url, map, UrlParamCommon.UTF_8 };
-		}
-		ThreadPoolTool.getInstance().setAsyncTask(EnumMsgWhat.HttpDefaultRequest_Msg, new NetWorkCallListener() {
-			@Override
-			public void NetWorkCall(NetWorkMsg msg) {
-				switch (msg.what) {
-					case EnumMsgWhat.HttpDefaultRequest_Msg:
-						@SuppressWarnings("unchecked")
-						T t = (T) msg.obj;
-						if (mNetWorkCallTListenet != null) {
-							mNetWorkCallTListenet.NetWorkCall(t);
-						}
-						break;
-					default:
-						break;
-				}
-			}
-		}, activity, HttpUrlConnectionRequest.class.getName(), method, params, typeOfT);
-	}
+    /**
+     * 适用所有请求方法
+     *
+     * @param activity
+     * @param mNetWorkCallTListenet
+     * @param url
+     * @param method
+     * @param map
+     * @param typeOfT
+     * @author :Atar
+     * @createTime:2017-8-10上午10:58:01
+     * @version:1.0.0
+     * @modifyTime:
+     * @modifyAuthor:
+     * @description:
+     */
+    public static <T> void NetWorkCall(Activity activity, final NetWorkCallTListenet<T> mNetWorkCallTListenet, String url, String method, Map<String, String> map, Type typeOfT) {
+        method = "POST".equals(method) ? HttpUrlConnectionRequest.POST : HttpUrlConnectionRequest.GET;
+        Object[] params = null;
+        if (activity != null) {
+            params = new Object[]{url, map, UrlParamCommon.UTF_8, activity};
+        } else {
+            params = new Object[]{url, map, UrlParamCommon.UTF_8};
+        }
+        ThreadPoolTool.getInstance().setAsyncTask(EnumMsgWhat.HttpDefaultRequest_Msg, new NetWorkCallListener() {
+            @Override
+            public void NetWorkCall(NetWorkMsg msg) {
+                switch (msg.what) {
+                    case EnumMsgWhat.HttpDefaultRequest_Msg:
+                        @SuppressWarnings("unchecked")
+                        T t = (T) msg.obj;
+                        if (mNetWorkCallTListenet != null) {
+                            mNetWorkCallTListenet.NetWorkCall(t);
+                        }
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }, activity, HttpUrlConnectionRequest.class.getName(), method, params, typeOfT);
+    }
 
-	// /** 获取今日赞 **/
-	// public static void GetWonderTopicList(Activity activity, NetWorkCallListener mNetWorkCallListener, String pageNo) {
-	// Map<String, String> map = new HashMap<String, String>();
-	// CommonStringUtil.setMap(map, "pageNo", pageNo);
-	// Object[] params = new Object[] { UrlParamCommon.UrlWonderfulList, map, UrlParamCommon.UTF_8, activity };
-	// ThreadPoolTool.getInstance().setAsyncTask(EnumMsgWhat.EInterface_Get_Wonder_Topic_List, mNetWorkCallListener, activity, HttpUrlConnectionRequest.class.getName(), HttpUrlConnectionRequest.GET,
-	// params, WonderfulTopicJson.class);
-	// }
+    /**
+     * 获取今日赞
+     **/
+    public static void GetWonderTopicList(Activity activity, NetWorkCallListener mNetWorkCallListener, String pageNo) {
+        Map<String, String> map = new HashMap<String, String>();
+        CommonStringUtil.setMap(map, "pageNo", pageNo);
+        Object[] params = new Object[]{UrlParamCommon.UrlWonderfulList, map, UrlParamCommon.UTF_8, activity};
+        ThreadPoolTool.getInstance().setAsyncTask(EnumMsgWhat.EInterface_Get_Wonder_Topic_List, mNetWorkCallListener, activity, HttpUrlConnectionRequest.class.getName(), HttpUrlConnectionRequest.GET,
+                params, WonderfulTopicJson.class);
+    }
 
-	/** 获取今日赞 **/
-	public static void GetWonderTopicList(Activity activity, NetWorkCallListener mNetWorkCallListener, String pageNo) {
-		pageNo = CommonStringUtil.emptyIfNull(pageNo);
-		Object[] params = new Object[] { activity, pageNo };
-		ThreadPoolTool.getInstance().setAsyncTask(EnumMsgWhat.EInterface_Get_Wonder_Topic_List, mNetWorkCallListener, activity, NetWorkImpl.class.getName(), "GetWonderTopicList", params, null);
-	}
+//	/** 获取今日赞 **/
+//	public static void GetWonderTopicList(Activity activity, NetWorkCallListener mNetWorkCallListener, String pageNo) {
+//		pageNo = CommonStringUtil.emptyIfNull(pageNo);
+//		Object[] params = new Object[] { activity, pageNo };
+//		ThreadPoolTool.getInstance().setAsyncTask(EnumMsgWhat.EInterface_Get_Wonder_Topic_List, mNetWorkCallListener, activity, NetWorkImpl.class.getName(), "GetWonderTopicList", params, null);
+//	}
 }
