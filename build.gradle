@@ -10,6 +10,10 @@ buildscript {
     // 如果需要的话，从https://jcenter.bintray.com/下载code reposities。
     repositories {
         jcenter()
+        maven {
+            url 'https://maven.google.com/'
+            name 'Google'
+        }
     }
     dependencies {
         // 定义classpath，gradle会从“repositories”中下载对应版本的Gradle。如果使用gradle wrapper的话，感觉这个配置会被忽略。Wrapper会自己去下载所使用的gradle版本。
@@ -23,6 +27,10 @@ buildscript {
 allprojects {
     repositories {
         jcenter()
+        maven {
+            url 'https://maven.google.com/'
+            name 'Google'
+        }
     }
 }
 

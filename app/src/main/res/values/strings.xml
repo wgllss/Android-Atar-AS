@@ -45,6 +45,9 @@
     <string name="pull_to_no_more_data">没有更多数据了</string>
     <string name="refreshing_waiting">加载中...</string>
     <string name="loading_waiting">请稍候...</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
     <!-- Atar end -->
 
 </resources>

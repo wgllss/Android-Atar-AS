@@ -117,8 +117,8 @@ public class AtarCommonWebViewPagerActivity extends AtarDropTitleBarActivity imp
             } else {
                 setTitleBarGone();
             }
-			/* 标题end */
-			/* 顶部右边部分处理start */
+            /* 标题end */
+            /* 顶部右边部分处理start */
             String top_right_img_url = mHtmlsViewPagerJson.getTOP_RIGHT_IMG_URL();
             String top_right_txt = mHtmlsViewPagerJson.getTOP_RIGHT_TXT();
             if (top_right_txt != null && top_right_txt.length() > 0) {
@@ -128,7 +128,7 @@ public class AtarCommonWebViewPagerActivity extends AtarDropTitleBarActivity imp
                 imgCommonTopRight.setVisibility(View.VISIBLE);
                 LoadImageView(top_right_img_url, imgCommonTopRight, 0);
             }
-			/* 顶部右边部分处理end */
+            /* 顶部右边部分处理end */
             listMenu.clear();
             for (TabMenuItemBean mTabMenuItemBean : mHtmlsViewPagerJson.getListFragment()) {
                 listMenu.add(mTabMenuItemBean);
@@ -228,6 +228,23 @@ public class AtarCommonWebViewPagerActivity extends AtarDropTitleBarActivity imp
                     tabs.notifyDataSetChanged();
                 }
             }
+        }
+    }
+
+    /**
+     * webview 中 swiper和viewpager 冲突解决
+     *
+     * @param disallowIntercept:1:只触发swiper 滑动事件， 0,触发原生viewpager事件
+     * @author :Atar
+     * @createTime:2017-10-31上午10:18:06
+     * @version:1.0.0
+     * @modifyTime:
+     * @modifyAuthor: Atar
+     * @description:
+     */
+    public void requestDisallowInterceptTouchEvent(boolean disallowIntercept) {
+        if (mViewPager != null) {
+            mViewPager.requestDisallowInterceptTouchEvent(disallowIntercept);
         }
     }
 

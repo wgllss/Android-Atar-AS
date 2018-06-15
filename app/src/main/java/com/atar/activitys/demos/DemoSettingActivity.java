@@ -6,16 +6,23 @@ import java.util.List;
 import android.activity.ActivityManager;
 import android.activity.CommonActivity;
 import android.app.Activity;
+import android.app.AlarmManager;
+import android.app.PendingIntent;
 import android.appconfig.AppConfigModel;
 import android.appconfig.AppConfigSetting;
+import android.content.Context;
+import android.content.Intent;
 import android.download.DownLoadFileManager;
 import android.enums.SkinMode;
 import android.os.Environment;
 import android.os.Message;
 import android.skin.SkinUtils;
 import android.utils.MDPassword;
+import android.view.View;
+import android.widget.CommonToast;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.atar.activitys.AtarRefreshListViewActivity;
@@ -24,6 +31,7 @@ import com.atar.adapters.SkinAdapter;
 import com.atar.beans.DynamicSkinBean;
 import com.atar.config.AppConfigJson;
 import com.atar.config.AppConfigUtils;
+import com.atar.weex.utils.WeexUtils;
 import com.google.gson.Gson;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.Mode;
 import com.zf.view.UISwitchButton;
@@ -42,8 +50,13 @@ import com.zf.view.UISwitchButton;
 public class DemoSettingActivity extends AtarRefreshListViewActivity implements OnCheckedChangeListener {
 
     public UISwitchButton common_ui_switch_button;
+    private EditText edt_ip;
+    private View view_line;
+    private TextView txt_save;
 
-    /**SD卡目录 下载 资源文件 皮肤资源*/
+    /**
+     * SD卡目录 下载 资源文件 皮肤资源
+     */
     private String SD_PATH = Environment.getExternalStorageDirectory() + "/.Android/.cache/.";
 
     private List<DynamicSkinBean> list = new ArrayList<DynamicSkinBean>();
@@ -57,8 +70,12 @@ public class DemoSettingActivity extends AtarRefreshListViewActivity implements 
     @Override
     protected void initControl() {
         super.initControl();
+        edt_ip = (EditText) findViewById(R.id.edt_ip);
+        view_line = findViewById(R.id.view_line);
+        txt_save = (TextView) findViewById(R.id.txt_save);
         common_ui_switch_button = (UISwitchButton) findViewById(R.id.common_ui_switch_button);
     }
+
 
     @Override
     protected void initValue() {
@@ -87,6 +104,8 @@ public class DemoSettingActivity extends AtarRefreshListViewActivity implements 
         }
         mSkinAdapter.notifyDataSetChanged();
         setAdapter(mSkinAdapter);
+
+        edt_ip.setText(WeexUtils.IP);
     }
 
     @Override
@@ -110,6 +129,28 @@ public class DemoSettingActivity extends AtarRefreshListViewActivity implements 
     protected void bindEvent() {
         super.bindEvent();
         common_ui_switch_button.setOnCheckedChangeListener(this);
+        txt_save.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View v) {
+        super.onClick(v);
+        switch (v.getId()) {
+            case R.id.txt_save:
+                String ip = edt_ip.getText().toString();
+                if (ip == null || ip.length() == 0) {
+                    CommonToast.show("请输入ip和端口");
+                    return;
+                }
+                AppConfigModel.getInstance().putString("WEEX_IP_KEY", ip, true);
+                Intent intent = getBaseContext().getPackageManager().getLaunchIntentForPackage(getBaseContext().getPackageName());
+                PendingIntent restartIntent = PendingIntent.getActivity(getApplicationContext(), 0, intent, PendingIntent.FLAG_ONE_SHOT);
+                AlarmManager mgr = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+                mgr.set(AlarmManager.RTC, System.currentTimeMillis() + 3000, restartIntent);
+//                android.os.Process.killProcess(android.os.Process.myPid());
+                ActivityManager.getActivityManager().exitApplication();
+                break;
+        }
     }
 
     @Override
@@ -135,5 +176,7 @@ public class DemoSettingActivity extends AtarRefreshListViewActivity implements 
         if (mSkinAdapter != null) {
             mSkinAdapter.setSkinType(skinType);
         }
+        SkinUtils.setTextColor(this, R.string.common_activity_title_color, skinType, txt_save);
+        SkinUtils.setBackgroundColor(this, R.string.common_top_title_bar_bg_color, skinType, view_line, txt_save);
     }
 }

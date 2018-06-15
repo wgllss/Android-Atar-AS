@@ -332,7 +332,6 @@ public class AtarCommonActivity extends CommonActivity implements OnClickListene
 	 * @version:1.0.0
 	 * @modifyTime:
 	 * @modifyAuthor:
-	 * @param resId
 	 * @description:
 	 */
 	protected void setLeftImageDrawable(Drawable drawable) {

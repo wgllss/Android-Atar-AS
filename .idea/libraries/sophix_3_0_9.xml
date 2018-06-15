@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="sophix-3.0.9">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/app/libs/sophix-3.0.9.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>
