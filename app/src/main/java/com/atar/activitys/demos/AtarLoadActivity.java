@@ -90,7 +90,7 @@ public class AtarLoadActivity extends Activity implements OnPageChangeListener, 
                         // String resultData = applicationInfo.metaData.getString("UMENG_CHANNEL");
                         // // ShowLog.i("resultData", "resultData:" + resultData); // 只要不是我我规定的渠道下载的app 不让进入
                         // if (resultData != null
-                        // && ("taoguba".equals(resultData) || "tencent".equals(resultData) || "huawei".equals(resultData) || "xiaomi".equals(resultData) || "wandoujia".equals(resultData)
+                        // && ("".equals(resultData) || "tencent".equals(resultData) || "huawei".equals(resultData) || "xiaomi".equals(resultData) || "wandoujia".equals(resultData)
                         // || "360".equals(resultData) || "baidu".equals(resultData) || "anzhi".equals(resultData) || "lenovo".equals(resultData) || "gfan".equals(resultData))) {
                         //
                         // } else {

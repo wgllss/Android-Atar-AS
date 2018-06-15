@@ -282,7 +282,7 @@ public class ImplInAndroidScript {
 						// 如跳帖子页面
 						// var
 						// optionJson='{"TOPIC_ID_KEY":"1415605","TOPIC_REPLY_ID_KEY":"0"}';
-						// weexEventModule.startOtherNativeActivity("com.taoguba.app.activity.TaogubaTopicActivity",optionJson);
+						// weexEventModule.startOtherNativeActivity("com..app.activity.TopicActivity",optionJson);
 						IntentUtil.startOtherActivity(activity, intent);
 						ImplInAndroidScript.this.tempID = "";
 					} catch (Exception e) {
@@ -322,7 +322,7 @@ public class ImplInAndroidScript {
                         // 如跳帖子页面
                         // var
                         // optionJson=[{"intentKey":"intnet传值Key","intentKeyValueClassName":"intent传值类型名","intentKeyValue":"intent所传值"},{"intentKey":"intnet传值Key","intentKeyValueClassName":"intent传值类型名","intentKeyValue":"intent所传值"}];
-                        // weexEventModule.startOtherNativeActivity("com.taoguba.app.activity.TaogubaTopicActivity",optionJson);
+                        // weexEventModule.startOtherNativeActivity("com..app.activity.TopicActivity",optionJson);
                         IntentUtil.startOtherActivity(activity, intent);
                         ImplInAndroidScript.this.tempID = "";
                     } catch (Exception e) {
@@ -354,11 +354,11 @@ public class ImplInAndroidScript {
             if (errorCode != null && errorCode.length() > 0) {
                 int code = Integer.valueOf(errorCode);
                 @SuppressWarnings("rawtypes")
-                CommonResult mTaogubaCommonResult = new CommonResult();
-                mTaogubaCommonResult.setErrorCode(code);
+                CommonResult mCommonResult = new CommonResult();
+                mCommonResult.setErrorCode(code);
                 boolean bstatus = Boolean.valueOf(status);
-                mTaogubaCommonResult.setStatus(bstatus);
-                mTaogubaCommonResult.isStatus(activity);
+                mCommonResult.setStatus(bstatus);
+                mCommonResult.isStatus(activity);
                 return bstatus ? "1" : "0";
             }
         }
@@ -453,7 +453,7 @@ public class ImplInAndroidScript {
     // }
 
     // /**
-    // * 替换淘股吧自定义表情 html
+    // * 替换自定义表情 html
     // * @author :Atar
     // * @createTime:2017-6-2下午2:34:11
     // * @version:1.0.0
@@ -464,8 +464,8 @@ public class ImplInAndroidScript {
     // * @description:
     // */
     // @JavascriptInterface
-    // public String replaceTaogubaFaceHtml(String strHtml) {
-    // strHtml = UbbCode.replaceTaogubaFaceHtml(strHtml);
+    // public String replaceFaceHtml(String strHtml) {
+    // strHtml = UbbCode.replaceFaceHtml(strHtml);
     // strHtml = UbbCode.cleatImgList(strHtml);
     // return strHtml;
     // }
@@ -654,7 +654,7 @@ public class ImplInAndroidScript {
                             }.getType());
                         }
                         LayoutInflater mLayoutInflater = (LayoutInflater) activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-                        ViewGroup dropView = null;// (ViewGroup) mLayoutInflater.inflate(R.layout.activity_taoguba_common_title_drop, null, true);
+                        ViewGroup dropView = null;// (ViewGroup) mLayoutInflater.inflate(R.layout.activity__common_title_drop, null, true);
                         final DropDownAdapter mDropDownAdapter = new DropDownAdapter(mList);
                         mDropDownAdapter.setTxtSize(textSize);
                         mDropDownAdapter.setCurrentPostiotn(currentPosition);
@@ -690,8 +690,8 @@ public class ImplInAndroidScript {
 
     /**
      * {
-     * "shareContent":"淘股吧是中国知名的移动互联投资社交化平台",
-     * "shareUrl":"http://m.taoguba.com.cn/downloadApp",
+     * "shareContent":"是中国知名的移动互联投资社交化平台",
+     * "shareUrl":"http://m..com.cn/downloadApp",
      * "shareTitle":"v_5.5.5",
      * "ShareImgResID":"",
      * "ShareImgUrl":"",
@@ -942,9 +942,9 @@ public class ImplInAndroidScript {
     }
 
     /**
-     * html页面 调用 另一个 TaogubaDynamicWebViewActivity html中js方法
+     * html页面 调用 另一个 DynamicWebViewActivity html中js方法
      *
-     * @param strlastPosition 为倒数第几个TaogubaDynamicWebViewActivity（可能开了多个）
+     * @param strlastPosition 为倒数第几个DynamicWebViewActivity（可能开了多个）
      * @param javascriptUrl
      * @author :Atar
      * @createTime:2017-6-28下午1:43:34

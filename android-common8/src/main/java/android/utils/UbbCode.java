@@ -429,7 +429,7 @@ package android.utils;//package android.utils;
 //				"<br/><img src=\"placeHolder.png\" onclick='window.injs.runOnAndroid(\"" + UrlParamCommon.IMAGE_HOST + "$1$2\")' class=\"lazy\" data-original=\"" + UrlParamCommon.IMAGE_HOST
 //						+ "$1$2\">", pattern, matcher, true);
 //		// 图片转换2
-//		strHtml = ubbItem(strHtml, "\\[img\\]\\s*[javascript]*(http://www.taoguba.com.cn/|http://www.taoguba.net)(.+?)(.JPEG|.jpeg|.JPG|.jpg|.GIF|.gif|.png|.PNG|.BMP|.bmp)\\[\\/img\\]",
+//		strHtml = ubbItem(strHtml, "\\[img\\]\\s*[javascript]*(http://www..com.cn/|http://www..net)(.+?)(.JPEG|.jpeg|.JPG|.jpg|.GIF|.gif|.png|.PNG|.BMP|.bmp)\\[\\/img\\]",
 //				"<br/><img src=\"placeHolder.png\" onclick='window.injs.runOnAndroid(\"" + UrlParamCommon.IMAGE_HOST + "$2$3\")' class=\"lazy\" data-original=\"" + UrlParamCommon.IMAGE_HOST
 //						+ "$2$3\">", pattern, matcher, true);
 //		strHtml = replaceImg(strHtml);
@@ -462,7 +462,7 @@ package android.utils;//package android.utils;
 //		// 解析行情
 //		strHtml = ubbItem(strHtml, "\\[stock\\](.+?)\\[\\/stock\\]", "<a href=\"mSearch?searchContent=$1&type=0\" style=\"color:#5193C7;\">$1</a>", pattern, matcher, true);
 //		strHtml = ubbItem(strHtml, "\\[stock\\](\\d{6})\\[\\/stock\\]", "<a href=\"mSearch?searchContent=$1&type=0\" style=\"color:#5193C7;\">$1</a>", pattern, matcher, true);
-//		strHtml = replaceTaogubaFaceHtml(strHtml);
+//		strHtml = replaceFaceHtml(strHtml);
 //		return strHtml;
 //	}
 //
@@ -477,7 +477,7 @@ package android.utils;//package android.utils;
 //	 * @return
 //	 * @description:
 //	 */
-//	public static String replaceTaogubaFaceHtml(String strHtml) {
+//	public static String replaceFaceHtml(String strHtml) {
 //		// strHtml = URLDecoder.decode(strHtml);
 //		// strHtml = strHtml.replace("[傲慢]", "<img src=\"../img/express_aoman.png\" height=\"35\" width=\"35\">");
 //		strHtml = strHtml.replace("[鄙视]", "<img src=\"../img/express_bishi.png\"height=\"35\" width=\"35\">");
@@ -801,7 +801,7 @@ package android.utils;//package android.utils;
 //			// 表情
 //			strContent = ubbItem(strContent, "\\[F\\](.*?)\\[\\/F\\]", " [表情 ]", pattern, matcher, true);
 //			// 转换站内图片(启用二级域名|)
-//			strContent = ubbItem(strContent, "\\[img\\]\\s*[javascript]*(../|http://www.taoguba.com.cn/|http://www.taoguba.net)(.+?)(.JPEG|.jpeg|.JPG|.jpg|.GIF|.gif|.png|.PNG|.BMP|.bmp)\\[\\/img\\]",
+//			strContent = ubbItem(strContent, "\\[img\\]\\s*[javascript]*(../|http://www..com.cn/|http://www..net)(.+?)(.JPEG|.jpeg|.JPG|.jpg|.GIF|.gif|.png|.PNG|.BMP|.bmp)\\[\\/img\\]",
 //					"[图片]", // <img src=\"$1$2\" />
 //					pattern, matcher, true);
 //
@@ -897,7 +897,7 @@ package android.utils;//package android.utils;
 //			// "", pattern, matcher, true);
 //
 //			// 转换站内图片(启用二级域名|)
-//			strContent = ubbItem(strContent, "\\[img\\]\\s*[javascript]*(../|http://www.taoguba.com.cn/|http://www.taoguba.net)(.+?)(.JPEG|.jpeg|.JPG|.jpg|.GIF|.gif|.png|.PNG|.BMP|.bmp)\\[\\/img\\]",
+//			strContent = ubbItem(strContent, "\\[img\\]\\s*[javascript]*(../|http://www..com.cn/|http://www..net)(.+?)(.JPEG|.jpeg|.JPG|.jpg|.GIF|.gif|.png|.PNG|.BMP|.bmp)\\[\\/img\\]",
 //					"[图片]", // <img src=\"$1$2\" />
 //					pattern, matcher, true);
 //
@@ -957,7 +957,7 @@ package android.utils;//package android.utils;
 //	// 获得内容中的图片链接
 //	public static String AppUbbGetImg(String strContent) {
 //		String getImg = "";
-//		String imgReg = ".*\\[img\\]\\s*[javascript]*(../img/|http://www.taoguba.com.cn/img/|http://www.taoguba.net/img/)(.+?)(.JPEG|.jpeg|.JPG|.jpg|.GIF|.gif|.png|.PNG|.BMP|.bmp)\\[\\/img\\].*";
+//		String imgReg = ".*\\[img\\]\\s*[javascript]*(../img/|http://www..com.cn/img/|http://www..net/img/)(.+?)(.JPEG|.jpeg|.JPG|.jpg|.GIF|.gif|.png|.PNG|.BMP|.bmp)\\[\\/img\\].*";
 //		Pattern patternQuote = Pattern.compile(imgReg);
 //		Matcher matcherQuote = patternQuote.matcher(strContent);
 //		while (matcherQuote.matches()) {
@@ -1050,7 +1050,7 @@ package android.utils;//package android.utils;
 //			// 表情
 //			strContent = ubbItem(strContent, "\\[F\\](.*?)\\[\\/F\\]", " <img src=\"" + UrlParamCommon.IMAGE_HOST + "/images/$1\"/>", pattern, matcher, true);
 //			// 转换站内图片(启用二级域名|)
-//			strContent = ubbItem(strContent, "\\[img\\]\\s*[javascript]*(http://www.taoguba.com.cn/|http://www.taoguba.net)(.+?)(.JPEG|.jpeg|.JPG|.jpg|.GIF|.gif|.png|.PNG|.BMP|.bmp)\\[\\/img\\]",
+//			strContent = ubbItem(strContent, "\\[img\\]\\s*[javascript]*(http://www..com.cn/|http://www..net)(.+?)(.JPEG|.jpeg|.JPG|.jpg|.GIF|.gif|.png|.PNG|.BMP|.bmp)\\[\\/img\\]",
 //					"<img src=\"/$2$3\" />", // <img src=\"$1$2\" />
 //					pattern, matcher, true);
 //			// 转换站内图片(启用二级域名|)

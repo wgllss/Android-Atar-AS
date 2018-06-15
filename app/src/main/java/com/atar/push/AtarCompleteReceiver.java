@@ -10,7 +10,7 @@ package com.atar.push;
 // * @description:
 // *****************************************************************************************************************************************************************************
 // */
-//package com.taoguba.push;
+//package com..push;
 //
 //import java.io.File;
 //
@@ -26,9 +26,9 @@ package com.atar.push;
 //
 //import cn.jpush.android.util.ac;
 //
-//import com.taoguba.app.activity.BuyWhatActivity;
-//import com.taoguba.net.TPYTransferSyncImpl;
-//import com.taoguba.utils.DownloadManagerUtils;
+//import com..app.activity.BuyWhatActivity;
+//import com..net.TPYTransferSyncImpl;
+//import com..utils.DownloadManagerUtils;
 //
 ///**
 // ***************************************************************************************************************************************************************************** 
@@ -41,7 +41,7 @@ package com.atar.push;
 // * @description:
 // ***************************************************************************************************************************************************************************** 
 // */
-//public class TaogubaCompleteReceiver extends BroadcastReceiver {
+//public class CompleteReceiver extends BroadcastReceiver {
 //
 //	@Override
 //	public void onReceive(Context context, Intent intent) {
@@ -52,7 +52,7 @@ package com.atar.push;
 //		String action = intent.getAction();
 //		if(action!=null){
 //			if(action.equals(DownloadManager.ACTION_DOWNLOAD_COMPLETE)){
-//				ShowLog.i("TaogubaCompleteReceiver", action);
+//				ShowLog.i("CompleteReceiver", action);
 //				long completeDownloadId = intent.getLongExtra(DownloadManager.EXTRA_DOWNLOAD_ID, -1);
 //				int downloadId = AppConfigModel.getInstance().getInt(TPYTransferSyncImpl.UrlTpyPackageName, 0);
 //				if (completeDownloadId == downloadId) {

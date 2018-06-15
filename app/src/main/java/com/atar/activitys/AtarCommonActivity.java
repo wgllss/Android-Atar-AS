@@ -18,7 +18,6 @@ import android.os.Build.VERSION_CODES;
 import android.os.Bundle;
 import android.reflection.NetWorkMsg;
 import android.skin.SkinUtils;
-import android.support.v4.view.ViewCompat;
 import android.utils.ApplicationManagement;
 import android.utils.ScreenUtils;
 import android.utils.ShowLog;

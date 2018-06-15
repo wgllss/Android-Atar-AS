@@ -87,7 +87,7 @@ package com.atar.common;///**
 //				return;
 //			}
 //			LayoutInflater mLayoutInflater = (LayoutInflater) v.getContext().getSystemService(v.getContext().LAYOUT_INFLATER_SERVICE);
-//			ViewGroup view = (ViewGroup) mLayoutInflater.inflate(R.layout.activity_taoguba_common_title_drop, null, true);
+//			ViewGroup view = (ViewGroup) mLayoutInflater.inflate(R.layout.activity__common_title_drop, null, true);
 //			ArrayAdapter<String> adapter = new ArrayAdapter<String>(v.getContext(), R.layout.adapter_item_drop_title, strArr);
 //			((ListView) view).setAdapter(adapter);
 //			((ListView) view).setOnItemClickListener(listener);
@@ -149,7 +149,7 @@ package com.atar.common;///**
 //	public static void show(View v, int x, int y, int popwindowWidth, int currentPosition, List<PopWindowItemBean> mList, OnItemClickListener listener, final OnDismissListener mOnDismissListener) {
 //		if (v != null && v.getContext() != null) {
 //			LayoutInflater mLayoutInflater = (LayoutInflater) v.getContext().getSystemService(v.getContext().LAYOUT_INFLATER_SERVICE);
-//			ViewGroup dropView = (ViewGroup) mLayoutInflater.inflate(R.layout.activity_taoguba_common_title_drop, null, true);
+//			ViewGroup dropView = (ViewGroup) mLayoutInflater.inflate(R.layout.activity__common_title_drop, null, true);
 //			DropDownAdapter mDropDownAdapter = new DropDownAdapter(mList);
 //			mDropDownAdapter.setTxtSize(18);
 //			mDropDownAdapter.setCurrentPostiotn(currentPosition);
@@ -180,7 +180,7 @@ package com.atar.common;///**
 //			final OnDismissListener mOnDismissListener) {
 //		if (v != null && v.getContext() != null) {
 //			LayoutInflater mLayoutInflater = (LayoutInflater) v.getContext().getSystemService(v.getContext().LAYOUT_INFLATER_SERVICE);
-//			ViewGroup dropView = (ViewGroup) mLayoutInflater.inflate(R.layout.activity_taoguba_common_title_drop, null, true);
+//			ViewGroup dropView = (ViewGroup) mLayoutInflater.inflate(R.layout.activity__common_title_drop, null, true);
 //			SwitchKCharAdapter mDropDownAdapter = new SwitchKCharAdapter(mList);
 //			mDropDownAdapter.setCurrentPostiotn(currentPosition);
 //			((ListView) dropView).setAdapter(mDropDownAdapter);
@@ -348,10 +348,10 @@ package com.atar.common;///**
 //	 */
 //	public static void showKeabord(Context context, View v, EditText mEditText) {
 //		int skinType = AppConfigSetting.getInstance().getInt(SkinMode.SKIN_MODE_KEY, 0);
-//		TaogubaKeboardView mTaogubaKeboardView = new TaogubaKeboardView(context);
-//		mTaogubaKeboardView.setEditText(mEditText);
-//		mTaogubaKeboardView.setSkinType(skinType);
-//		mPopupWindow = new PopupWindow(mTaogubaKeboardView, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT, false);
+//		KeboardView mKeboardView = new KeboardView(context);
+//		mKeboardView.setEditText(mEditText);
+//		mKeboardView.setSkinType(skinType);
+//		mPopupWindow = new PopupWindow(mKeboardView, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT, false);
 //		mPopupWindow.setAnimationStyle(R.style.popwin_anim_style);
 //		mPopupWindow.setBackgroundDrawable(context.getResources().obtainTypedArray(R.array.keaoard_bg_color).getDrawable(skinType));
 //		mPopupWindow.showAtLocation(v, Gravity.BOTTOM, 0, 0);
@@ -362,7 +362,7 @@ package com.atar.common;///**
 //				isShowing = false;
 //			}
 //		});
-//		mTaogubaKeboardView.setOnDismissListener(new OnDismissListener() {
+//		mKeboardView.setOnDismissListener(new OnDismissListener() {
 //			@Override
 //			public void onDismiss() {
 //				mPopupWindow.dismiss();

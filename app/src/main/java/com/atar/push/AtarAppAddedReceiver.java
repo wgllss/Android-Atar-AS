@@ -10,7 +10,7 @@ package com.atar.push;
 // * @description:
 // *****************************************************************************************************************************************************************************
 // */
-//package com.taoguba.push;
+//package com..push;
 //
 //import android.common.ApplicationManagement;
 //import android.common.ShowLog;
@@ -18,7 +18,7 @@ package com.atar.push;
 //import android.content.Context;
 //import android.content.Intent;
 //
-//import com.taoguba.net.TPYTransferSyncImpl;
+//import com..net.TPYTransferSyncImpl;
 //
 ///**
 // ***************************************************************************************************************************************************************************** 
@@ -31,7 +31,7 @@ package com.atar.push;
 // * @description:
 // ***************************************************************************************************************************************************************************** 
 // */
-//public class TaogubaAppAddedReceiver extends BroadcastReceiver {
+//public class AppAddedReceiver extends BroadcastReceiver {
 //
 //	@Override
 //	public void onReceive(Context context, Intent intent) {
@@ -42,7 +42,7 @@ package com.atar.push;
 //		String action = intent.getAction();
 //		if (action != null) {
 //			if (action.equals(Intent.ACTION_PACKAGE_ADDED)) {
-//				ShowLog.i("TaogubaAppAddedReceiver", action);
+//				ShowLog.i("AppAddedReceiver", action);
 //				String packageName = intent.getDataString().substring(8);
 //				if (packageName.equals(TPYTransferSyncImpl.UrlTpyPackageName)) {
 //					ApplicationManagement.startAppLaunchIntentForPackage(context, packageName);

@@ -312,7 +312,7 @@ public class WonderTopicFragment extends AtarRefreshListFragment implements OnPa
 		// String userID = Integer.toString(((WonderfulTopicBean) list.get((int) position)).getUserID());
 		// if (getActivity() != null) {
 		// if ("T".equals(topicType)) {
-		// TaogubaTopicActivity.startTaogubaTopicActivity(getActivity(), ((WonderfulTopicBean) list.get((int) position)).getLinkID() + "", "");
+		// TopicActivity.startTopicActivity(getActivity(), ((WonderfulTopicBean) list.get((int) position)).getLinkID() + "", "");
 		// } else if ("S".equals(topicType)) {
 		// // StockActivity.startStockActivity(this, dh, isZiXuanGu);
 		// } else if ("W".equals(topicType)) {

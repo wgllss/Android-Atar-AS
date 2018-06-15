@@ -1,5 +1,5 @@
 package com.atar.widget.draglistview_lib;
-//package com.taoguba.widget.drag_lib;
+//package com..widget.drag_lib;
 //
 //import java.util.ArrayList;
 //

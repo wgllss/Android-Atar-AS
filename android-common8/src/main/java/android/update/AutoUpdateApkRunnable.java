@@ -43,7 +43,7 @@ public class AutoUpdateApkRunnable implements Runnable, HandlerListener {
 
 	public static final String TAG = AutoUpdateApkRunnable.class.getSimpleName();
 
-	public static final String TAOGUBA_APP_DOWNLOAD_URL_KEY = "TAOGUBA_APP_DOWNLOAD_URL_KEY";
+	public static final String _APP_DOWNLOAD_URL_KEY = "_APP_DOWNLOAD_URL_KEY";
 	/**没有新的版本*/
 	private final int UPDATA_NO_NEW_VERSION = 0;
 	/**有新的版本*/
@@ -95,7 +95,7 @@ public class AutoUpdateApkRunnable implements Runnable, HandlerListener {
 			InputStream is = conn.getInputStream();
 			info = getUpdataInfo(is);
 			if (info != null) {
-				AppConfigSetting.getInstance().putString(TAOGUBA_APP_DOWNLOAD_URL_KEY, apkServerPath + info.getUrl());
+				AppConfigSetting.getInstance().putString(_APP_DOWNLOAD_URL_KEY, apkServerPath + info.getUrl());
 				if (info.getVersion().compareToIgnoreCase(localVersion) > 0) {
 					CommonHandler.getInstatnce().handerMessage(this, UPDATA_IS_NEW_VERSION, 0, 0, "");
 				} else {
@@ -231,7 +231,7 @@ public class AutoUpdateApkRunnable implements Runnable, HandlerListener {
 				if (!FileUtils.exists(downLoadLocalPath)) {
 					FileUtils.createDir(downLoadLocalPath);
 				}
-				File file = new File(downLoadLocalPath, "taoguba_updata.apk");
+				File file = new File(downLoadLocalPath, "_updata.apk");
 				FileOutputStream fos = new FileOutputStream(file);
 				BufferedInputStream bis = new BufferedInputStream(is);
 				byte[] buffer = new byte[1024];

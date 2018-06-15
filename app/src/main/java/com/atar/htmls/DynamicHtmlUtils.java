@@ -127,7 +127,7 @@ public class DynamicHtmlUtils {
 			mPullToRefreshWebView.getRefreshableView().setWebChromeClient(new ImplWebChromeClient(activity));
 
 			if (url != null && url.length() > 0) {
-				// if (url.contains("taoguba")) {
+				// if (url.contains("")) {
 				// CookieTool.synCookies(activity, url, mPullToRefreshWebView.getRefreshableView());
 				// }
 				ShowLog.i(TAG, "webView--url--->" + url);

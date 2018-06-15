@@ -106,7 +106,7 @@ package com.atar.push;//package com.atar.push;
 //			Gson gson = new Gson();
 //			ShowLog.i(TAG, "content---0-->" + message.toString());
 //			if (ActivityManager.getActivityManager().getActivityStack() != null && ActivityManager.getActivityManager().getActivityStack().size() > 0) {
-//				TaogubaPushReceiver.setStartActivity(context, gson.toJson(extraMap), true);
+//				PushReceiver.setStartActivity(context, gson.toJson(extraMap), true);
 //			} else {
 //				WelcomeActivity.startWelcomeActivity(context, gson.toJson(extraMap));
 //			}

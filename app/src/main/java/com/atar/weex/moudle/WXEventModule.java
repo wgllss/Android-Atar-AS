@@ -200,7 +200,7 @@ public class WXEventModule extends WXModule {
 			// 如跳帖子页面
 			// var
 			// optionJson='{"TOPIC_ID_KEY":"1415605","TOPIC_REPLY_ID_KEY":"0"}';
-			// weexEventModule.startOtherNativeActivity("com.taoguba.app.activity.TaogubaTopicActivity",optionJson);
+			// weexEventModule.startOtherNativeActivity("com..app.activity.TopicActivity",optionJson);
 			IntentUtil.startOtherActivity(mWXSDKInstance.getContext(), intent);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -231,7 +231,7 @@ public class WXEventModule extends WXModule {
 			// 如跳帖子页面
 			// var
 			// optionJson=[{"intentKey":"intnet传值Key","intentKeyValueClassName":"intent传值类型名","intentKeyValue":"intent所传值"},{"intentKey":"intnet传值Key","intentKeyValueClassName":"intent传值类型名","intentKeyValue":"intent所传值"}];
-			// weexEventModule.startOtherNativeActivity("com.taoguba.app.activity.TaogubaTopicActivity",optionJson);
+			// weexEventModule.startOtherNativeActivity("com..app.activity.TopicActivity",optionJson);
 			IntentUtil.startOtherActivity(mWXSDKInstance.getContext(), intent);
 		} catch (Exception e) {
 			e.printStackTrace();

@@ -38,7 +38,7 @@ public class CommonLoading {
 			return;
 		}
 		// dialog = new Dialog(mContext, R.style.MyDialog);
-		// dialog.setContentView(R.layout.common_taoguba_loading);
+		// dialog.setContentView(R.layout.common__loading);
 		// dialog.findViewById(R.id.linear_loading).setVisibility(View.VISIBLE);
 		// dialog.show();
 	}
@@ -62,7 +62,7 @@ public class CommonLoading {
 			return;
 		}
 //		dialog = new Dialog(mContext, R.style.MyDialog);
-//		dialog.setContentView(R.layout.common_taoguba_loading);
+//		dialog.setContentView(R.layout.common__loading);
 //		dialog.findViewById(R.id.linear_loading).setVisibility(View.VISIBLE);
 //		dialog.setCanceledOnTouchOutside(false);
 //		dialog.show();
@@ -76,7 +76,7 @@ public class CommonLoading {
 			return;
 		}
 //		dialog = new Dialog(mContext, R.style.MyDialog);
-//		dialog.setContentView(R.layout.common_taoguba_loading);
+//		dialog.setContentView(R.layout.common__loading);
 //		dialog.findViewById(R.id.linear_loading).setVisibility(View.VISIBLE);
 //		txtLoading = (TextView) dialog.findViewById(R.id.txt_loading_notice);
 //		txtLoading.setText(strContent);

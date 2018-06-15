@@ -104,7 +104,7 @@ public class DownLoadUtil {
 								if (file != null && file.length() > 0 && file.exists() && file.isFile()) {
 									Intent i = new Intent(Intent.ACTION_VIEW);
 									i.setDataAndType(Uri.parse("file://" + apkFilePath), "application/vnd.android.package-archive");
-									if (!apkFilePath.contains("taoguba")) {
+									if (!apkFilePath.contains("")) {
 										i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 									}
 									context.startActivity(i);

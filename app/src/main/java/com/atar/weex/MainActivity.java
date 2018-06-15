@@ -331,7 +331,7 @@ public class MainActivity extends AtarCommonActivity implements IWXRenderListene
 				} else {
 					color = "#192c46";
 				}
-				// TaogubaSysWebViewActivity.startTaogubaSysWebViewActivity(context, url, "", color);
+				// SysWebViewActivity.startSysWebViewActivity(context, url, "", color);
 			}
 		} catch (Exception e) {
 

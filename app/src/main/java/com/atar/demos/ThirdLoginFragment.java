@@ -30,26 +30,26 @@ package com.atar.demos;
 //import com.sina.weibo.sdk.auth.WeiboAuthListener;
 //import com.sina.weibo.sdk.auth.sso.SsoHandler;
 //import com.sina.weibo.sdk.exception.WeiboException;
-//import com.taoguba.app.R;
-//import com.taoguba.app.activity.AddInfoActivity;
-//import com.taoguba.app.activity.AuthorizeActivity;
-//import com.taoguba.app.activity.CheckMobileActivity;
-//import com.taoguba.app.activity.CoolActivity;
-//import com.taoguba.app.activity.DynamicActivity;
-//import com.taoguba.app.activity.InterestActivity;
-//import com.taoguba.app.activity.LoginActivity;
-//import com.taoguba.app.activity.RegistActivity;
-//import com.taoguba.app.activity.TaogubaCommonActivity;
-//import com.taoguba.app.activity.TaogubaMainTabActivity;
-//import com.taoguba.app.wxapi.WeiXinJson;
-//import com.taoguba.application.TaogubaApplication;
-//import com.taoguba.enums.EnumMsgWhat;
-//import com.taoguba.globe.GlobeSettings;
-//import com.taoguba.modle.LoginJson;
-//import com.taoguba.net.NetWorkInterfaces;
-//import com.taoguba.push.TaogubaPushTool;
-//import com.taoguba.utils.IntentUtil;
-//import com.taoguba.utils.LoadUtil;
+//import com..app.R;
+//import com..app.activity.AddInfoActivity;
+//import com..app.activity.AuthorizeActivity;
+//import com..app.activity.CheckMobileActivity;
+//import com..app.activity.CoolActivity;
+//import com..app.activity.DynamicActivity;
+//import com..app.activity.InterestActivity;
+//import com..app.activity.LoginActivity;
+//import com..app.activity.RegistActivity;
+//import com..app.activity.CommonActivity;
+//import com..app.activity.MainTabActivity;
+//import com..app.wxapi.WeiXinJson;
+//import com..application.Application;
+//import com..enums.EnumMsgWhat;
+//import com..globe.GlobeSettings;
+//import com..modle.LoginJson;
+//import com..net.NetWorkInterfaces;
+//import com..push.PushTool;
+//import com..utils.IntentUtil;
+//import com..utils.LoadUtil;
 //import com.tencent.connect.common.Constants;
 //import com.tencent.mm.sdk.modelmsg.SendAuth;
 //import com.umeng.socialize.PlatformConfig;
@@ -177,7 +177,7 @@ package com.atar.demos;
 //			SendAuth.Req req = new SendAuth.Req();
 //			req.scope = "snsapi_userinfo";
 //			req.state = "wechat_sdk_demo_test";
-//			TaogubaApplication.getApplication().getWxApi(getActivity()).sendReq(req);
+//			Application.getApplication().getWxApi(getActivity()).sendReq(req);
 //			break;
 //		}
 //	}
@@ -187,7 +187,7 @@ package com.atar.demos;
 //		switch (msg.what) {
 //		case EnumMsgWhat.EInterface_Aauth_Submit:// 检查是否授权QQ or 新浪 or 微信
 //			if (getActivity() != null) {
-//				((TaogubaCommonActivity) getActivity()).setLoadingViewGone();
+//				((CommonActivity) getActivity()).setLoadingViewGone();
 //			}
 //			if (msg.obj != null) {
 //				LoginJson mLoginJson = (LoginJson) msg.obj;
@@ -213,26 +213,26 @@ package com.atar.demos;
 //							if (0 == mLoginJson.getDto().getNext()) {// 成功
 //								ActivityManager.getActivityManager().popAllActivity();// 退出所有activity
 //								AppConfigSetting.getInstance().setIsLogin(true);
-//								TaogubaPushTool.getInstance().reSetPushStatus();
+//								PushTool.getInstance().reSetPushStatus();
 //								AppConfigSetting.getInstance().setIsVisitorLogin(false);
-//								intent = new Intent(getActivity(), TaogubaMainTabActivity.class);
+//								intent = new Intent(getActivity(), MainTabActivity.class);
 //							} else if (2 == mLoginJson.getDto().getNext()) {// 激活页面
 //								// ActivityManager.getActivityManager().popAllActivity();// 退出所有activity
 //								intent = new Intent(getActivity(), CheckMobileActivity.class);
 //							} else if (3 == mLoginJson.getDto().getNext() || 4 == mLoginJson.getDto().getNext()) {// 引导
 //								InterestActivity.startInterestActivity(getActivity(), InterestActivity.INTEREST_ALL, current_from_to);
-//								IntentUtil.taogubaFinish(getActivity());// 结束当前的activity
+//								IntentUtil.Finish(getActivity());// 结束当前的activity
 //								return;
 //							} else if (1 == mLoginJson.getDto().getNext()) {// 设置用户名
 //								AddInfoActivity.startAddInfoActivity(getActivity(), current_from_to);
-//								IntentUtil.taogubaFinish(getActivity());// 结束当前的activity
+//								IntentUtil.Finish(getActivity());// 结束当前的activity
 //								return;
 //							} else {
 //								return;
 //							}
 //							AppConfigSetting.getInstance().putString(AppConfigSetting.LOGIN_NAME, mLoginJson.getDto().getUserName());
 //							IntentUtil.startActivityWithOutTween(getActivity(), intent);
-//							IntentUtil.taogubaFinish(getActivity());// 结束当前的activity
+//							IntentUtil.Finish(getActivity());// 结束当前的activity
 //						}
 //					} else {
 //						if (3 == mLoginJson.getErrorCode()) {
@@ -347,7 +347,7 @@ package com.atar.demos;
 //	 */
 //	public void setCode(String code) {
 //		if (getActivity() != null) {
-//			((TaogubaCommonActivity) getActivity()).setLoadingViewVisible();
+//			((CommonActivity) getActivity()).setLoadingViewVisible();
 //		}
 //		NetWorkInterfaces.GetWeiXinToken(ThirdLoginFragment.this, GlobeSettings.WeiXin_AppID, GlobeSettings.WeiXin_App_Secret, code);
 //	}

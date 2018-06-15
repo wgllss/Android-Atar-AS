@@ -41,14 +41,14 @@ public class DownLoadActivity extends AtarRefreshScrollViewActivity {
 	private String strDownloadFileName1 = "baiduteiba.apk";
 	private String strDownloadFileName2 = "baidushoujizushou.apk";
 	private String strDownloadFileName3 = "baiduxinwen3.apk";
-	private String strDownloadFileName4 = "taoguba.apk";
+	private String strDownloadFileName4 = ".apk";
 	private String strDownloadFileName5 = "baiduxinwen5.apk";
 	private String strDownloadFileName6 = "baiduxinwen6.apk";
 
 	private String url1 = "http://gdown.baidu.com/data/wisegame/6e220cc18d807060/shoujibaidu_38032640.apk";
 	private String url2 = "https://github.com/wgllss/atar-skin/raw/master/download_skin.apk";
 	private String url3 = "https://gdown.baidu.com/data/wisegame/23315dd5f0bbe8ab/baiduxinwen_6402.apk";
-	private String url4 = "https://m.taoguba.com.cn/downloadApp?channelType=android";
+	private String url4 = "https://m..com.cn/downloadApp?channelType=android";
 
 	@Override
 	protected void onCreate(Bundle bundle) {

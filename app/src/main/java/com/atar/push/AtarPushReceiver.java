@@ -26,8 +26,8 @@ package com.atar.push;
 // * @description:
 // *****************************************************************************************************************************************************************************
 // */
-//public class TaogubaPushReceiver extends BroadcastReceiver {
-//	private static final String TAG = TaogubaPushReceiver.class.getSimpleName();
+//public class PushReceiver extends BroadcastReceiver {
+//	private static final String TAG = PushReceiver.class.getSimpleName();
 //
 //	@Override
 //	public void onReceive(Context context, Intent intent) {
@@ -72,12 +72,12 @@ package com.atar.push;
 //					ShowLog.i(TAG, "extras---2->" + extras);
 //					Intent i = new Intent();
 //					if ("T".equals(actionName) || "TT".equals(actionName) || "SC".equals(actionName) || "R".equals(actionName) || "TR".equals(actionName)) {
-//						i.setClass(context, TaogubaTopicActivity.class);
-//						i.putExtra(TaogubaTopicActivity.TOPIC_ID_KEY, topicID);
+//						i.setClass(context, TopicActivity.class);
+//						i.putExtra(TopicActivity.TOPIC_ID_KEY, topicID);
 //						if ("R".equals(actionName) || "TR".equals(actionName)) {
 //							String otherId = String.valueOf(obj.getOtherID());
 //							ShowLog.d(TAG, "otherId------>" + otherId);
-//							i.putExtra(TaogubaTopicActivity.REPLY_ID_KEY, otherId);
+//							i.putExtra(TopicActivity.REPLY_ID_KEY, otherId);
 //						}
 //					} else if ("W".equals(actionName)) {// 到说说
 //						i.setClass(context, ShuoWebViewActivity.class);
@@ -99,7 +99,7 @@ package com.atar.push;
 //						}
 //						i.setClass(context, MyCallActivity.class);
 //						i.setAction(Intent.ACTION_VIEW);
-//						Uri uri = Uri.parse("taoguba://app.qrcode/myCall?currentItem=1");
+//						Uri uri = Uri.parse("://app.qrcode/myCall?currentItem=1");
 //						i.setData(uri);
 //					} else if ("DV".equals(actionName)) {
 //						String top_right_img_url = "";
@@ -109,7 +109,7 @@ package com.atar.push;
 //							top_right_img_url = "assets://img/fenxiang_n.png";
 //						}
 //						String options = "{\"seq_key\":\"" + obj.getObjectID() + "\"}";
-//						TaogubaDynamicWebViewActivity.startTaogubaSysWebViewActivity(context, WeexUtils.WEEX_HOST + "assets/html/taoguba_dav.html", "大V观点", top_right_img_url, "", options, "0",
+//						DynamicWebViewActivity.startSysWebViewActivity(context, WeexUtils.WEEX_HOST + "assets/html/_dav.html", "大V观点", top_right_img_url, "", options, "0",
 //								isFlagActivityNewTask);
 //						return;
 //					} else {

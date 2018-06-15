@@ -80,8 +80,8 @@ public class ImplOnTouchChanceTextSizeListener implements OnTouchListener {
 			isChangeTextSize = false;
 			if (enable && mCommonActivity != null) {
 				try {
-//					if (mCommonActivity instanceof TaogubaDynamicWebViewActivity) {
-//						((TaogubaDynamicWebViewActivity) mCommonActivity).setOnZoomTextSizeOnDrawerBackEnabled(true);
+//					if (mCommonActivity instanceof DynamicWebViewActivity) {
+//						((DynamicWebViewActivity) mCommonActivity).setOnZoomTextSizeOnDrawerBackEnabled(true);
 //					} else if (mCommonActivity instanceof WebViewPagerActivity) {
 //						((WebViewPagerActivity) mCommonActivity).setOnZoomTextSizeOnDrawerBackEnabled(true);
 //					}
@@ -99,8 +99,8 @@ public class ImplOnTouchChanceTextSizeListener implements OnTouchListener {
 			isChangeTextSize = false;
 			if (enable && mCommonActivity != null) {
 				try {
-//					if (mCommonActivity instanceof TaogubaDynamicWebViewActivity) {
-//						((TaogubaDynamicWebViewActivity) mCommonActivity).setOnZoomTextSizeOnDrawerBackEnabled(true);
+//					if (mCommonActivity instanceof DynamicWebViewActivity) {
+//						((DynamicWebViewActivity) mCommonActivity).setOnZoomTextSizeOnDrawerBackEnabled(true);
 //					} else if (mCommonActivity instanceof WebViewPagerActivity) {
 //						((WebViewPagerActivity) mCommonActivity).setOnZoomTextSizeOnDrawerBackEnabled(true);
 //					}
@@ -118,8 +118,8 @@ public class ImplOnTouchChanceTextSizeListener implements OnTouchListener {
 			}
 			if (enable && mCommonActivity != null) {
 				try {
-//					if (mCommonActivity instanceof TaogubaDynamicWebViewActivity) {
-//						((TaogubaDynamicWebViewActivity) mCommonActivity).setOnZoomTextSizeOnDrawerBackEnabled(false);
+//					if (mCommonActivity instanceof DynamicWebViewActivity) {
+//						((DynamicWebViewActivity) mCommonActivity).setOnZoomTextSizeOnDrawerBackEnabled(false);
 //					} else if (mCommonActivity instanceof WebViewPagerActivity) {
 //						((WebViewPagerActivity) mCommonActivity).setOnZoomTextSizeOnDrawerBackEnabled(false);
 //					}

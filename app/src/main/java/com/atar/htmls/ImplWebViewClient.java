@@ -49,7 +49,7 @@ public class ImplWebViewClient extends WebViewClient {
 		if (url.indexOf("tel:") < 0) {
 			view.loadUrl(url);
 		}
-		// if (url != null && url.contains("taoguba")) {
+		// if (url != null && url.contains("")) {
 		// initUrl(view, url);
 		// } else {
 		// view.loadUrl(url);
@@ -60,7 +60,7 @@ public class ImplWebViewClient extends WebViewClient {
 	@Override
 	public void onPageFinished(WebView view, String url) {
 		super.onPageFinished(view, url);
-		if (url.contains("taoguba")) {
+		if (url.contains("")) {
 			CookieManager cookieManager = CookieManager.getInstance();
 			String CookieStr = cookieManager.getCookie(url);
 			ShowLog.i(TAG, "Cookies = " + CookieStr);
@@ -106,10 +106,10 @@ public class ImplWebViewClient extends WebViewClient {
 
 	private void initUrl(WebView view, String mUrl) {
 		// 页面手动拼写不 入数据库
-		// href="http://m.taoguba.com.cn/mViewTopic?topicID=1293091&replyID=890&pageNo=1" 帖子最终页面
-		// href="http://m.taoguba.com.cn/stockBar?stockCode=sh600770" 个股吧
-		// href="http://m.taoguba.com.cn/themeBar?subjectID=890&keywordID=1004&themeName=次新股" 主题吧
-		// href="http://m.taoguba.com.cn/blog?userID=1293091" 个人博客
+		// href="http://m..com.cn/mViewTopic?topicID=1293091&replyID=890&pageNo=1" 帖子最终页面
+		// href="http://m..com.cn/stockBar?stockCode=sh600770" 个股吧
+		// href="http://m..com.cn/themeBar?subjectID=890&keywordID=1004&themeName=次新股" 主题吧
+		// href="http://m..com.cn/blog?userID=1293091" 个人博客
 		// try {
 		// if (mUrl.contains("mViewTopic")) {// 到帖子最终页
 		// if (mUrl.contains("?")) {
@@ -117,7 +117,7 @@ public class ImplWebViewClient extends WebViewClient {
 		// if (strArrayValue != null && strArrayValue.length() > 1) {
 		// String topicID = strArrayValue.split("&")[0].split("=")[1];
 		// String replyID = strArrayValue.split("&")[1].split("=")[1];
-		// TaogubaTopicActivity.startTaogubaTopicActivity(activity, topicID, replyID);
+		// TopicActivity.startTopicActivity(activity, topicID, replyID);
 		// }
 		// }
 		// } else if (mUrl.contains("stockBar")) {// 个股吧

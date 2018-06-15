@@ -361,7 +361,7 @@
     <!-- 亮天蓝色 -->
     <color name="skyblue">#87CEEB</color>
     <!-- 天蓝色 -->
-    <color name="gray_taoguba">#808080</color>
+    <color name="gray_">#808080</color>
     <!-- 灰色 -->
     <color name="grey">#808080</color>
     <!-- 灰色 -->
@@ -451,7 +451,7 @@
     <!-- 暗青色 -->
     <color name="teal">#008080</color>
     <!-- 水鸭色 -->
-    <color name="green_taoguba">#008000</color>
+    <color name="green_">#008000</color>
     <!-- 绿色 -->
     <color name="darkgreen">#006400</color>
     <!-- 暗绿色 -->

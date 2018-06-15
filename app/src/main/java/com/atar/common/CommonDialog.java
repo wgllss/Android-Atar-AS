@@ -62,7 +62,7 @@ public class CommonDialog {
 		}
 		dialogDismiss();
 		// mDialog = new Dialog(mContext, R.style.MyDialog);
-		// mDialog.setContentView(R.layout.common_taoguba_alert_dialog);
+		// mDialog.setContentView(R.layout.common__alert_dialog);
 		// int widthPixels = AtarApplication.getApplication().getResources().getDisplayMetrics().widthPixels;
 		// if (mContext.getResources().getConfiguration().orientation == 1) {
 		// // 1竖屏
@@ -133,7 +133,7 @@ public class CommonDialog {
 		}
 		// 取得自定义View
 		//mDialog = new Dialog(mContext, R.style.MyDialog);
-		// mDialog.setContentView(R.layout.common_taoguba_conform_dialog);
+		// mDialog.setContentView(R.layout.common__conform_dialog);
 		// int widthPixels = AtarApplication.getApplication().getResources().getDisplayMetrics().widthPixels;
 		// if (mContext.getResources().getConfiguration().orientation == 1) {
 		// // 1竖屏
@@ -230,7 +230,7 @@ public class CommonDialog {
 	public static void conformDialogWithEditText(Context mContext, String strTitle, final EditFinishListener lsOk) {
 		// 取得自定义View
 		//mDialog = new Dialog(mContext, R.style.MyDialog);
-		// mDialog.setContentView(R.layout.common_taoguba_conform_edit_dialog);
+		// mDialog.setContentView(R.layout.common__conform_edit_dialog);
 		// int widthPixels = AtarApplication.getApplication().getResources().getDisplayMetrics().widthPixels;
 		// mDialog.getWindow().setLayout(13 * widthPixels / 15, WindowManager.LayoutParams.WRAP_CONTENT);
 		// TextView txtTitle = (TextView) mDialog.getWindow().findViewById(R.id.txt_title);
@@ -287,7 +287,7 @@ public class CommonDialog {
 	public static void conformDialogWithEditText(Context mContext, String strTitle, String hinttext, int maxLength, final EditFinishListener lsOk) {
 		// 取得自定义View
 		//mDialog = new Dialog(mContext, R.style.MyDialog);
-		// mDialog.setContentView(R.layout.common_taoguba_conform_edit_dialog);
+		// mDialog.setContentView(R.layout.common__conform_edit_dialog);
 		// int widthPixels = AtarApplication.getApplication().getResources().getDisplayMetrics().widthPixels;
 		// mDialog.getWindow().setLayout(13 * widthPixels / 15, WindowManager.LayoutParams.WRAP_CONTENT);
 		// TextView txtTitle = (TextView) mDialog.getWindow().findViewById(R.id.txt_title);
@@ -353,7 +353,7 @@ public class CommonDialog {
 	public static void conformDialogForShiPanSignUp(Context mContext, final EditFinishListener lsOk) {
 		// 取得自定义View
 		//mDialog = new Dialog(mContext, R.style.MyDialog);
-		// mDialog.setContentView(R.layout.common_taoguba_shipan_signup_edit_dialog);
+		// mDialog.setContentView(R.layout.common__shipan_signup_edit_dialog);
 		// int widthPixels = AtarApplication.getApplication().getResources().getDisplayMetrics().widthPixels;
 		// mDialog.getWindow().setLayout(13 * widthPixels / 15, WindowManager.LayoutParams.WRAP_CONTENT);
 		//
@@ -422,7 +422,7 @@ public class CommonDialog {
 			int maxLines) {
 		// 取得自定义View
 		//mDialog = new Dialog(mContext, R.style.MyDialog);
-		// mDialog.setContentView(R.layout.common_taoguba_conform_edit_dialog);
+		// mDialog.setContentView(R.layout.common__conform_edit_dialog);
 		// int widthPixels = AtarApplication.getApplication().getResources().getDisplayMetrics().widthPixels;
 		// mDialog.getWindow().setLayout(13 * widthPixels / 15, WindowManager.LayoutParams.WRAP_CONTENT);
 		// TextView txtTitle = (TextView) mDialog.getWindow().findViewById(R.id.txt_title);
@@ -602,7 +602,7 @@ public class CommonDialog {
 	// public static void WheelDialog(Context context, String strTitle, List<String> list1, List<String> list2, OnWheelChangeListener mOnWheelChangedListener1,
 	// OnWheelChangeListener mOnWheelChangedListener2, int currentPosition1, int currentPosition2, OnClickListener lsOk, OnClickListener lsCacle) {
 	// mDialog = new Dialog(context, R.style.MyDialog);
-	// mDialog.setContentView(R.layout.common_taoguba_wheel_dialog);
+	// mDialog.setContentView(R.layout.common__wheel_dialog);
 	// int widthPixels = AtarApplication.getApplication().getResources().getDisplayMetrics().widthPixels;
 	// mDialog.getWindow().setLayout(13 * widthPixels / 15, WindowManager.LayoutParams.WRAP_CONTENT);
 	// TextView txtTitle = (TextView) mDialog.getWindow().findViewById(R.id.txt_title);
@@ -684,7 +684,7 @@ public class CommonDialog {
 	// public static void WheelDialogOnlyOne(Context context, String strTitle, List<String> list, boolean isCyclic, OnWheelChangeListener mOnWheelChangedListener1, int currentPosition1,
 	// OnClickListener lsOk, OnClickListener lsCacle) {
 	// mDialog = new Dialog(context, R.style.MyDialog);
-	// mDialog.setContentView(R.layout.common_taoguba_wheel_dialog_only_one);
+	// mDialog.setContentView(R.layout.common__wheel_dialog_only_one);
 	// int widthPixels = AtarApplication.getApplication().getResources().getDisplayMetrics().widthPixels;
 	// mDialog.getWindow().setLayout(13 * widthPixels / 15, WindowManager.LayoutParams.WRAP_CONTENT);
 	// TextView txtTitle = (TextView) mDialog.getWindow().findViewById(R.id.txt_title);
@@ -757,7 +757,7 @@ public class CommonDialog {
 	// mDialog = null;
 	// mDialog = new Dialog(mContext, R.style.MyDialog);
 	// LayoutInflater inflater = LayoutInflater.from(mContext);
-	// View view = inflater.inflate(R.layout.common_taoguba_list_dialog, null);
+	// View view = inflater.inflate(R.layout.common__list_dialog, null);
 	// mDialog.setContentView(view);
 	//
 	// int widthPixels = AtarApplication.getApplication().getResources().getDisplayMetrics().widthPixels;
@@ -833,7 +833,7 @@ public class CommonDialog {
 	// mDialog = null;
 	// mDialog = new Dialog(mContext, R.style.MyDialog);
 	// LayoutInflater inflater = LayoutInflater.from(mContext);
-	// View view = inflater.inflate(R.layout.common_taoguba_kgame_settings_dialog, null);
+	// View view = inflater.inflate(R.layout.common__kgame_settings_dialog, null);
 	// mDialog.setContentView(view);
 	//
 	// int widthPixels = AtarApplication.getApplication().getResources().getDisplayMetrics().widthPixels;
@@ -934,7 +934,7 @@ public class CommonDialog {
 	// dialogDismiss();
 	// mDialog = null;
 	// mDialog = new Dialog(mContext, R.style.MyDialog);
-	// mDialog.setContentView(R.layout.common_taoguba_k_toast_dialog);
+	// mDialog.setContentView(R.layout.common__k_toast_dialog);
 	// int widthPixels = AtarApplication.getApplication().getResources().getDisplayMetrics().widthPixels;
 	// if (width == 0) {
 	// width = 13 * widthPixels / 15;
@@ -1024,7 +1024,7 @@ public class CommonDialog {
 	// dialogDismiss();
 	// mDialog = null;
 	// mDialog = new Dialog(mContext, R.style.MyDialog);
-	// mDialog.setContentView(R.layout.common_taoguba_kgame_dialog_mutil_style);
+	// mDialog.setContentView(R.layout.common__kgame_dialog_mutil_style);
 	// int widthPixels = AtarApplication.getApplication().getResources().getDisplayMetrics().widthPixels;
 	// if (width == 0) {
 	// width = 13 * widthPixels / 15;
@@ -1147,7 +1147,7 @@ public class CommonDialog {
 	// dialogDismiss();
 	// // }
 	// mDialog = new Dialog(mContext, R.style.MyDialog);
-	// mDialog.setContentView(R.layout.common_taoguba_score_dialog);
+	// mDialog.setContentView(R.layout.common__score_dialog);
 	// int widthPixels = AtarApplication.getApplication().getResources().getDisplayMetrics().widthPixels;
 	// if (mContext.getResources().getConfiguration().orientation == 1) {
 	// // 1竖屏

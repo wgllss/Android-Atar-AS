@@ -84,7 +84,7 @@ public class WeexModalUIModule extends WXModule {
 	// weexModalUIModule.alert("title","content",function(options) {
 	// weexEventModule.ShowLogI(self.TAG,options.toString());
 	// weexModalUIModule.toast(options.toString());
-	// weexModule.openUrl(taoguba.getDefaultUrl(name))
+	// weexModule.openUrl(.getDefaultUrl(name))
 	//
 	// });
 	@WXModuleAnno(runOnUIThread = true)
@@ -250,7 +250,7 @@ public class WeexModalUIModule extends WXModule {
 						}
 						if (mWXSDKInstance.getContext() instanceof MainActivity) {
 							LayoutInflater mLayoutInflater = (LayoutInflater) mWXSDKInstance.getContext().getSystemService(mWXSDKInstance.getContext().LAYOUT_INFLATER_SERVICE);
-							ViewGroup dropView = null;// (ViewGroup) mLayoutInflater.inflate(R.layout.activity_taoguba_common_title_drop, null, true);
+							ViewGroup dropView = null;// (ViewGroup) mLayoutInflater.inflate(R.layout.activity__common_title_drop, null, true);
 							final DropDownAdapter mDropDownAdapter = new DropDownAdapter(mList);
 							mDropDownAdapter.setTxtSize(textSize);
 							mDropDownAdapter.setCurrentPostiotn(currentPosition);
@@ -280,7 +280,7 @@ public class WeexModalUIModule extends WXModule {
 	/**
 		{
 		"shareContent":"是中国知名的移动互联投资社交化平台",
-		"shareUrl":"http://m.taoguba.com.cn/downloadApp",
+		"shareUrl":"http://m..com.cn/downloadApp",
 		"shareTitle":"v_5.5.5",
 		"ShareImgResID":"",
 		"ShareImgUrl":"",
@@ -408,13 +408,13 @@ public class WeexModalUIModule extends WXModule {
 	}
 
 	/**
-	 * weex 调用 TaogubaDynamicWebViewActivity html中js方法
+	 * weex 调用 DynamicWebViewActivity html中js方法
 	 * @author :Atar
 	 * @createTime:2017-6-28下午1:43:34
 	 * @version:1.0.0
 	 * @modifyTime:
 	 * @modifyAuthor:
-	 * @param strlastPosition 为倒数第几个TaogubaDynamicWebViewActivity（可能开了多个）
+	 * @param strlastPosition 为倒数第几个DynamicWebViewActivity（可能开了多个）
 	 * @param javascriptUrl
 	 * @description:
 	 */
@@ -474,7 +474,7 @@ public class WeexModalUIModule extends WXModule {
 								((AtarDynamicFragment) ActivityManager.getActivityManager().getActivity(WebViewPagerActivity.class, lastPosition).getFragmentList().get(currntPosition))
 										.loadWebViewUrl(javascriptUrl);
 							} else if (activityName.contains("CommunityActivity")) {
-								// ((TaogubaDynamicFragment) ActivityManager.getActivityManager().getActivity(CommunityActivity.class, lastPosition).getFragmentList().get(currntPosition))
+								// ((DynamicFragment) ActivityManager.getActivityManager().getActivity(CommunityActivity.class, lastPosition).getFragmentList().get(currntPosition))
 								// .loadWebViewUrl(javascriptUrl);
 							}
 						} catch (Exception e) {

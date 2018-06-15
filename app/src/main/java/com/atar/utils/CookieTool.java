@@ -12,7 +12,7 @@ import com.atar.net.UrlParamCommon;
 
 public class CookieTool {
 	private static String TAG = CookieTool.class.getSimpleName();
-	public static final String DOMAIN = ".taoguba.com.cn";
+	public static final String DOMAIN = "..com.cn";
 
 	public static String getCookieStr(String cookieName) {
 		StringBuilder sb = new StringBuilder(cookieName);

@@ -39,15 +39,15 @@ package com.atar.push;
 // *****************************************************************************************************************************************************************************
 // */
 //@SuppressLint("HandlerLeak")
-//public class TaogubaPushTool implements HandleMessageListener {
+//public class PushTool implements HandleMessageListener {
 //	// private Handler netWorkHandler = NetWorkHandler.newInstance(this);
-//	private static String TAG = TaogubaPushTool.class.getSimpleName();
+//	private static String TAG = PushTool.class.getSimpleName();
 //
-//	private static TaogubaPushTool mTaogubaPushTool;
+//	private static PushTool mPushTool;
 //	/** 是否绑定极光服务器 */
 //	private boolean isBindJpushSuccessed;
 //	/** 是否绑定服务器 */
-//	private boolean isBindTaogubaServer;
+//	private boolean isBindServer;
 //	/** 单个线程池开启向极光发送 */
 //	private ExecutorService exec = Executors.newSingleThreadExecutor();
 //	private PushToJGRunnable mPushToJGRunnable = new PushToJGRunnable();
@@ -61,16 +61,16 @@ package com.atar.push;
 //
 //	// 此TAG在adb logcat中检索自己所需要的信息， 只需在命令行终端输入 adb logcat | grep
 //
-//	public TaogubaPushTool() {
+//	public PushTool() {
 //		super();
 //	}
 //
-//	public synchronized static TaogubaPushTool getInstance() {
-//		if (mTaogubaPushTool == null) {
-//			mTaogubaPushTool = new TaogubaPushTool();
-//			mTaogubaPushTool.VersionName = AppConfigModel.getInstance().getString(AppConfigModel.VERSION_KEY, "5.27");
+//	public synchronized static PushTool getInstance() {
+//		if (mPushTool == null) {
+//			mPushTool = new PushTool();
+//			mPushTool.VersionName = AppConfigModel.getInstance().getString(AppConfigModel.VERSION_KEY, "5.27");
 //		}
-//		return mTaogubaPushTool;
+//		return mPushTool;
 //	}
 //
 //	/**
@@ -84,7 +84,7 @@ package com.atar.push;
 //	 */
 //	public void reSetPushStatus() {
 //		isBindJpushSuccessed = false;
-//		isBindTaogubaServer = false;
+//		isBindServer = false;
 //	}
 //
 //	/**
@@ -350,25 +350,25 @@ package com.atar.push;
 //			if (VersionName == null || VersionName.length() == 0) {
 //				VersionName = AppConfigModel.getInstance().getString(AppConfigModel.VERSION_KEY, "5.27");
 //			}
-//			boolean isFirst = AppConfigModel.getInstance().getBoolean(VersionName + TaogubaPushTool.class.getSimpleName(), true);
+//			boolean isFirst = AppConfigModel.getInstance().getBoolean(VersionName + PushTool.class.getSimpleName(), true);
 //			if (isFirst) {
-//				AppConfigModel.getInstance().putBoolean(VersionName + TaogubaPushTool.class.getSimpleName(), false);
+//				AppConfigModel.getInstance().putBoolean(VersionName + PushTool.class.getSimpleName(), false);
 //				AppConfigModel.getInstance().commit();
-//				NetWorkInterfaces.ApiResetAllPushSet(TaogubaPushTool.this);// 每个版本第一次安装
+//				NetWorkInterfaces.ApiResetAllPushSet(PushTool.this);// 每个版本第一次安装
 //			}
-//			if (!isBindTaogubaServer && !isBindJpushSuccessed) {
+//			if (!isBindServer && !isBindJpushSuccessed) {
 //				String token = " ";
 //				if (android.os.Build.MANUFACTURER.equalsIgnoreCase("Xiaomi")) {
-//					NetWorkInterfaces.BindPush(TaogubaPushTool.this, getAlias(), "xiaomi");
+//					NetWorkInterfaces.BindPush(PushTool.this, getAlias(), "xiaomi");
 //				} else if (android.os.Build.MANUFACTURER.equalsIgnoreCase("HUAWEI")) {
 //					token = AppConfigModel.getInstance().getString(HuaWeiPushReceiver.HUAWEI_TOKEN, "");
 //					if (token != null && token.length() > 0) {
-//						NetWorkInterfaces.BindPush(TaogubaPushTool.this, token, "huawei");
+//						NetWorkInterfaces.BindPush(PushTool.this, token, "huawei");
 //					}
 //				} else {
-//					NetWorkInterfaces.BindPush(TaogubaPushTool.this, getAlias(), "android");
+//					NetWorkInterfaces.BindPush(PushTool.this, getAlias(), "android");
 //				}
-//			} else if (isBindTaogubaServer && !isBindJpushSuccessed && AppConfigSetting.getInstance().IsBindOpen()) {
+//			} else if (isBindServer && !isBindJpushSuccessed && AppConfigSetting.getInstance().IsBindOpen()) {
 //				// 绑定 并且推送打开 但绑定极光失败
 //				exec.execute(mPushToJGRunnable);
 //			}
@@ -446,10 +446,10 @@ package com.atar.push;
 //		case EnumMsgWhat.EInterface_Bing_Push:
 //			if (msg.obj != null) {
 //				@SuppressWarnings("rawtypes")
-//				TaogubaCommonResult mTaogubaCommonResult = (TaogubaCommonResult) msg.obj;
-//				if (mTaogubaCommonResult != null) {
-//					isBindTaogubaServer = mTaogubaCommonResult.isStatus();
-//					if (mTaogubaCommonResult.isStatus()) {
+//				CommonResult mCommonResult = (CommonResult) msg.obj;
+//				if (mCommonResult != null) {
+//					isBindServer = mCommonResult.isStatus();
+//					if (mCommonResult.isStatus()) {
 //						if (!isBindJpushSuccessed) {
 //							exec.execute(mPushToJGRunnable);
 //						}

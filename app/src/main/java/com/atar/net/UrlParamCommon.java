@@ -26,29 +26,29 @@ public class UrlParamCommon {
     // public static String postfix = AppConfigModel.getInstance().getString("POSTFIX_KEY", "sp/");
     // /** 前缀线上环境是https 本地和测试环境是http 2016年12.15.10:06*/
     // public static String prefix = postfix.contains("com.cn") ? "https" : "http";
-    // public static final String UrlPkWebSocket = AppConfigModel.getInstance().getString("WEBSOCKET_KEY", "ws://ws.taoguba.sp/kline");
+    // public static final String UrlPkWebSocket = AppConfigModel.getInstance().getString("WEBSOCKET_KEY", "ws://ws..sp/kline");
     // /** 域名后缀 com.cn 打包上线时用 注意 注释掉上面三行 放开下面三行*/
 
     public static String prefix = "https";
     public static String postfix = "sp/";
-    public static final String UrlPkWebSocket = "ws://ws.taoguba.com.cn/kline";
+    public static final String UrlPkWebSocket = "ws://ws..com.cn/kline";
     /**
      * www服务器地址
      **/
-    public static final String API_HOST = prefix + "://api.taoguba." + postfix;
+    public static final String API_HOST = prefix + "://api.." + postfix;
 
 	/* ****************************************************************图片地址 start ************************************************************************** */
     /**
      * 图片服务器地址
      **/
-    public static final String IMAGE_HOST = prefix + "://image.taoguba.com.cn/";
+    public static final String IMAGE_HOST = prefix + "://image..com.cn/";
     //    public static final String download_skin_url = "https://github.com/wgllss/atar-skin/raw/master/download_skin.apk";
     public static final String download_skin_url = WeexUtils.WEEX_HOST + "assets/html/download_skin.apk";
 
     /**
      * 头像图片服务器地址
      **/
-    public static final String TOUXIANG_IMAGEPATH = prefix + "://image.taoguba.com.cn/img/";
+    public static final String TOUXIANG_IMAGEPATH = prefix + "://image..com.cn/img/";
 
     /* 获取头像完整地址 */
     public static String getPortrait(String portrait) {

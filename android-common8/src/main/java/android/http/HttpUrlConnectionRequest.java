@@ -59,7 +59,7 @@ public class HttpUrlConnectionRequest {
 
 	@SuppressWarnings({ "static-access", "rawtypes" })
 	public static String getResult(String httpurl, Map<String, String> parames, String inputEncoding, Activity activity) {
-		// if (UrlParamCommon.isHasMD5 && httpurl.contains("taoguba")) {
+		// if (UrlParamCommon.isHasMD5 && httpurl.contains("")) {
 		// parames = KGameUtil.getSignMap(parames);
 		// }
 		String requestUrl = httpurl;
@@ -119,7 +119,7 @@ public class HttpUrlConnectionRequest {
 			// conn.addRequestProperty("Authorization", AppConfigModel.getInstance().getString(HttpRequest.TLTOKIEN, ""));
 			// ShowLog.i(TAG, "TLTOKIEN--->" + AppConfigModel.getInstance().getString(HttpRequest.TLTOKIEN, ""));
 			// }
-			// if (httpurl.contains("taoguba")) {
+			// if (httpurl.contains("")) {
 			// setCookie(httpurl, conn);
 			// }
 			conn.connect();
@@ -168,7 +168,7 @@ public class HttpUrlConnectionRequest {
 
 	@SuppressWarnings({ "rawtypes", "static-access" })
 	public static String postData(String httpurl, Map<String, String> parames, String inputEncoding, Activity activity) {
-		// if (UrlParamCommon.isHasMD5 && httpurl.contains("taoguba")) {
+		// if (UrlParamCommon.isHasMD5 && httpurl.contains("")) {
 		// parames = KGameUtil.getSignMap(parames);
 		// }
 		WeakReference<Activity> mWeakReference = null;
@@ -217,7 +217,7 @@ public class HttpUrlConnectionRequest {
 			// if (AppConfigModel.getInstance().getString(HttpRequest.TLTOKIEN, "") != null && AppConfigModel.getInstance().getString(HttpRequest.TLTOKIEN, "").length() > 0) {
 			// conn.addRequestProperty("Authorization", AppConfigModel.getInstance().getString(HttpRequest.TLTOKIEN, ""));
 			// }
-			// if (httpurl.contains("taoguba")) {
+			// if (httpurl.contains("")) {
 			// setCookie(httpurl, conn);
 			// }
 			conn.connect();
@@ -295,7 +295,7 @@ public class HttpUrlConnectionRequest {
 	// * @description:
 	// */
 	// public static void setCookie(String httpurl, HttpURLConnection conn) {
-	// if (httpurl.contains("taoguba")) {
+	// if (httpurl.contains("")) {
 	// if (UrlParamCommon.JSESSIONID != null && UrlParamCommon.JSESSIONID.length() > 0) {
 	// conn.addRequestProperty("Cookie", CookieTool.getCookieStr("JSESSIONID"));
 	// ShowLog.i(TAG, "请求JSESSIONID------->" + UrlParamCommon.JSESSIONID);

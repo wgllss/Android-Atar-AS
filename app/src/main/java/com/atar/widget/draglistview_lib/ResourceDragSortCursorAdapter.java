@@ -15,7 +15,7 @@ package com.atar.widget.draglistview_lib;
 // * limitations under the License.
 // */
 //
-//package com.taoguba.widget.drag_lib;
+//package com..widget.drag_lib;
 //
 //import android.content.Context;
 //import android.database.Cursor;

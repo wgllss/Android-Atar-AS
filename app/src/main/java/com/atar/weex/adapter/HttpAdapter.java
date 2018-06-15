@@ -74,7 +74,7 @@ public class HttpAdapter implements IWXHttpAdapter {
 		if (request != null && request.url != null && request.url.length() > 0) {
 			if (request.url.contains(".js")) {// 加载js
 				ShowLog.i(TAG, "js--url-->" + request.url);
-				if (request.url.contains("taoguba") && request.url.contains("com.cn") && !request.url.contains("https") && request.url.contains("http")) {
+				if (request.url.contains("") && request.url.contains("com.cn") && !request.url.contains("https") && request.url.contains("http")) {
 					request.url = request.url.replace("http", "https");
 				}
 				ThreadPoolTool.getInstance().execute(new Runnable() {

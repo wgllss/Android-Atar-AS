@@ -78,7 +78,7 @@ package com.atar.push;//package com.atar.push;
 //				// {"actionName":"W","userID":"3881","type":"1","otherID":"0","objectID":"2884817"}
 //				ShowLog.i(TAG, "pushbean----->" + pushlist.get(0).getPushbean());
 //				if (ActivityManager.getActivityManager().getActivityStack() != null && ActivityManager.getActivityManager().getActivityStack().size() > 0) {
-//					TaogubaPushReceiver.setStartActivity(context, pushlist.get(0).getPushbean(), true);
+//					PushReceiver.setStartActivity(context, pushlist.get(0).getPushbean(), true);
 //				} else {
 //					WelcomeActivity.startWelcomeActivity(context, pushlist.get(0).getPushbean());
 //				}
