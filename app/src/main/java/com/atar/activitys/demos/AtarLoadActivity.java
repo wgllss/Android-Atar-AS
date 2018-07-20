@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.interfaces.HandlerListener;
 import android.os.Bundle;
 import android.os.Message;
@@ -23,6 +24,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
+import android.view.Window;
 import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
 import android.widget.LinearLayout;
@@ -71,6 +73,11 @@ public class AtarLoadActivity extends Activity implements OnPageChangeListener, 
     @SuppressWarnings("deprecation")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+//        if (android.os.Build.VERSION.SDK_INT >= 21) {
+//            //解决Android5.0以上，状态栏设置颜色后变灰的问题
+//            Window window = getWindow();
+//            window.setStatusBarColor(Color.TRANSPARENT);
+//        }
         super.onCreate(savedInstanceState);
         ActivityManager.getActivityManager().setLoadActivity(this);
         if (!this.isTaskRoot()) { // 判断该Activity是不是任务空间的源Activity，“非”也就是说是被系统重新实例化出来 //如果你就放在launcher Activity中话，这里可以直接return了

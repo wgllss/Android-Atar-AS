@@ -17,6 +17,11 @@
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
 
+    <style name="LauncherActivity" parent="AppBaseTheme">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowBackground">@mipmap/loading</item>
+    </style>
+
     <!-- ListView的父style,去除一些基本设置 -->
     <style name="BaseListViewStyle" parent="android:Widget.ListView.White">
         <item name="android:cacheColorHint">#00000000</item> <!-- 去除拖动时默认的黑色背景 -->
