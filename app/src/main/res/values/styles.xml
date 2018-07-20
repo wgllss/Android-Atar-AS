@@ -18,6 +18,8 @@
     </style>
 
     <style name="LauncherActivity" parent="AppBaseTheme">
+        <item name="android:windowNoTitle">true</item>
+        <item name="windowNoTitle">true</item>
         <item name="android:windowFullscreen">true</item>
         <item name="android:windowBackground">@mipmap/loading</item>
     </style>
