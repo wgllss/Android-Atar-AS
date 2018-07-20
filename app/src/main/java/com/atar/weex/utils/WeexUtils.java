@@ -14,6 +14,7 @@ import android.app.Activity;
 import android.appconfig.AppConfigModel;
 import android.os.Build.VERSION;
 import android.os.Build.VERSION_CODES;
+import android.reflection.ThreadPoolTool;
 
 import com.atar.weex.adapter.DefaultWebSocketAdapterFactory;
 import com.atar.weex.adapter.HttpAdapter;
@@ -66,31 +67,38 @@ public class WeexUtils {
      * @modifyAuthor:
      * @description:
      */
-    public static void weexInit(Activity activity) {
-        try {
-            if (!WXSDKEngine.isInitialized()) {
-                if (VERSION.SDK_INT >= VERSION_CODES.ICE_CREAM_SANDWICH) {
-                    InitConfig config = new InitConfig.Builder().setWebSocketAdapterFactory(new DefaultWebSocketAdapterFactory()).setHttpAdapter(new HttpAdapter()).setImgAdapter(new ImageAdapter())
-                            .build();
-                    WXSDKEngine.initialize(activity.getApplication(), config);
-                    WXSDKEngine.registerModule("weexModule", WeexModule.class);
-                    WXSDKEngine.registerModule("weexModalUIModule", WeexModalUIModule.class);
-                    WXSDKEngine.registerModule("weexEventModule", WXEventModule.class);
-                    WXSDKEngine.registerModule("weexNavigatorModule", WXNavigatorModule.class);
-                    WXSDKEngine.registerModule("mywebview", WeeXWebViewModule.class);
-                    // WXSDKEngine.registerComponent("myinput", MyInput.class);
-                    // WXSDKEngine.registerComponent("richtext",RichText.class);
-                    // WXSDKEngine.registerComponent("web", WeeXWeb.class);
-                    // WXSDKEngine.registerComponent("myrichtext", RichText.class);
-                    // WXSDKEngine.registerComponent(new SimpleComponentHolder(WeeXText.class, new WeeXText.Creator()), false, "mystockview");
-                    // WXSDKEngine.registerDomObject("mystockview", WeeXTextDomObject.class);
-                    // WXSDKEngine.registerComponent("richview", WeexTextarea.class, false);
-                    WXSDKEngine.registerDomObject("richview", TextAreaEditTextDomObject.class);
-                    // WXEnvironment.sLogLevel = LogLevel.WARN;// 上线关闭日志级别 如本地调试 注释此行
+    public static void weexInit(final Activity activity) {
+
+        ThreadPoolTool.getInstance().execute(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    if (!WXSDKEngine.isInitialized()) {
+                        if (VERSION.SDK_INT >= VERSION_CODES.ICE_CREAM_SANDWICH) {
+                            InitConfig config = new InitConfig.Builder().setWebSocketAdapterFactory(new DefaultWebSocketAdapterFactory()).setHttpAdapter(new HttpAdapter()).setImgAdapter(new ImageAdapter())
+                                    .build();
+                            WXSDKEngine.initialize(activity.getApplication(), config);
+                            WXSDKEngine.registerModule("weexModule", WeexModule.class);
+                            WXSDKEngine.registerModule("weexModalUIModule", WeexModalUIModule.class);
+                            WXSDKEngine.registerModule("weexEventModule", WXEventModule.class);
+                            WXSDKEngine.registerModule("weexNavigatorModule", WXNavigatorModule.class);
+                            WXSDKEngine.registerModule("mywebview", WeeXWebViewModule.class);
+                            // WXSDKEngine.registerComponent("myinput", MyInput.class);
+                            // WXSDKEngine.registerComponent("richtext",RichText.class);
+                            // WXSDKEngine.registerComponent("web", WeeXWeb.class);
+                            // WXSDKEngine.registerComponent("myrichtext", RichText.class);
+                            // WXSDKEngine.registerComponent(new SimpleComponentHolder(WeeXText.class, new WeeXText.Creator()), false, "mystockview");
+                            // WXSDKEngine.registerDomObject("mystockview", WeeXTextDomObject.class);
+                            // WXSDKEngine.registerComponent("richview", WeexTextarea.class, false);
+                            WXSDKEngine.registerDomObject("richview", TextAreaEditTextDomObject.class);
+                            // WXEnvironment.sLogLevel = LogLevel.WARN;// 上线关闭日志级别 如本地调试 注释此行
+                        }
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
                 }
             }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        });
+
     }
 }
