@@ -18,6 +18,9 @@ import android.utils.ShowLog;
 import com.atar.activitys.R;
 import com.atar.net.UrlParamCommon;
 import com.lidroid.xutils.DbUtils;
+import com.taobao.sophix.PatchStatus;
+import com.taobao.sophix.SophixManager;
+import com.taobao.sophix.listener.PatchLoadStatusListener;
 
 /**
  * ø
@@ -62,7 +65,7 @@ public class AtarApplication extends Application {
                 db = getDb();
             }
         });
-        // initHotfix();
+//         initHotfix();
     }
 
     public static AtarApplication getApplication() {
@@ -97,37 +100,37 @@ public class AtarApplication extends Application {
         // UrlParamCommon.JSESSIONID = "";
     }
 
-//	/**
-//	 * 阿里热修复功能
-//	 * @author :Atar
-//	 * @createTime:2017-8-4下午5:49:44
-//	 * @version:1.0.0
-//	 * @modifyTime:
-//	 * @modifyAuthor:
-//	 * @description:
-//	 */
-//	private void initHotfix() {
-//		String appVersion;
-//		try {
-//			appVersion = this.getPackageManager().getPackageInfo(this.getPackageName(), 0).versionName;
-//		} catch (Exception e) {
-//			appVersion = "1.0.0";
-//		}
-//		SophixManager.getInstance().setContext(this).setAppVersion(appVersion).setAesKey(null).setEnableDebug(true).setPatchLoadStatusStub(new PatchLoadStatusListener() {
-//			@Override
-//			public void onLoad(final int mode, final int code, final String info, final int handlePatchVersion) {
-//				ShowLog.i("AtarApplication", "code-->" + code + "--info-->" + info + "--handlePatchVersion-->" + handlePatchVersion);
-//				switch (code) {
-//				case PatchStatus.CODE_LOAD_SUCCESS:// 1 表明补丁加载成功
-//					break;
-//				case PatchStatus.CODE_LOAD_RELAUNCH:// 12 表明新补丁生效需要重启. 开发者可提示用户或者强制重启;
-//					break;
-//				case PatchStatus.CODE_LOAD_FAIL:// 13 内部引擎异常, 推荐此时清空本地补丁, 防止失败补丁重复加载
-//					SophixManager.getInstance().cleanPatches();
-//					break;
-//				}
-//			}
-//		}).initialize();
-//		SophixManager.getInstance().queryAndLoadNewPatch();
-//	}
+	/**
+	 * 阿里热修复功能
+	 * @author :Atar
+	 * @createTime:2017-8-4下午5:49:44
+	 * @version:1.0.0
+	 * @modifyTime:
+	 * @modifyAuthor:
+	 * @description:
+	 */
+	private void initHotfix() {
+		String appVersion;
+		try {
+			appVersion = this.getPackageManager().getPackageInfo(this.getPackageName(), 0).versionName;
+		} catch (Exception e) {
+			appVersion = "1.0.0";
+		}
+		SophixManager.getInstance().setContext(this).setAppVersion(appVersion).setAesKey(null).setEnableDebug(true).setPatchLoadStatusStub(new PatchLoadStatusListener() {
+			@Override
+			public void onLoad(final int mode, final int code, final String info, final int handlePatchVersion) {
+				ShowLog.i("AtarApplication", "code-->" + code + "--info-->" + info + "--handlePatchVersion-->" + handlePatchVersion);
+				switch (code) {
+				case PatchStatus.CODE_LOAD_SUCCESS:// 1 表明补丁加载成功
+					break;
+				case PatchStatus.CODE_LOAD_RELAUNCH:// 12 表明新补丁生效需要重启. 开发者可提示用户或者强制重启;
+					break;
+				case PatchStatus.CODE_LOAD_FAIL:// 13 内部引擎异常, 推荐此时清空本地补丁, 防止失败补丁重复加载
+					SophixManager.getInstance().cleanPatches();
+					break;
+				}
+			}
+		}).initialize();
+		SophixManager.getInstance().queryAndLoadNewPatch();
+	}
 }

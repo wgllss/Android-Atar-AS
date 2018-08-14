@@ -22,18 +22,18 @@ android {
 
     externalNativeBuild {
         ndkBuild {
-            path file("src\\main\\jni\\Android.mk")
+            path file("src/main/jni/Android.mk")
         }
     }
 
-//   signingConfigs {
-//         release {
-//                 keyAlias 'atar'
-//                 keyPassword 'wtfpeapgg'
-//                 storeFile file('/Users/xuelanbin/Downloads/regenxin/Android-Atar/atar.store.jks')
-//               storePassword 'wtfpeapgg'
-//             }
-//    }
+    signingConfigs {
+        release {
+            keyAlias 'atar'
+            keyPassword 'wtfpeapgg'
+            storeFile file('./atar.store.jks')
+            storePassword 'wtfpeapgg'
+        }
+    }
     buildTypes {
         release {
             //是否混淆
@@ -92,5 +92,6 @@ dependencies {
     compile project(':speex—library8')
     compile project(':swithc-button8')
     compile 'com.android.support:appcompat-v7:22.2.1'
+//    compile 'com.android.support:appcompat-v7:26.+'
     compile 'com.android.support:support-v4:22.2.1'
 }

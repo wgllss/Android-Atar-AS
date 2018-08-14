@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.interfaces.NetWorkCallTListenet;
 import android.os.Message;
 import android.reflection.NetWorkMsg;
+import android.utils.ApplicationManagement;
 import android.utils.CommonStringUtil;
 import android.view.View;
 import android.widget.AdapterView;
@@ -62,6 +63,7 @@ public class MainDemoActivity extends AtarRefreshListViewActivity {
         list.add(new MenuItemBean("9", "语音录放"));
         list.add(new MenuItemBean("10", "动态html"));
         list.add(new MenuItemBean("11", "jni"));
+        list.add(new MenuItemBean("12", "当前版本" + ApplicationManagement.getVersionName()));
 
 
         // list.add(new MenuItemBean("8", "网络测试1"));
