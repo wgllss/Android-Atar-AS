@@ -16,7 +16,9 @@ import android.support.multidex.MultiDex;
 import android.utils.ShowLog;
 
 import com.atar.activitys.R;
+import com.atar.globe.GlobeSettings;
 import com.atar.net.UrlParamCommon;
+import com.iflytek.cloud.SpeechUtility;
 import com.lidroid.xutils.DbUtils;
 import com.taobao.sophix.PatchStatus;
 import com.taobao.sophix.SophixManager;
@@ -31,7 +33,8 @@ import com.taobao.sophix.listener.PatchLoadStatusListener;
  * @version:1.0.0
  * @modifyTime:
  * @modifyAuthor:
- * @description: ****************************************************************************************************************************************************************************
+ * @description:
+ * ****************************************************************************************************************************************************************************
  */
 public class AtarApplication extends Application {
     public static AtarApplication mInstance;
@@ -55,13 +58,18 @@ public class AtarApplication extends Application {
             public void run() {
                 mInstance = AtarApplication.this;
                 CommonApplication.initApplication(AtarApplication.this);// 初始化全局Context
-                CommonNetWorkExceptionToast.initToastError(AtarApplication.this, R.array.err_toast_string);// 初始化全局网络错误提示信息
+                CommonNetWorkExceptionToast.initToastError(AtarApplication.this, R.array
+                        .err_toast_string);// 初始化全局网络错误提示信息
                 ShowLog.setDebug(true);// 设置不显示日志 上线前记得改成false
                 CommonNetWorkExceptionToast.setIsShowErrorToast(false);// 上线前记得设置不显示错误网络具体提示 测试时可开启
                 CommonApplication.initImageLoader(getApplicationContext());// 初始化加载图片配置
-                // CommonToast.initToastResouseId(R.drawable.corners_toast, R.color.black);// 初始化toast字体颜色和背景
+                // CommonToast.initToastResouseId(R.drawable.corners_toast, R.color.black);//
+                // 初始化toast字体颜色和背景
                 CrashHandler.getInstance().init(AtarApplication.this);// 接收错误异常
-                SkinResourcesManager.getInstance(AtarApplication.this).initSkinResources(true, "com.atar.skin", UrlParamCommon.download_skin_url);
+                SpeechUtility.createUtility(AtarApplication.this, "appid=" + GlobeSettings.XF_ID);
+
+                SkinResourcesManager.getInstance(AtarApplication.this).initSkinResources(true,
+                        "com.atar.skin", UrlParamCommon.download_skin_url);
                 db = getDb();
             }
         });
@@ -100,37 +108,42 @@ public class AtarApplication extends Application {
         // UrlParamCommon.JSESSIONID = "";
     }
 
-	/**
-	 * 阿里热修复功能
-	 * @author :Atar
-	 * @createTime:2017-8-4下午5:49:44
-	 * @version:1.0.0
-	 * @modifyTime:
-	 * @modifyAuthor:
-	 * @description:
-	 */
-	private void initHotfix() {
-		String appVersion;
-		try {
-			appVersion = this.getPackageManager().getPackageInfo(this.getPackageName(), 0).versionName;
-		} catch (Exception e) {
-			appVersion = "1.0.0";
-		}
-		SophixManager.getInstance().setContext(this).setAppVersion(appVersion).setAesKey(null).setEnableDebug(true).setPatchLoadStatusStub(new PatchLoadStatusListener() {
-			@Override
-			public void onLoad(final int mode, final int code, final String info, final int handlePatchVersion) {
-				ShowLog.i("AtarApplication", "code-->" + code + "--info-->" + info + "--handlePatchVersion-->" + handlePatchVersion);
-				switch (code) {
-				case PatchStatus.CODE_LOAD_SUCCESS:// 1 表明补丁加载成功
-					break;
-				case PatchStatus.CODE_LOAD_RELAUNCH:// 12 表明新补丁生效需要重启. 开发者可提示用户或者强制重启;
-					break;
-				case PatchStatus.CODE_LOAD_FAIL:// 13 内部引擎异常, 推荐此时清空本地补丁, 防止失败补丁重复加载
-					SophixManager.getInstance().cleanPatches();
-					break;
-				}
-			}
-		}).initialize();
-		SophixManager.getInstance().queryAndLoadNewPatch();
-	}
+    /**
+     * 阿里热修复功能
+     *
+     * @author :Atar
+     * @createTime:2017-8-4下午5:49:44
+     * @version:1.0.0
+     * @modifyTime:
+     * @modifyAuthor:
+     * @description:
+     */
+    private void initHotfix() {
+        String appVersion;
+        try {
+            appVersion = this.getPackageManager().getPackageInfo(this.getPackageName(), 0)
+                    .versionName;
+        } catch (Exception e) {
+            appVersion = "1.0.0";
+        }
+        SophixManager.getInstance().setContext(this).setAppVersion(appVersion).setAesKey(null)
+                .setEnableDebug(true).setPatchLoadStatusStub(new PatchLoadStatusListener() {
+            @Override
+            public void onLoad(final int mode, final int code, final String info, final int
+                    handlePatchVersion) {
+                ShowLog.i("AtarApplication", "code-->" + code + "--info-->" + info +
+                        "--handlePatchVersion-->" + handlePatchVersion);
+                switch (code) {
+                    case PatchStatus.CODE_LOAD_SUCCESS:// 1 表明补丁加载成功
+                        break;
+                    case PatchStatus.CODE_LOAD_RELAUNCH:// 12 表明新补丁生效需要重启. 开发者可提示用户或者强制重启;
+                        break;
+                    case PatchStatus.CODE_LOAD_FAIL:// 13 内部引擎异常, 推荐此时清空本地补丁, 防止失败补丁重复加载
+                        SophixManager.getInstance().cleanPatches();
+                        break;
+                }
+            }
+        }).initialize();
+        SophixManager.getInstance().queryAndLoadNewPatch();
+    }
 }

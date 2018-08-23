@@ -38,7 +38,8 @@ import java.util.Map;
  * @version:1.0.0
  * @modifyTime:
  * @modifyAuthor:
- * @description: ****************************************************************************************************************************************************************************
+ * @description:
+ * ****************************************************************************************************************************************************************************
  */
 public class MainDemoActivity extends AtarRefreshListViewActivity {
     private List<MenuItemBean> list = new ArrayList<MenuItemBean>();
@@ -64,7 +65,8 @@ public class MainDemoActivity extends AtarRefreshListViewActivity {
         list.add(new MenuItemBean("10", "动态html"));
         list.add(new MenuItemBean("11", "jni"));
         list.add(new MenuItemBean("12", "当前版本" + ApplicationManagement.getVersionName()));
-
+        list.add(new MenuItemBean("13", "科大讯飞语音识别"));
+        list.add(new MenuItemBean("14", "百度语音识别"));
 
         // list.add(new MenuItemBean("8", "网络测试1"));
         mMainDemoAdapter.notifyDataSetChanged();
@@ -136,7 +138,8 @@ public class MainDemoActivity extends AtarRefreshListViewActivity {
             case 5:
                 ArrayList<String> imgList = new ArrayList<String>();
                 imgList.add("http://img4.imgtn.bdimg.com/it/u=1906744648,758477532&fm=26&gp=0.jpg");
-                imgList.add("http://img0.imgtn.bdimg.com/it/u=3368323297,2417132385&fm=26&gp=0.jpg");
+                imgList.add("http://img0.imgtn.bdimg.com/it/u=3368323297," +
+                        "2417132385&fm=26&gp=0.jpg");
                 imgList.add("http://img2.imgtn.bdimg.com/it/u=917052547,4265044967&fm=26&gp=0.jpg");
                 ShowImageActivity.startShowImage(this, imgList, 1);
                 break;
@@ -156,10 +159,17 @@ public class MainDemoActivity extends AtarRefreshListViewActivity {
                 startActivity(new Intent(this, DemoRefreshInFragmentActivity.class));
                 break;
             case 10:
-                AtarDynamicWebViewActivity.startAtarDynamicWebViewActivity(this, WeexUtils.HTML_TEST_URL, "", "", "", "", "0", false);
+                AtarDynamicWebViewActivity.startAtarDynamicWebViewActivity(this, WeexUtils
+                        .HTML_TEST_URL, "", "", "", "", "0", false);
                 break;
             case 11:
                 startActivity(new Intent(this, TestJNIActivity.class));
+                break;
+            case 13:
+                startActivity(new Intent(this, AudioListenerActivity.class));
+                break;
+            case 14:
+                startActivity(new Intent(this, BaiduAudioListenerActivity.class));
                 break;
         }
     }

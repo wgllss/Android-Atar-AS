@@ -108,12 +108,10 @@
             android:name=".demos.DemoRefreshExpandableListViewActivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-
         <activity
             android:name=".demos.DemoRefreshRecyclerViewActivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-
         <activity
             android:name=".demos.DemoRefreshQuickReturnListViewActivity"
             android:screenOrientation="portrait"
@@ -158,7 +156,14 @@
             android:name=".demos.TestJNIActivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-
+        <activity
+            android:name=".demos.AudioListenerActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity
+            android:name=".demos.BaiduAudioListenerActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"></activity>
         <!-- weex项目 start -->
         <activity
             android:name="com.atar.weex.MainActivity"

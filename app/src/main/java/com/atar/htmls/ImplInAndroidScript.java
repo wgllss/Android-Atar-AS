@@ -79,7 +79,8 @@ import com.umeng.socialize.bean.SHARE_MEDIA;
  * @version:1.0.0
  * @modifyTime:
  * @modifyAuthor:
- * @description: ****************************************************************************************************************************************************************************
+ * @description:
+ * ****************************************************************************************************************************************************************************
  */
 public class ImplInAndroidScript {
 
@@ -94,7 +95,9 @@ public class ImplInAndroidScript {
 
     private OnHandlerDataListener<PullToRefreshWebView, WebView> onHandlerDataListener;
 
-    public ImplInAndroidScript(AtarCommonActivity activity, OnHandlerDataListener<PullToRefreshWebView, WebView> onHandlerDataListener) {
+    public ImplInAndroidScript(AtarCommonActivity activity,
+                               OnHandlerDataListener<PullToRefreshWebView, WebView>
+                                       onHandlerDataListener) {
         super();
         this.activity = activity;
         this.onHandlerDataListener = onHandlerDataListener;
@@ -118,12 +121,15 @@ public class ImplInAndroidScript {
      * @description:
      */
     @JavascriptInterface
-    public void networkRequest(final String msgWhat, final String whichThred1, final String whichThred2, String url, final String requestMethod, String paramsJson, final String specialHtml) {
+    public void networkRequest(final String msgWhat, final String whichThred1, final String
+            whichThred2, String url, final String requestMethod, String paramsJson, final String
+            specialHtml) {
         if (msgWhat == null || msgWhat.length() == 0) {
             return;
         }
         try {
-            String httpRequestMethod = "POST".equals(requestMethod) ? HttpUrlConnectionRequest.POST : HttpUrlConnectionRequest.GET;
+            String httpRequestMethod = "POST".equals(requestMethod) ? HttpUrlConnectionRequest
+                    .POST : HttpUrlConnectionRequest.GET;
             int msgwhat = Integer.valueOf(msgWhat);
             int msgArg1 = 0, msgArg2 = 0;
             if (whichThred1 != null && whichThred1.length() > 0) {
@@ -147,7 +153,8 @@ public class ImplInAndroidScript {
             Object[] params = new Object[]{url, map, UrlParamCommon.UTF_8, activity};
             final int requestMsgwhat = msgwhat;
             final String savrUrl = url + map.hashCode() + msgwhat + msgArg1 + msgArg2;
-            ThreadPoolTool.getInstance().setAsyncTask(msgwhat, msgArg1, msgArg2, new NetWorkCallListener() {
+            ThreadPoolTool.getInstance().setAsyncTask(msgwhat, msgArg1, msgArg2, new
+                    NetWorkCallListener() {
                 @Override
                 public void NetWorkCall(final NetWorkMsg msg) {
                     try {
@@ -158,15 +165,19 @@ public class ImplInAndroidScript {
                                 if (!"POST".equals(requestMethod)) {// GET才接口数据，post不存入
                                     LoadUtil.saveToDB(resultJson, savrUrl, "", "");
                                 }
-                                callWebViewData(resultJson, msgWhat, whichThred1, whichThred2, specialHtml);
-                            } else if (!"POST".equals(requestMethod) && EnumMsgWhat.EMobileNetUseless_Msg == msg.what) {// 没有网络
+                                callWebViewData(resultJson, msgWhat, whichThred1, whichThred2,
+                                        specialHtml);
+                            } else if (!"POST".equals(requestMethod) && EnumMsgWhat
+                                    .EMobileNetUseless_Msg == msg.what) {// 没有网络
                                 LoadUtil.QueryDB(new HandlerListener() {
                                     @Override
                                     public void onHandlerData(Message msg1) {
                                         switch (msg1.what) {
                                             case EnumMsgWhat.LOAD_FROM_SQL_COMPLETE:
-                                                String resultJson = LoadUtil.loadFromSqlComelete(msg1, String.class);
-                                                callWebViewData(resultJson, msgWhat, whichThred1, whichThred2, specialHtml);
+                                                String resultJson = LoadUtil.loadFromSqlComelete
+                                                        (msg1, String.class);
+                                                callWebViewData(resultJson, msgWhat, whichThred1,
+                                                        whichThred2, specialHtml);
                                                 break;
                                         }
                                     }
@@ -177,37 +188,45 @@ public class ImplInAndroidScript {
                         ShowLog.e(TAG, CrashHandler.crashToString(e));
                     }
                 }
-            }, activity, HttpUrlConnectionRequest.class.getName(), httpRequestMethod, params, String.class);
+            }, activity, HttpUrlConnectionRequest.class.getName(), httpRequestMethod, params,
+                    String.class);
         } catch (Exception e) {
             ShowLog.e(TAG, CrashHandler.crashToString(e));
         }
     }
 
-	/**
-	 * 返回数据通知webview调回到html
-	 * @author :Atar
-	 * @createTime:2017-7-28上午10:26:24
-	 * @version:1.0.0
-	 * @modifyTime:
-	 * @modifyAuthor:
-	 * @param resultJson
-	 * @param strMsgWhat
-	 * @param strMsgArg1
-	 * @param strMsgArg2
-	 * @description:
-	 */
-	private void callWebViewData(String resultJson, String strMsgWhat, String strMsgArg1, String strMsgArg2, String specialHtml) {
-		if (onHandlerDataListener != null) {
-			if (resultJson != null && resultJson.length() > 0 && "1".equals(specialHtml)) {
-				resultJson = resultJson.replace("loadImg(this,", "window.injs.runOnAndroid(");// 替换图片点击事件
-				resultJson = resultJson.replace("placeHolder.png", AppConfigSetting.getInstance().getInt(SkinMode.SKIN_MODE_KEY, 0) == SkinMode.NIGHT_MODE ? "../img/loading_n.png"
-						: "../img/loading_d.png");// 预加载占位图片
-				tempJson.put(TAG + strMsgWhat + "_" + strMsgArg1 + "_" + strMsgArg2, resultJson);
-				resultJson = "";
-			}
-			onHandlerDataListener.sendMessage(EnumMsgWhat.REFRESH_HANDLER2, "javascript:netWorkCallBack('" + strMsgWhat + "','" + strMsgArg1 + "','" + strMsgArg2 + "','" + resultJson + "')");
-		}
-	}
+    /**
+     * 返回数据通知webview调回到html
+     *
+     * @param resultJson
+     * @param strMsgWhat
+     * @param strMsgArg1
+     * @param strMsgArg2
+     * @author :Atar
+     * @createTime:2017-7-28上午10:26:24
+     * @version:1.0.0
+     * @modifyTime:
+     * @modifyAuthor:
+     * @description:
+     */
+    private void callWebViewData(String resultJson, String strMsgWhat, String strMsgArg1, String
+            strMsgArg2, String specialHtml) {
+        if (onHandlerDataListener != null) {
+            if (resultJson != null && resultJson.length() > 0 && "1".equals(specialHtml)) {
+                resultJson = resultJson.replace("loadImg(this,", "window.injs.runOnAndroid(");//
+                // 替换图片点击事件
+                resultJson = resultJson.replace("placeHolder.png", AppConfigSetting.getInstance()
+                        .getInt(SkinMode.SKIN_MODE_KEY, 0) == SkinMode.NIGHT_MODE ?
+                        "../img/loading_n.png"
+                        : "../img/loading_d.png");// 预加载占位图片
+                tempJson.put(TAG + strMsgWhat + "_" + strMsgArg1 + "_" + strMsgArg2, resultJson);
+                resultJson = "";
+            }
+            onHandlerDataListener.sendMessage(EnumMsgWhat.REFRESH_HANDLER2,
+                    "javascript:netWorkCallBack('" + strMsgWhat + "','" + strMsgArg1 + "','" +
+                            strMsgArg2 + "','" + resultJson + "')");
+        }
+    }
 
     /**
      * 得到特殊包含html 代码的json
@@ -254,44 +273,45 @@ public class ImplInAndroidScript {
         });
     }
 
-	@JavascriptInterface
-	public void startOtherNativeActivity(final String className, final String optionJson) {
+    @JavascriptInterface
+    public void startOtherNativeActivity(final String className, final String optionJson) {
 
-		if (className == null || className.length() == 0 || activity == null) {
-			return;
-		}
-		if ("".equals(this.tempID)) {
-			this.tempID = className;
-			handler.postDelayed(new Runnable() {
-				@Override
-				public void run() {
-					try {
-						Class<?> cls = Class.forName(className);
-						Intent intent = new Intent(activity, cls);
-						if (optionJson != null && optionJson.length() > 0) {
-							JSONObject jsonObject = new JSONObject(optionJson);
-							if (jsonObject != null) {
-								Iterator<String> iterator = jsonObject.keys();
-								while (iterator.hasNext()) {
-									String key = (String) iterator.next();
-									String value = jsonObject.getString(key);
-									intent.putExtra(key, value);
-								}
-							}
-						}
-						// 如跳帖子页面
-						// var
-						// optionJson='{"TOPIC_ID_KEY":"1415605","TOPIC_REPLY_ID_KEY":"0"}';
-						// weexEventModule.startOtherNativeActivity("com..app.activity.TopicActivity",optionJson);
-						IntentUtil.startOtherActivity(activity, intent);
-						ImplInAndroidScript.this.tempID = "";
-					} catch (Exception e) {
-						e.printStackTrace();
-					}
-				}
-			}, 10);
-		}
-	}
+        if (className == null || className.length() == 0 || activity == null) {
+            return;
+        }
+        if ("".equals(this.tempID)) {
+            this.tempID = className;
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    try {
+                        Class<?> cls = Class.forName(className);
+                        Intent intent = new Intent(activity, cls);
+                        if (optionJson != null && optionJson.length() > 0) {
+                            JSONObject jsonObject = new JSONObject(optionJson);
+                            if (jsonObject != null) {
+                                Iterator<String> iterator = jsonObject.keys();
+                                while (iterator.hasNext()) {
+                                    String key = (String) iterator.next();
+                                    String value = jsonObject.getString(key);
+                                    intent.putExtra(key, value);
+                                }
+                            }
+                        }
+                        // 如跳帖子页面
+                        // var
+                        // optionJson='{"TOPIC_ID_KEY":"1415605","TOPIC_REPLY_ID_KEY":"0"}';
+                        // weexEventModule.startOtherNativeActivity("com..app.activity
+                        // .TopicActivity",optionJson);
+                        IntentUtil.startOtherActivity(activity, intent);
+                        ImplInAndroidScript.this.tempID = "";
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+            }, 10);
+        }
+    }
 
     /**
      * 跳转到任意activity
@@ -318,11 +338,16 @@ public class ImplInAndroidScript {
                     try {
                         Class<?> cls = Class.forName(className);
                         Intent intent = new Intent(activity, cls);
-                        intent = AppConfigUtils.getIntentFromOptionJson(activity, intent, optionJson, null);
+                        intent = AppConfigUtils.getIntentFromOptionJson(activity, intent,
+                                optionJson, null);
                         // 如跳帖子页面
                         // var
-                        // optionJson=[{"intentKey":"intnet传值Key","intentKeyValueClassName":"intent传值类型名","intentKeyValue":"intent所传值"},{"intentKey":"intnet传值Key","intentKeyValueClassName":"intent传值类型名","intentKeyValue":"intent所传值"}];
-                        // weexEventModule.startOtherNativeActivity("com..app.activity.TopicActivity",optionJson);
+                        // optionJson=[{"intentKey":"intnet传值Key",
+                        // "intentKeyValueClassName":"intent传值类型名","intentKeyValue":"intent所传值"},
+                        // {"intentKey":"intnet传值Key","intentKeyValueClassName":"intent传值类型名",
+                        // "intentKeyValue":"intent所传值"}];
+                        // weexEventModule.startOtherNativeActivity("com..app.activity
+                        // .TopicActivity",optionJson);
                         IntentUtil.startOtherActivity(activity, intent);
                         ImplInAndroidScript.this.tempID = "";
                     } catch (Exception e) {
@@ -414,7 +439,7 @@ public class ImplInAndroidScript {
     /**
      * 是否缩放字体
      *
-     * @param isZoomTextSize
+     * @param value
      * @author :Atar
      * @createTime:2017-6-22下午2:05:17
      * @version:1.0.0
@@ -513,7 +538,8 @@ public class ImplInAndroidScript {
                         public void onClick(View v) {
                             CommonDialog.dialogDismiss();
                             if (onHandlerDataListener != null) {
-                                onHandlerDataListener.sendMessage(EnumMsgWhat.REFRESH_HANDLER2, "javascript:" + callbackMethod + "()");
+                                onHandlerDataListener.sendMessage(EnumMsgWhat.REFRESH_HANDLER2,
+                                        "javascript:" + callbackMethod + "()");
                             }
                             // activity.loadWebViewUrl("javascript:" + callbackMethod + "()");
                         }
@@ -524,30 +550,38 @@ public class ImplInAndroidScript {
     }
 
     @JavascriptInterface
-    public void confirm(final String strTitle, final String strContent, final String strOk, final String strCancle, final String callbackMethodOk, final String callbackMethodCancle,
+    public void confirm(final String strTitle, final String strContent, final String strOk, final
+    String strCancle, final String callbackMethodOk, final String callbackMethodCancle,
                         final String callbackMethodOkJson, final String callbackMethodCancleJson) {
         if (handler != null && activity != null) {
             handler.post(new Runnable() {
                 @Override
                 public void run() {
-                    CommonDialog.conformDialog(activity, strTitle, strContent, strOk, strCancle, new OnClickListener() {
+                    CommonDialog.conformDialog(activity, strTitle, strContent, strOk, strCancle,
+                            new OnClickListener() {
 
                         @Override
                         public void onClick(View v) {
                             CommonDialog.dialogDismiss();
                             if (onHandlerDataListener != null) {
-                                onHandlerDataListener.sendMessage(EnumMsgWhat.REFRESH_HANDLER2, "javascript:" + callbackMethodOk + "('" + callbackMethodOkJson + "')");
+                                onHandlerDataListener.sendMessage(EnumMsgWhat.REFRESH_HANDLER2,
+                                        "javascript:" + callbackMethodOk + "('" +
+                                                callbackMethodOkJson + "')");
                             }
-                            // activity.loadWebViewUrl("javascript:" + callbackMethodOk + "('" + callbackMethodOkJson + "')");
+                            // activity.loadWebViewUrl("javascript:" + callbackMethodOk + "('" +
+                            // callbackMethodOkJson + "')");
                         }
                     }, new OnClickListener() {
                         @Override
                         public void onClick(View v) {
                             CommonDialog.dialogDismiss();
                             if (onHandlerDataListener != null) {
-                                onHandlerDataListener.sendMessage(EnumMsgWhat.REFRESH_HANDLER2, "javascript:" + callbackMethodCancle + "('" + callbackMethodCancleJson + "')");
+                                onHandlerDataListener.sendMessage(EnumMsgWhat.REFRESH_HANDLER2,
+                                        "javascript:" + callbackMethodCancle + "('" +
+                                                callbackMethodCancleJson + "')");
                             }
-                            // activity.loadWebViewUrl("javascript:" + callbackMethodCancle + "('" + callbackMethodCancleJson + "')");
+                            // activity.loadWebViewUrl("javascript:" + callbackMethodCancle + "
+                            // ('" + callbackMethodCancleJson + "')");
                         }
                     });
                 }
@@ -556,7 +590,8 @@ public class ImplInAndroidScript {
     }
 
     @JavascriptInterface
-    public void conformDialogWithEditText(final String strTitle, final String hinttext, final String callbackMethod, final String maxLength, final String callbackMethodOptionJson) {
+    public void conformDialogWithEditText(final String strTitle, final String hinttext, final
+    String callbackMethod, final String maxLength, final String callbackMethodOptionJson) {
         if (handler != null && activity != null) {
             handler.post(new Runnable() {
                 @Override
@@ -565,14 +600,18 @@ public class ImplInAndroidScript {
                     if (smaxLength == null || smaxLength.length() == 0) {
                         smaxLength = "0";
                     }
-                    CommonDialog.conformDialogWithEditText(activity, strTitle, hinttext, Integer.valueOf(smaxLength), new EditFinishListener() {
+                    CommonDialog.conformDialogWithEditText(activity, strTitle, hinttext, Integer
+                            .valueOf(smaxLength), new EditFinishListener() {
                         @Override
                         public void finish(String strEditContent) {
                             CommonDialog.dialogDismiss();
                             if (onHandlerDataListener != null) {
-                                onHandlerDataListener.sendMessage(EnumMsgWhat.REFRESH_HANDLER2, "javascript:" + callbackMethod + "('" + strEditContent + "','" + callbackMethodOptionJson + "')");
+                                onHandlerDataListener.sendMessage(EnumMsgWhat.REFRESH_HANDLER2,
+                                        "javascript:" + callbackMethod + "('" + strEditContent +
+                                                "','" + callbackMethodOptionJson + "')");
                             }
-                            // activity.loadWebViewUrl("javascript:" + callbackMethod + "('" + strEditContent + "','" + callbackMethodOptionJson + "')");
+                            // activity.loadWebViewUrl("javascript:" + callbackMethod + "('" +
+                            // strEditContent + "','" + callbackMethodOptionJson + "')");
                         }
                     });
                 }
@@ -589,8 +628,9 @@ public class ImplInAndroidScript {
      * @param spKey             保存当前位置存入key 传""代表不保存状态
      * @param strPopwindowWidth 宽度
      * @param strTextSize       列表字体大小
-     * @param jsonList          列表数据 weex上如： var json = [{"DropDownItemId":"0","DropDownItemName":"按回帖时间"},{"DropDownItemId":"1","DropDownItemName":"按发帖时间"}]
-     * @param callbackId        回调方法
+     * @param jsonList          列表数据 weex上如： var json = [{"DropDownItemId":"0",
+     *                          "DropDownItemName":"按回帖时间"},{"DropDownItemId":"1",
+     *                          "DropDownItemName":"按发帖时间"}]
      * @author :Atar
      * @createTime:2017-4-11下午4:32:20
      * @version:1.0.0
@@ -599,7 +639,8 @@ public class ImplInAndroidScript {
      * @description:
      */
     @JavascriptInterface
-    public void show(final String strGravity, final String strX, final String strY, final String spKey, final String strPopwindowWidth, final String strTextSize, final String jsonList,
+    public void show(final String strGravity, final String strX, final String strY, final String
+            spKey, final String strPopwindowWidth, final String strTextSize, final String jsonList,
                      final String onItemClickcallbackMethod) {
         if (handler != null && activity != null) {
             handler.post(new Runnable() {
@@ -608,7 +649,9 @@ public class ImplInAndroidScript {
                 @Override
                 public void run() {
                     try {
-                        int gravity = 0, x = 0, y = 0, popwindowWidth = 0, textSize = 0, currentPosition = -1, drawableResID = 0;// R.drawable.corners_transparent8;
+                        int gravity = 0, x = 0, y = 0, popwindowWidth = 0, textSize = 0,
+                                currentPosition = -1, drawableResID = 0;// R.drawable
+                        // .corners_transparent8;
                         if (strGravity != null && strGravity.length() > 0) {
                             if ("0".equals(strGravity)) {// 自定义 xy起始点
                                 gravity = Gravity.NO_GRAVITY;
@@ -650,34 +693,47 @@ public class ImplInAndroidScript {
                         List<PopWindowItemBean> mList = null;
                         if (jsonList != null) {
                             Gson gson = new Gson();
-                            mList = gson.fromJson(jsonList, new TypeToken<List<PopWindowItemBean>>() {
+                            mList = gson.fromJson(jsonList, new
+                                    TypeToken<List<PopWindowItemBean>>() {
                             }.getType());
                         }
-                        LayoutInflater mLayoutInflater = (LayoutInflater) activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-                        ViewGroup dropView = null;// (ViewGroup) mLayoutInflater.inflate(R.layout.activity__common_title_drop, null, true);
+                        LayoutInflater mLayoutInflater = (LayoutInflater) activity
+                                .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                        ViewGroup dropView = null;// (ViewGroup) mLayoutInflater.inflate(R.layout
+                        // .activity__common_title_drop, null, true);
                         final DropDownAdapter mDropDownAdapter = new DropDownAdapter(mList);
                         mDropDownAdapter.setTxtSize(textSize);
                         mDropDownAdapter.setCurrentPostiotn(currentPosition);
                         ((ListView) dropView).setAdapter(mDropDownAdapter);
                         ((ListView) dropView).setDividerHeight(0);
-                        final PopupWindow mPopupWindow = new PopupWindow(dropView, popwindowWidth, ViewGroup.LayoutParams.WRAP_CONTENT, true);
-                        mPopupWindow.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
+                        final PopupWindow mPopupWindow = new PopupWindow(dropView,
+                                popwindowWidth, ViewGroup.LayoutParams.WRAP_CONTENT, true);
+                        mPopupWindow.setSoftInputMode(WindowManager.LayoutParams
+                                .SOFT_INPUT_ADJUST_RESIZE);
                         if ("1".equals(strGravity)) {// 右上角
-                            mPopupWindow.setBackgroundDrawable(SkinUtils.getDrawable(activity, R.string.drawable_drop_r));
+                            mPopupWindow.setBackgroundDrawable(SkinUtils.getDrawable(activity, R
+                                    .string.drawable_drop_r));
                         }
-                        mPopupWindow.showAtLocation(activity.getWindow().getDecorView(), gravity, x, y);
+                        mPopupWindow.showAtLocation(activity.getWindow().getDecorView(), gravity,
+                                x, y);
                         ((ListView) dropView).setOnItemClickListener(new OnItemClickListener() {
                             @Override
-                            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                            public void onItemClick(AdapterView<?> parent, View view, int
+                                    position, long id) {
                                 if (spKey != null && spKey.length() > 0) {
                                     AppConfigSetting.getInstance().putInt(spKey, position);
                                 }
                                 mPopupWindow.dismiss();
                                 if (onHandlerDataListener != null) {
-                                    onHandlerDataListener.sendMessage(EnumMsgWhat.REFRESH_HANDLER2, "javascript:" + onItemClickcallbackMethod + "('"
-                                            + mDropDownAdapter.getItem(position).getDropDownItemId() + "')");
+                                    onHandlerDataListener.sendMessage(EnumMsgWhat
+                                            .REFRESH_HANDLER2, "javascript:" +
+                                            onItemClickcallbackMethod + "('"
+                                            + mDropDownAdapter.getItem(position)
+                                            .getDropDownItemId() + "')");
                                 }
-                                // activity.loadWebViewUrl("javascript:" + onItemClickcallbackMethod + "('" + mDropDownAdapter.getItem(position).getDropDownItemId() + "')");
+                                // activity.loadWebViewUrl("javascript:" +
+                                // onItemClickcallbackMethod + "('" + mDropDownAdapter.getItem
+                                // (position).getDropDownItemId() + "')");
                             }
                         });
                     } catch (Exception e) {
@@ -708,8 +764,10 @@ public class ImplInAndroidScript {
                         Gson gson = new Gson();
                         ShareBean share = gson.fromJson(shareJson, ShareBean.class);
                         if (share != null) {
-                            if (share.getSHARE_MEDIA() != null && share.getSHARE_MEDIA().size() > 0) {
-                                SHARE_MEDIA[] medias = new SHARE_MEDIA[share.getSHARE_MEDIA().size()];
+                            if (share.getSHARE_MEDIA() != null && share.getSHARE_MEDIA().size() >
+                                    0) {
+                                SHARE_MEDIA[] medias = new SHARE_MEDIA[share.getSHARE_MEDIA()
+                                        .size()];
                                 for (int i = 0; i < share.getSHARE_MEDIA().size(); i++) {
                                     String smedia = share.getSHARE_MEDIA().get(i);
                                     if ("WEIXIN".equalsIgnoreCase(smedia)) {
@@ -724,9 +782,13 @@ public class ImplInAndroidScript {
                                         medias[i] = SHARE_MEDIA.QQ;
                                     }
                                 }
-                                ShareTool.getInstance().setShare(activity, share.getShareTitle(), share.getShareUrl(), share.getShareContent(), share.getShareImgUrl(), medias);
+                                ShareTool.getInstance().setShare(activity, share.getShareTitle(),
+                                        share.getShareUrl(), share.getShareContent(), share
+                                                .getShareImgUrl(), medias);
                             } else {
-                                // ShareTool.getInstance().setShare(activity, share.getShareTitle(), share.getShareUrl(), share.getShareContent(), R.drawable.share);
+                                // ShareTool.getInstance().setShare(activity, share.getShareTitle
+                                // (), share.getShareUrl(), share.getShareContent(), R.drawable
+                                // .share);
                             }
                         }
                     } catch (Exception e) {
@@ -788,11 +850,13 @@ public class ImplInAndroidScript {
 
     @JavascriptInterface
     public void setTopRightImgUrl(final String top_right_img_url) {
-        if (top_right_img_url != null && top_right_img_url.length() > 0 && handler != null && onHandlerDataListener != null) {
+        if (top_right_img_url != null && top_right_img_url.length() > 0 && handler != null &&
+                onHandlerDataListener != null) {
             handler.post(new Runnable() {
                 @Override
                 public void run() {
-                    onHandlerDataListener.sendMessage(EnumMsgWhat.REFRESH_HANDLER6, top_right_img_url);
+                    onHandlerDataListener.sendMessage(EnumMsgWhat.REFRESH_HANDLER6,
+                            top_right_img_url);
                     // activity.setTopRightImgUrl(top_right_img_url);
                 }
             });
@@ -842,8 +906,11 @@ public class ImplInAndroidScript {
                         } catch (Exception e) {
 
                         }
-                        if (ActivityManager.getActivityManager().getActivity(WeexTabHostWithWebViewActivity.class) != null) {
-                            ActivityManager.getActivityManager().getActivity(WeexTabHostWithWebViewActivity.class).setNewInfoNum(position, num);
+                        if (ActivityManager.getActivityManager().getActivity
+                                (WeexTabHostWithWebViewActivity.class) != null) {
+                            ActivityManager.getActivityManager().getActivity
+                                    (WeexTabHostWithWebViewActivity.class).setNewInfoNum
+                                    (position, num);
                         }
                     } catch (Exception e) {
 
@@ -868,8 +935,10 @@ public class ImplInAndroidScript {
                         } catch (Exception e) {
 
                         }
-                        if (ActivityManager.getActivityManager().getActivity(WeexTabHostWithWebViewActivity.class) != null) {
-                            ActivityManager.getActivityManager().getActivity(WeexTabHostWithWebViewActivity.class).setCurrentTab(position);
+                        if (ActivityManager.getActivityManager().getActivity
+                                (WeexTabHostWithWebViewActivity.class) != null) {
+                            ActivityManager.getActivityManager().getActivity
+                                    (WeexTabHostWithWebViewActivity.class).setCurrentTab(position);
                         }
                     } catch (Exception e) {
 
@@ -893,13 +962,15 @@ public class ImplInAndroidScript {
      * @description:
      */
     @JavascriptInterface
-    public void callWeekActivity(String activityClassName, String callback_key, String callback_value) {
+    public void callWeekActivity(String activityClassName, String callback_key, String
+            callback_value) {
         try {
             if (activityClassName != null && activityClassName.length() > 0) {
                 @SuppressWarnings("unchecked")
                 Class<MainActivity> cls = (Class<MainActivity>) Class.forName(activityClassName);
                 if (cls != null && ActivityManager.getActivityManager().getActivity(cls) != null) {
-                    ActivityManager.getActivityManager().getActivity(cls).weekCallback(callback_key, callback_value);
+                    ActivityManager.getActivityManager().getActivity(cls).weekCallback
+                            (callback_key, callback_value);
                 }
             }
         } catch (Exception e) {
@@ -922,7 +993,8 @@ public class ImplInAndroidScript {
      * @description:
      */
     @JavascriptInterface
-    public void callWeekActivity(String activityClassName, String callback_key, String callback_value, String strlastPosition) {
+    public void callWeekActivity(String activityClassName, String callback_key, String
+            callback_value, String strlastPosition) {
         try {
             if (activityClassName != null && activityClassName.length() > 0) {
                 @SuppressWarnings("unchecked")
@@ -932,8 +1004,10 @@ public class ImplInAndroidScript {
                     lastPosition = Integer.valueOf(strlastPosition);
                 } catch (Exception e) {
                 }
-                if (cls != null && ActivityManager.getActivityManager().getActivity(cls, lastPosition) != null) {
-                    ActivityManager.getActivityManager().getActivity(cls, lastPosition).weekCallback(callback_key, callback_value);
+                if (cls != null && ActivityManager.getActivityManager().getActivity(cls,
+                        lastPosition) != null) {
+                    ActivityManager.getActivityManager().getActivity(cls, lastPosition)
+                            .weekCallback(callback_key, callback_value);
                 }
             }
         } catch (Exception e) {
@@ -954,7 +1028,8 @@ public class ImplInAndroidScript {
      * @description:
      */
     @JavascriptInterface
-    public void callDynamicWebViewctivity(final String strlastPosition, final String javascriptUrl) {
+    public void callDynamicWebViewctivity(final String strlastPosition, final String
+            javascriptUrl) {
         try {
             if (handler != null) {
                 handler.post(new Runnable() {
@@ -965,8 +1040,11 @@ public class ImplInAndroidScript {
                             lastPosition = Integer.valueOf(strlastPosition);
                         } catch (Exception e) {
                         }
-                        if (ActivityManager.getActivityManager().getActivity(AtarDynamicWebViewActivity.class, lastPosition) != null) {
-                            ActivityManager.getActivityManager().getActivity(AtarDynamicWebViewActivity.class, lastPosition).loadWebViewUrl(javascriptUrl);
+                        if (ActivityManager.getActivityManager().getActivity
+                                (AtarDynamicWebViewActivity.class, lastPosition) != null) {
+                            ActivityManager.getActivityManager().getActivity
+                                    (AtarDynamicWebViewActivity.class, lastPosition)
+                                    .loadWebViewUrl(javascriptUrl);
                         }
                     }
                 });
@@ -995,12 +1073,16 @@ public class ImplInAndroidScript {
                     @Override
                     public void run() {
                         if (activityName.contains("WebViewPagerActivity")) {
-                            if (ActivityManager.getActivityManager().getActivity(WebViewPagerActivity.class) != null) {
-                                ActivityManager.getActivityManager().getActivity(WebViewPagerActivity.class).setActivityTitle(title);
+                            if (ActivityManager.getActivityManager().getActivity
+                                    (WebViewPagerActivity.class) != null) {
+                                ActivityManager.getActivityManager().getActivity
+                                        (WebViewPagerActivity.class).setActivityTitle(title);
                             }
                         } else if (activityName.contains("CommunityActivity")) {
-                            // if (ActivityManager.getActivityManager().getActivity(CommunityActivity.class) != null) {
-                            // ActivityManager.getActivityManager().getActivity(CommunityActivity.class).setActivityTitle(title);
+                            // if (ActivityManager.getActivityManager().getActivity
+                            // (CommunityActivity.class) != null) {
+                            // ActivityManager.getActivityManager().getActivity(CommunityActivity
+                            // .class).setActivityTitle(title);
                             // }
                         }
                     }
@@ -1025,7 +1107,8 @@ public class ImplInAndroidScript {
      * @description:
      */
     @JavascriptInterface
-    public void callWebViewPagerActivityFragment(final String activityName, final String strlastPosition, final String strCurrntPosition, final String javascriptUrl) {
+    public void callWebViewPagerActivityFragment(final String activityName, final String
+            strlastPosition, final String strCurrntPosition, final String javascriptUrl) {
         try {
             if (handler != null) {
                 handler.post(new Runnable() {
@@ -1041,10 +1124,14 @@ public class ImplInAndroidScript {
                         }
                         try {
                             if (activityName.contains("WebViewPagerActivity")) {
-                                ((AtarDynamicFragment) ActivityManager.getActivityManager().getActivity(WebViewPagerActivity.class, lastPosition).getFragmentList().get(currntPosition))
+                                ((AtarDynamicFragment) ActivityManager.getActivityManager()
+                                        .getActivity(WebViewPagerActivity.class, lastPosition)
+                                        .getFragmentList().get(currntPosition))
                                         .loadWebViewUrl(javascriptUrl);
                             } else if (activityName.contains("CommunityActivity")) {
-                                // ((AtarDynamicFragment) ActivityManager.getActivityManager().getActivity(CommunityActivity.class, lastPosition).getFragmentList().get(currntPosition))
+                                // ((AtarDynamicFragment) ActivityManager.getActivityManager()
+                                // .getActivity(CommunityActivity.class, lastPosition)
+                                // .getFragmentList().get(currntPosition))
                                 // .loadWebViewUrl(javascriptUrl);
                             }
                         } catch (Exception e) {
@@ -1072,7 +1159,8 @@ public class ImplInAndroidScript {
      * @description:
      */
     @JavascriptInterface
-    public void setWebViewPagerActivityNewInfoNum(final String activityName, final String strlastPosition, final String strCurrntPosition, final String strNewNum) {
+    public void setWebViewPagerActivityNewInfoNum(final String activityName, final String
+            strlastPosition, final String strCurrntPosition, final String strNewNum) {
         try {
             if (handler != null) {
                 handler.post(new Runnable() {
@@ -1090,9 +1178,13 @@ public class ImplInAndroidScript {
                         }
                         try {
                             if (activityName.contains("WebViewPagerActivity")) {
-                                ActivityManager.getActivityManager().getActivity(WebViewPagerActivity.class, lastPosition).setNewInfoNum(currntPosition, num);
+                                ActivityManager.getActivityManager().getActivity
+                                        (WebViewPagerActivity.class, lastPosition).setNewInfoNum
+                                        (currntPosition, num);
                             } else if (activityName.contains("CommunityActivity")) {
-                                // ActivityManager.getActivityManager().getActivity(CommunityActivity.class, lastPosition).setNewInfoNum(currntPosition, num);
+                                // ActivityManager.getActivityManager().getActivity
+                                // (CommunityActivity.class, lastPosition).setNewInfoNum
+                                // (currntPosition, num);
                             }
                         } catch (Exception e) {
                             ShowLog.e(TAG, CrashHandler.crashToString(e));
@@ -1118,7 +1210,8 @@ public class ImplInAndroidScript {
      * @description:
      */
     @JavascriptInterface
-    public void setWebViewPagerActivityCurrentItem(final String activityName, final String strlastPosition, final String strCurrntPosition) {
+    public void setWebViewPagerActivityCurrentItem(final String activityName, final String
+            strlastPosition, final String strCurrntPosition) {
         try {
             if (handler != null) {
                 handler.post(new Runnable() {
@@ -1134,9 +1227,13 @@ public class ImplInAndroidScript {
                         }
                         try {
                             if (activityName.contains("WebViewPagerActivity")) {
-                                ActivityManager.getActivityManager().getActivity(WebViewPagerActivity.class, lastPosition).setCurrentItem(currntPosition, true);
+                                ActivityManager.getActivityManager().getActivity
+                                        (WebViewPagerActivity.class, lastPosition).setCurrentItem
+                                        (currntPosition, true);
                             } else if (activityName.contains("CommunityActivity")) {
-                                // ActivityManager.getActivityManager().getActivity(CommunityActivity.class, lastPosition).setCurrentItem(currntPosition, true);
+                                // ActivityManager.getActivityManager().getActivity
+                                // (CommunityActivity.class, lastPosition).setCurrentItem
+                                // (currntPosition, true);
                             }
                         } catch (Exception e) {
                             ShowLog.e(TAG, CrashHandler.crashToString(e));
@@ -1168,7 +1265,8 @@ public class ImplInAndroidScript {
                     @Override
                     public void run() {
                         if (activity instanceof WebViewPagerActivity) {
-                            ((WebViewPagerActivity) activity).requestDisallowInterceptTouchEvent("1".equals(disallowIntercept));
+                            ((WebViewPagerActivity) activity).requestDisallowInterceptTouchEvent
+                                    ("1".equals(disallowIntercept));
                         }
                     }
                 });
@@ -1198,7 +1296,8 @@ public class ImplInAndroidScript {
     // @Override
     // public void run() {
     // try {
-    // ActivityManager.getActivityManager().getActivity(CommunityActivity.class).setTopLeftImage(imgUrl);
+    // ActivityManager.getActivityManager().getActivity(CommunityActivity.class).setTopLeftImage
+    // (imgUrl);
     // } catch (Exception e) {
     // ShowLog.e(TAG, CrashHandler.crashToString(e));
     // }

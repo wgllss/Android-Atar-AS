@@ -77,19 +77,19 @@ public class DynamicHtmlUtils {
      * @description:
      */
     public static String getInitValue(AtarCommonActivity activity,
-									  OnHandlerDataListener<PullToRefreshWebView, WebView>
-											  onHandlerDataListener, PullToRefreshWebView
-											  mPullToRefreshWebView,
+                                      OnHandlerDataListener<PullToRefreshWebView, WebView>
+            onHandlerDataListener, PullToRefreshWebView
+                                              mPullToRefreshWebView,
                                       String options, String mode, String url, int skinType,
-									  ImplOnTouchChanceTextSizeListener
-											  mImplOnTouchChanceTextSizeListener) {
+                                      ImplOnTouchChanceTextSizeListener
+                                              mImplOnTouchChanceTextSizeListener) {
         String optionsJson = "";
-		/* 向html传入初始参数 start */
+        /* 向html传入初始参数 start */
         try {
             Map<String, String> optionsMap = new HashMap<String, String>();
             optionsMap.put("skinType", Integer.toString(skinType));
             String isLoadImage = "Y";// AppConfigSetting.getInstance().getBoolean(GlobeSettings
-			// .SHOW_IMAGE_KEY, true) ? "Y" : "N";
+            // .SHOW_IMAGE_KEY, true) ? "Y" : "N";
 
             optionsMap.put("isLoadImage", isLoadImage);
             if (options != null && options.length() > 0) {
@@ -112,16 +112,16 @@ public class DynamicHtmlUtils {
 		/* 向html传入初始参数 end */
 
         OffineImplWebViewClient mOffineImplWebViewClient = new OffineImplWebViewClient(activity,
-				onHandlerDataListener);
+                onHandlerDataListener);
         if (mPullToRefreshWebView != null && mPullToRefreshWebView.getRefreshableView() != null) {
             mImplOnTouchChanceTextSizeListener = new ImplOnTouchChanceTextSizeListener
-					(mPullToRefreshWebView, activity);
+                    (mPullToRefreshWebView, activity);
             mImplOnTouchChanceTextSizeListener.setTypefaceModeStasus(AppConfigSetting.getInstance
-					().getString(TypefaceMode.TYPE_FACE_MODE_KEY.getValue(), TypefaceMode.MIDDLE
-					.getValue()));
+                    ().getString(TypefaceMode.TYPE_FACE_MODE_KEY.getValue(), TypefaceMode.MIDDLE
+                    .getValue()));
             // mImplOnTouchChanceTextSizeListener.setWebViewLoadSuccess(false);
             mPullToRefreshWebView.getRefreshableView().setOnTouchListener
-					(mImplOnTouchChanceTextSizeListener);
+                    (mImplOnTouchChanceTextSizeListener);
 
 			/* 刷新模式 0:上下都可以刷新 1:只上面可下拉 2:只有下面可上拉 start */
             if ("0".equals(mode)) {
@@ -136,14 +136,14 @@ public class DynamicHtmlUtils {
 			/* 刷新模式 end */
 
             mOffineImplWebViewClient.initWebViewSettings(mPullToRefreshWebView.getRefreshableView
-					());
+                    ());
 
             mPullToRefreshWebView.getRefreshableView().addJavascriptInterface(new
-					ImplInAndroidScript(activity, onHandlerDataListener), "injs");
+                    ImplInAndroidScript(activity, onHandlerDataListener), "injs");
 
             mPullToRefreshWebView.getRefreshableView().setWebViewClient(mOffineImplWebViewClient);
             mPullToRefreshWebView.getRefreshableView().setWebChromeClient(new ImplWebChromeClient
-					(activity));
+                    (activity));
 
             if (url != null && url.length() > 0) {
                 // if (url.contains("")) {
@@ -180,25 +180,25 @@ public class DynamicHtmlUtils {
      * @description:
      */
     public static void loadLocalHtml(AtarCommonActivity activity, PullToRefreshWebView
-			mPullToRefreshWebView, String url) {
+            mPullToRefreshWebView, String url) {
         try {
             File file = new File(SAVE_HTML_PATH);
             if (!FileUtils.exists(SAVE_HTML_PATH)) {
                 FileUtils.createDir(SAVE_HTML_PATH);
             }
             String strLocalFileName = url.substring(url.lastIndexOf("/") + 1, url.length())
-					.replace(".html", "");
+                    .replace(".html", "");
             File htmlFile = new File(file.getAbsolutePath(), MDPassword.getPassword32
-					(strLocalFileName));
+                    (strLocalFileName));
             if (htmlFile.exists()) {
                 mPullToRefreshWebView.getRefreshableView().loadUrl("file:///" + htmlFile
-						.getAbsolutePath());
+                        .getAbsolutePath());
             } else {
                 if (HttpRequest.IsUsableNetWork(activity)) {
                     mPullToRefreshWebView.getRefreshableView().loadUrl(url);
                 } else {
                     ToastWhthCheck.show(activity, activity.getResources().getString(R.string
-							.emobilenetuseless_msg));
+                            .emobilenetuseless_msg));
                 }
             }
         } catch (Exception e) {
@@ -245,8 +245,10 @@ public class DynamicHtmlUtils {
                                 if (!FileUtils.exists(SAVE_HTML_PATH)) {
                                     FileUtils.createDir(SAVE_HTML_PATH);
                                 }
-                                String strLocalFileName = htmlUrl.substring(htmlUrl.lastIndexOf("/") + 1, htmlUrl.length()).replace(".html", "");
-                                File htmlFile = new File(file.getAbsolutePath(), MDPassword.getPassword32(strLocalFileName));
+                                String strLocalFileName = htmlUrl.substring(htmlUrl.lastIndexOf
+                                        ("/") + 1, htmlUrl.length()).replace(".html", "");
+                                File htmlFile = new File(file.getAbsolutePath(), MDPassword
+                                        .getPassword32(strLocalFileName));
                                 htmlFile.deleteOnExit();
                                 htmlFile.createNewFile();
                                 FileOutputStream outStream = new FileOutputStream(htmlFile);

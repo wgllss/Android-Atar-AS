@@ -49,4 +49,5 @@ public class GlobeSettings {
 
 	/** 本地语音文件目录 */
 	public static final String audioDir = appCommonDir + "/audio/";
+	public static final String XF_ID = "5b73d610";
 }

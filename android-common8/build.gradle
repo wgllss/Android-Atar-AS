@@ -2,7 +2,7 @@ apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion 22
-    buildToolsVersion "25.0.3"
+    buildToolsVersion '26.0.2'
 
     defaultConfig {
         minSdkVersion 14
@@ -26,13 +26,13 @@ dependencies {
     //    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
     //        exclude group: 'com.android.support', module: 'support-annotations'
     //    })
-//    compile files('libs/universal-image-loader-fixed1.9.5.jar')
-//    compile files('libs/xmlpull_1_0_5.jar')
-//    compile files('libs/Xutils-db.jar')
+    //    compile files('libs/universal-image-loader-fixed1.9.5.jar')
+    //    compile files('libs/xmlpull_1_0_5.jar')
+    //    compile files('libs/Xutils-db.jar')
     //compile 'com.android.support:appcompat-v7:26.+'
     //    testCompile 'junit:junit:4.12'
     compile 'com.android.support:recyclerview-v7:22.2.1'
     compile 'com.google.code.gson:gson:2.2.4'
-//    compile 'com.android.support:support-v4:26.0.0-alpha1'
+    //    compile 'com.android.support:support-v4:26.0.0-alpha1'
     compile project(':android-atar_skin')
 }
