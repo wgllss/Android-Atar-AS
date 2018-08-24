@@ -38,8 +38,7 @@ import java.util.Map;
  * @version:1.0.0
  * @modifyTime:
  * @modifyAuthor:
- * @description:
- * ****************************************************************************************************************************************************************************
+ * @description: ****************************************************************************************************************************************************************************
  */
 public class MainDemoActivity extends AtarRefreshListViewActivity {
     private List<MenuItemBean> list = new ArrayList<MenuItemBean>();
@@ -67,6 +66,8 @@ public class MainDemoActivity extends AtarRefreshListViewActivity {
         list.add(new MenuItemBean("12", "当前版本" + ApplicationManagement.getVersionName()));
         list.add(new MenuItemBean("13", "科大讯飞语音识别"));
         list.add(new MenuItemBean("14", "百度语音识别"));
+        list.add(new MenuItemBean("15", "动态加载sd卡上的布局"));
+        list.add(new MenuItemBean("16", "class加载"));
 
         // list.add(new MenuItemBean("8", "网络测试1"));
         mMainDemoAdapter.notifyDataSetChanged();
@@ -170,6 +171,12 @@ public class MainDemoActivity extends AtarRefreshListViewActivity {
                 break;
             case 14:
                 startActivity(new Intent(this, BaiduAudioListenerActivity.class));
+                break;
+            case 15:
+                startActivity(new Intent(this, DemoLoadSDLayoutActivity.class));
+                break;
+            case 16:
+                startActivity(new Intent(this, ClassLoaderActivity.class));
                 break;
         }
     }

@@ -33,8 +33,7 @@ import com.taobao.sophix.listener.PatchLoadStatusListener;
  * @version:1.0.0
  * @modifyTime:
  * @modifyAuthor:
- * @description:
- * ****************************************************************************************************************************************************************************
+ * @description: ****************************************************************************************************************************************************************************
  */
 public class AtarApplication extends Application {
     public static AtarApplication mInstance;
@@ -58,6 +57,8 @@ public class AtarApplication extends Application {
             public void run() {
                 mInstance = AtarApplication.this;
                 CommonApplication.initApplication(AtarApplication.this);// 初始化全局Context
+                SkinResourcesManager.getInstance(AtarApplication.this).initSkinResources(true,
+                        "com.atar.skin", UrlParamCommon.download_skin_url);
                 CommonNetWorkExceptionToast.initToastError(AtarApplication.this, R.array
                         .err_toast_string);// 初始化全局网络错误提示信息
                 ShowLog.setDebug(true);// 设置不显示日志 上线前记得改成false
@@ -67,9 +68,6 @@ public class AtarApplication extends Application {
                 // 初始化toast字体颜色和背景
                 CrashHandler.getInstance().init(AtarApplication.this);// 接收错误异常
                 SpeechUtility.createUtility(AtarApplication.this, "appid=" + GlobeSettings.XF_ID);
-
-                SkinResourcesManager.getInstance(AtarApplication.this).initSkinResources(true,
-                        "com.atar.skin", UrlParamCommon.download_skin_url);
                 db = getDb();
             }
         });

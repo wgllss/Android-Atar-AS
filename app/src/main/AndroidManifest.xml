@@ -163,7 +163,17 @@
         <activity
             android:name=".demos.BaiduAudioListenerActivity"
             android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity
+            android:name=".demos.DemoLoadSDLayoutActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <activity
+            android:name=".demos.ClassLoaderActivity"
+            android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Translucent.NoTitleBar"></activity>
+
         <!-- weex项目 start -->
         <activity
             android:name="com.atar.weex.MainActivity"
@@ -230,6 +240,7 @@
 
 
         <!-- 阿里热修复 start -->
+
 
     </application>
 
