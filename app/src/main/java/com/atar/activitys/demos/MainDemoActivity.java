@@ -3,10 +3,16 @@
  */
 package com.atar.activitys.demos;
 
+import android.application.CommonApplication;
 import android.common.CommonHandler;
 import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.res.Resources;
 import android.interfaces.NetWorkCallTListenet;
+import android.os.Environment;
 import android.os.Message;
+import android.plugin.PluginListener;
+import android.plugin.PluginManager;
 import android.reflection.NetWorkMsg;
 import android.utils.ApplicationManagement;
 import android.utils.CommonStringUtil;
@@ -18,6 +24,7 @@ import com.atar.activitys.AtarRefreshListViewActivity;
 import com.atar.activitys.R;
 import com.atar.activitys.htmls.AtarDynamicWebViewActivity;
 import com.atar.adapters.MainDemoAdapter;
+import com.atar.application.AtarApplication;
 import com.atar.beans.MenuItemBean;
 import com.atar.enums.EnumMsgWhat;
 import com.atar.modles.WonderfulTopicJson;
@@ -68,6 +75,7 @@ public class MainDemoActivity extends AtarRefreshListViewActivity {
         list.add(new MenuItemBean("14", "百度语音识别"));
         list.add(new MenuItemBean("15", "动态加载sd卡上的布局"));
         list.add(new MenuItemBean("16", "class加载"));
+        list.add(new MenuItemBean("17", "加载插件apk"));
 
         // list.add(new MenuItemBean("8", "网络测试1"));
         mMainDemoAdapter.notifyDataSetChanged();
@@ -177,6 +185,36 @@ public class MainDemoActivity extends AtarRefreshListViewActivity {
                 break;
             case 16:
                 startActivity(new Intent(this, ClassLoaderActivity.class));
+                break;
+            case 17:
+
+                final String className = "com.atar.other.activitys.demo.MainActivity";
+                if (ProxyActivity.isLoadApk) {
+                    String apk_sdk_path = Environment.getExternalStorageDirectory() + "/software/other-apk-debug.apk";
+                    PluginManager.getInstance().setContext(this);
+                    PluginManager.getInstance().loadApk(apk_sdk_path, new PluginListener() {
+                        @Override
+                        public void success(Resources pluginResources, PackageInfo pluginPackageArchiveInfo) {
+                            String className = "com.atar.other.activitys.demo.MainActivity";
+                            if (PluginManager.getInstance().exists(className)) {
+                                ProxyActivity.startProxyActivity(MainDemoActivity.this, className);
+                            }
+                        }
+
+                        @Override
+                        public void fail() {
+
+                        }
+                    });
+                } else {
+//                    try {
+//                        AtarApplication.getApplication().startActivity(new Intent(this, Class.forName(className)));
+//                    } catch (Exception e) {
+//
+//                    }
+
+//                    ProxyActivity.startProxyActivity(MainDemoActivity.this, className);
+                }
                 break;
         }
     }

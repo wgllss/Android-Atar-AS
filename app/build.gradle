@@ -91,7 +91,9 @@ dependencies {
     compile project(':refresh-library8')
     compile project(':speex—library8')
     compile project(':swithc-button8')
-    compile project(':core')
+    compile project(':baidu-speech-core')
+    compile project(':android-plugin-library')
+//    compile project(':other-apk')
 
     compile 'com.android.support:appcompat-v7:22.2.1'
 //    compile 'com.android.support:appcompat-v7:26.+'

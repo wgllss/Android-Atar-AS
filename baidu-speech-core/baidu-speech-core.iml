@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module external.linked.project.id=":android-common8" external.linked.project.path="$MODULE_DIR$" external.root.project.path="$MODULE_DIR$/.." external.system.id="GRADLE" type="JAVA_MODULE" version="4">
+<module external.linked.project.id=":baidu-speech-core" external.linked.project.path="$MODULE_DIR$" external.root.project.path="$MODULE_DIR$/.." external.system.id="GRADLE" type="JAVA_MODULE" version="4">
   <component name="FacetManager">
     <facet type="android-gradle" name="Android-Gradle">
       <configuration>
-        <option name="GRADLE_PROJECT_PATH" value=":android-common8" />
+        <option name="GRADLE_PROJECT_PATH" value=":baidu-speech-core" />
       </configuration>
     </facet>
     <facet type="android" name="Android">
@@ -97,12 +97,8 @@
     <orderEntry type="jdk" jdkName="Android API 22 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" name="com.android.support:support-annotations:22.2.1@jar" level="project" />
-    <orderEntry type="library" exported="" name="__local_jars__:/Users/helo/Documents/git2018_07_17/Android-Atar-AS/android-common8/libs/xmlpull_1_0_5.jar:unspecified@jar" level="project" />
-    <orderEntry type="library" exported="" name="__local_jars__:/Users/helo/Documents/git2018_07_17/Android-Atar-AS/android-common8/libs/Xutils-db.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" exported="" name="__local_jars__:/Users/helo/Documents/git2018_07_17/Android-Atar-AS/baidu-speech-core/libs/bdasr_V3_20180801_d6f298a.jar:unspecified@jar" level="project" />
     <orderEntry type="library" exported="" name="com.android.support:support-v4-22.2.1" level="project" />
-    <orderEntry type="library" exported="" name="__local_jars__:/Users/helo/Documents/git2018_07_17/Android-Atar-AS/android-common8/libs/universal-image-loader-fixed1.9.5.jar:unspecified@jar" level="project" />
-    <orderEntry type="library" exported="" name="com.google.code.gson:gson:2.2.4@jar" level="project" />
-    <orderEntry type="library" exported="" name="com.android.support:recyclerview-v7-22.2.1" level="project" />
-    <orderEntry type="module" module-name="android-atar_skin" exported="" />
+    <orderEntry type="library" exported="" name="com.android.support:appcompat-v7-22.2.1" level="project" />
   </component>
 </module>
