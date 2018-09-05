@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:voiceView="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.atar.widgets.waves.VoiceLineView
+        android:id="@+id/voiceLineview"
+        android:layout_width="match_parent"
+        android:layout_height="1000dp"
+        android:background="@android:color/white"
+        voiceView:fineness="three"
+        voiceView:lineSpeed="90"
+        voiceView:maxVolume="120"
+        voiceView:middleLine="@android:color/black"
+        voiceView:middleLineHeight="1dp"
+        voiceView:rectSpace="2dp"
+        voiceView:rectWidth="5dp"
+        voiceView:sensibility="four"
+        voiceView:viewMode="line"
+        voiceView:voiceLine="@color/red" />
+</RelativeLayout>

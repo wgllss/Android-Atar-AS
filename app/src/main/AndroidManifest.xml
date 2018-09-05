@@ -172,12 +172,18 @@
             android:name=".demos.ClassLoaderActivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-
         <activity
             android:name=".demos.ProxyActivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-
+        <activity
+            android:name=".demos.WavaLineActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity
+            android:name=".demos.VoiceLineActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"></activity>
         <!-- weex项目 start -->
         <activity
             android:name="com.atar.weex.MainActivity"

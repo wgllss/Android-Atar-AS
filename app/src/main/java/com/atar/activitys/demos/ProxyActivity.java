@@ -11,7 +11,7 @@ import com.atar.utils.IntentUtil;
 
 public class ProxyActivity extends CommonActivity {
 
-    public static boolean isLoadApk = true;
+    public static boolean isLoadApk = false;
     private ProxyManager mProxyManager = ProxyManager.getInstance(this);
 
 

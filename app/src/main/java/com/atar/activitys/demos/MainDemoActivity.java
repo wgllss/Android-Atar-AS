@@ -76,6 +76,8 @@ public class MainDemoActivity extends AtarRefreshListViewActivity {
         list.add(new MenuItemBean("15", "动态加载sd卡上的布局"));
         list.add(new MenuItemBean("16", "class加载"));
         list.add(new MenuItemBean("17", "加载插件apk"));
+        list.add(new MenuItemBean("18", "wave曲线"));
+        list.add(new MenuItemBean("19", "wave曲线2"));
 
         // list.add(new MenuItemBean("8", "网络测试1"));
         mMainDemoAdapter.notifyDataSetChanged();
@@ -215,6 +217,12 @@ public class MainDemoActivity extends AtarRefreshListViewActivity {
 
 //                    ProxyActivity.startProxyActivity(MainDemoActivity.this, className);
                 }
+                break;
+            case 18:
+                startActivity(new Intent(this, WavaLineActivity.class));
+                break;
+            case 19:
+                startActivity(new Intent(this, VoiceLineActivity.class));
                 break;
         }
     }
