@@ -57,6 +57,13 @@ public class PluginManager {
                 if (context == null) {
                     return;
                 }
+                if (pluginDexClassLoader != null && pluginResources != null && pluginPackageArchiveInfo != null) {
+                    //已经加载过
+                    if (mPluginListener != null) {
+                        mPluginListener.success(pluginResources, pluginPackageArchiveInfo);
+                    }
+                    return;
+                }
                 try {
                     pluginDexClassLoader = new DexClassLoader(apkPath, context.getDir("dex", Context.MODE_PRIVATE).getAbsolutePath(), null, context.getClassLoader());
                     pluginPackageArchiveInfo = context.getPackageManager().getPackageArchiveInfo(apkPath, PackageManager.GET_ACTIVITIES);

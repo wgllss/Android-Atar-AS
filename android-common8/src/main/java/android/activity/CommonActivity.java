@@ -181,7 +181,7 @@ public abstract class CommonActivity extends FragmentActivity {
 	 * @version:1.0.0
 	 * @modifyTime:
 	 * @modifyAuthor:
-	 * @param callbacks
+	 * @param mOnOpenDrawerCompleteListener
 	 * @description:
 	 */
 	public void setOnOpenDrawerCompleteListener(OnOpenDrawerCompleteListener mOnOpenDrawerCompleteListener) {

@@ -16,6 +16,7 @@ import android.plugin.PluginManager;
 import android.reflection.NetWorkMsg;
 import android.utils.ApplicationManagement;
 import android.utils.CommonStringUtil;
+import android.utils.ShowLog;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.CommonToast;
@@ -48,6 +49,9 @@ import java.util.Map;
  * @description: ****************************************************************************************************************************************************************************
  */
 public class MainDemoActivity extends AtarRefreshListViewActivity {
+
+    private String TAG = MainDemoActivity.class.getSimpleName();
+
     private List<MenuItemBean> list = new ArrayList<MenuItemBean>();
     private MainDemoAdapter mMainDemoAdapter = new MainDemoAdapter(list);
 
@@ -189,34 +193,8 @@ public class MainDemoActivity extends AtarRefreshListViewActivity {
                 startActivity(new Intent(this, ClassLoaderActivity.class));
                 break;
             case 17:
-
                 final String className = "com.atar.other.activitys.demo.MainActivity";
-                if (ProxyActivity.isLoadApk) {
-                    String apk_sdk_path = Environment.getExternalStorageDirectory() + "/software/other-apk-debug.apk";
-                    PluginManager.getInstance().setContext(this);
-                    PluginManager.getInstance().loadApk(apk_sdk_path, new PluginListener() {
-                        @Override
-                        public void success(Resources pluginResources, PackageInfo pluginPackageArchiveInfo) {
-                            String className = "com.atar.other.activitys.demo.MainActivity";
-                            if (PluginManager.getInstance().exists(className)) {
-                                ProxyActivity.startProxyActivity(MainDemoActivity.this, className);
-                            }
-                        }
-
-                        @Override
-                        public void fail() {
-
-                        }
-                    });
-                } else {
-//                    try {
-//                        AtarApplication.getApplication().startActivity(new Intent(this, Class.forName(className)));
-//                    } catch (Exception e) {
-//
-//                    }
-
-//                    ProxyActivity.startProxyActivity(MainDemoActivity.this, className);
-                }
+                ProxyActivity.startProxyActivity(this, className);
                 break;
             case 18:
                 startActivity(new Intent(this, WavaLineActivity.class));

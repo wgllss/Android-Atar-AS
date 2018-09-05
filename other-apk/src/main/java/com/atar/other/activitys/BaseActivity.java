@@ -21,6 +21,7 @@ public class BaseActivity extends FragmentActivity implements PluginInterface {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         if (!isPlugin) {
+            thisContext = this;
             super.onCreate(savedInstanceState);
         }
     }
